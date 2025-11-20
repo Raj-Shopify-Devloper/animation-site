@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Process Section - Animated</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --gray-200: #e5e5e5;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-100: #f5f5f5;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; 
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        .creative-section.design-process-section {
+            height: 400vh; 
+            padding-top: 135px; 
+            padding-bottom: 0;
+            overflow: clip;
+            position: relative;
+        }
+        .design-sticky-wrap {
+            position: sticky;
+            top: 140px;
+            height: 100vh; 
+        }
+        .container {
+            width: 100%;
+            max-width: 1345px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .w-container:before, 
+        .w-container:after {
+            content: " ";
+            grid-area: 1 / 1 / 2 / 2;
+            display: table;
+        }
+        .design-wrapper.v2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .design-top-wrap {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 665px; 
+            position: relative;
+            opacity: 0; 
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-sub-title {
+            text-align: center;
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .content-wrap {
+            position: relative;
+        }
+        .design-process {
+            color: var(--white);
+            letter-spacing: -1.1px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: Anton, sans-serif; 
+            font-size: 110px;
+            font-weight: 400;
+            line-height: 110%;
+            text-align: center;
+        }
+        .deesign-button-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .primary {
+            background-color: #d1f24d; 
+            border-radius: 27px;
+            justify-content: center;
+            align-items: center;
+            min-height: 54px;
+            padding: 7px 7px 7px 18px;
+            text-decoration: none;
+            display: inline-flex;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            color: #000; 
+        }
+        .primary:hover {
+            transform: scale(1.05);
+        }
+        .primary.white-text-primary-button {
+            background-color: transparent;
+            min-height: auto;
+            padding: 6px 10px;
+            color: var(--white);
+            border: 2px solid #d1f24d;
+        }
+        .primary-button-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .primary-btn-wrap {
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            position: relative;
+        }
+        .primary-button-text {
+            white-space: nowrap;
+            transition: transform 0.3s ease;
+        }
+        .primary.white-text-primary-button .primary-button-text:first-child {
+            transform: translateY(0%);
+        }
+        .primary.white-text-primary-button:hover .primary-button-text:first-child {
+            transform: translateY(-100%);
+        }
+        .primary.white-text-primary-button .primary-button-text:last-child {
+            transform: translateY(100%);
+            position: absolute;
+            inset: 0 auto 0 0;
+        }
+        .primary.white-text-primary-button:hover .primary-button-text:last-child {
+            transform: translateY(0%);
+        }
+        .primary-icon-wrap {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            background-color: rgb(41, 41, 41);
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .primary:hover .primary-icon-wrap {
+            transform: translateX(5px);
+        }
+        .primary-button-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .box-one {
+            position: absolute;
+            width: 2000px;
+            height: 2000px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            will-change: transform;
+            transform-origin: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .box-one._1 {
+            transform: translate(-50%, -50%) scale(0.36877); 
+        }
+        .box-one._2 {
+            transform: translate(-50%, -50%) scale(0); 
+            background-color: #000;
+        }
+        .box-two {
+            border: 1px dashed var(--white);
+            border-radius: 50%;
+            width: 665px;
+            height: 665px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .inner-box-div {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            position: relative;        
+        }
+        .design-process-image {
+            width: auto;
+            opacity: 0; 
+            will-change: opacity, transform;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            position: absolute;
+        }
+        .design-process-image._1{
+            inset: auto auto 10% -140px;
+        }
+        .design-process-image._3{
+            inset: 25% -200px auto auto;
+        }
+        .design-process-image._4 {
+            inset: auto 50px 5% auto;
+        }
+        .design-process-image._2 {
+            inset: 10% auto auto 0%;
+        }
+        .primary-icon-wrap img {
+            display: inline-block;
+            position: relative; 
+            transition: transform 0.5s ease;
+            -webkit-box-reflect: left 0 linear-gradient(#fff, #fff);
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .design-process {
+                letter-spacing: -3px;
+                font-size: 80px;
+            }
+            .design-process-image._1{
+                inset: auto auto 10% 40px;
+            }
+            .design-process-image._4 {
+                inset: auto 0px 5% auto;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .creative-section.design-process-section {
+                padding-top: 80px;
+            }
+            .design-top-wrap {
+                height: 500px;
+            }
+            .design-process {
+                letter-spacing: -2px;
+                font-size: 60px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .creative-section.design-process-section {
+                height: auto;
+                padding-top: 40px;
+            }
+            .design-sticky-wrap {
+                position: relative;
+                top: 0;
+            }
+            .design-top-wrap {
+                height: 320px;
+            }
+            .design-process {
+                letter-spacing: -1px;
+                font-size: 34px;
+            }
+            .box-one,
+            .box-two {
+                width: 150px;
+                height: 150px; 
+            }
+            .design-process-image {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section data-w-id="f5469736-b807-3254-33c1-17ba90b98416" class="creative-section design-process-section">
+        <div class="design-sticky-wrap">
+            <div class="w-layout-blockcontainer container w-container">
+                <div class="design-wrapper v2">
+                    <div data-w-id="f5469736-b807-3254-33c1-17ba90b9841a" class="design-top-wrap">
+                        <div class="section-sub-title">Creative Lead</div>
+                        <div class="content-wrap">
+                            <h2 class="design-process">Design<br>Process</h2>
+                        </div>
+                        <div class="deesign-button-wrap">
+                            <a href="#" data-w-id="f5469736-b807-3254-33c1-17ba90b98437" class="primary white-text-primary-button w-inline-block">
+                                <div class="primary-button-wrapper white-button-wrapper">
+                                    <div class="primary-btn-wrap white-primary-btn-wrap">
+                                        <div class="primary-button-text white-text">Let’s Contact</div>
+                                        <div class="primary-button-text white-text">Let’s Contact</div>
+                                    </div>
+                                    <div style="background-color: rgb(41, 41, 41);" class="primary-icon-wrap blue-with-shadow">
+                                        <img loading="lazy" src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/687878a19f8acee9eeaf0cc6_arrow-left.svg" alt="" class="primary-button-icon v1">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-one _1"></div>
+                    <div class="box-one _2"></div>
+                    <div class="box-two">
+                        <div class="inner-box-div">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/68996126eabbac800eb718d1_one.svg" loading="lazy" alt="" class="design-process-image _1">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/689961261bda74f989d16d7c_two.svg" loading="lazy" alt="" class="design-process-image _2">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/68996126eabbac800eb718d1_one.svg" loading="lazy" alt="" class="design-process-image _3">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/689961260a1b77e9f4a525e9_four.svg" loading="lazy" alt="" class="design-process-image _4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const section = document.querySelector('.creative-section.design-process-section');
+        const topWrap = document.querySelector('.design-top-wrap');
+        const box1 = document.querySelector('.box-one._1');
+        const box2 = document.querySelector('.box-one._2');
+        const boxTwo = document.querySelector('.box-two');
+        const images = document.querySelectorAll('.design-process-image');
+
+        // Smooth easing for opacity
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+
+        function updateAnimations() {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top + window.scrollY;
+            const sectionHeight = section.offsetHeight;
+            const scrollY = window.scrollY;
+
+            // Main scroll progress (0 to 1)
+            const animationProgress = Math.max(0, Math.min(1,
+                (scrollY - sectionTop) / (sectionHeight - window.innerHeight)
+            ));
+
+            /* -------------------------
+            TOP WRAP (opacity + scale)
+            --------------------------*/
+            const topOpacity = Math.min(1, animationProgress * 2);
+            const topScale = 0.95 + (0.05 * topOpacity);
+            topWrap.style.opacity = topOpacity;
+            topWrap.style.transform = `scale(${topScale})`;
+
+            /* -------------------------
+            BOX 1 SCALE 
+            --------------------------*/
+            const scale1 = 0 + (2 * animationProgress);
+            box1.style.transform = `translate(-50%, -50%) scale(${scale1})`;
+
+            /* -------------------------
+            BOX 2 SCALE (starts after 0.3)
+            --------------------------*/
+            const scale2 = 0 + (3 * Math.max(0, animationProgress - 0.3));
+            box2.style.transform = `translate(-50%, -50%) scale(${scale2})`;
+
+            /* -------------------------
+            BOX TWO (opacity animation starts at 0.65)
+            --------------------------*/
+            const boxTwoStart = 0.39;
+            const boxTwoProg = Math.max(0, (animationProgress - boxTwoStart) / (0.09 + boxTwoStart));
+            boxTwo.style.opacity = easeOutCubic(boxTwoProg);
+
+            /* -------------------------
+            IMAGES SLIDE-IN
+            --------------------------*/
+            images.forEach((img, index) => {
+                const delay = index * 0.04;
+                const prog = Math.max(0, (animationProgress - 0.8 - delay));
+                const opacity = Math.min(1, prog * 20);
+
+                let translateX = index === 1 ? -50 : -150;
+                translateX += (Math.min(1, prog) * Math.abs(translateX));
+
+                img.style.opacity = opacity;
+                img.style.transform = `translateX(${translateX}px)`;
+            });
+        }
+
+        function scrollHandler() {
+            requestAnimationFrame(updateAnimations);
+        }
+
+        window.addEventListener('scroll', scrollHandler);
+        scrollHandler(); 
+    </script>
+</body>
+</html>

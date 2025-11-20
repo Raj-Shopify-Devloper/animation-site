@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Lead Section - Animated</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        h2 {
+            color: var(--white);
+            letter-spacing: -1.1px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: Anton, sans-serif;
+            font-size: 110px;
+            font-weight: 400;
+            line-height: 110%;
+        }
+        .creative-section.creative {
+            height: 400vh;
+            padding-top: 135px;
+            padding-bottom: 0;
+            overflow: clip;
+            position: relative;
+        }
+        .design-sticky-wrap {
+            position: sticky;
+            top: 140px;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1345px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .w-container:before, 
+        .w-container:after {
+            content: " ";
+            grid-area: 1 / 1 / 2 / 2;
+            display: table;
+        }
+        .design-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .design-top-wrap {
+            z-index: 10;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            height: 665px;
+            display: flex;
+            position: relative;
+        }
+        .section-sub-title {
+            text-align: center;
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .content-wrap {
+            position: relative;
+        }
+        .deesign-title {
+            text-align: center;
+            letter-spacing: -4.2px;
+            max-width: 918px;
+            margin-top: 24px;
+            margin-bottom: 40px;
+        }
+        .text-gray {
+            color: var(--white);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .line-image {
+            position: absolute;
+            inset: 60% auto 0% 0%;
+            width: 100px;
+            opacity: 0;
+            transform: translateY(-100px) rotate(-45deg);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .star-image {
+            position: absolute;
+            inset: -50px 0% auto auto;
+            width: 80px;
+            opacity: 0;
+            transform: translateX(-800px) rotateZ(0deg);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .circle-image {
+            position: absolute;
+            inset: auto 70px -30px auto;
+            width: 150px;
+            opacity: 0;
+            transform: scale(0) rotateZ(0deg);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .deesign-button-wrap {
+            display: flex;
+            justify-content: center;
+        }
+        .primary {
+            background-color: #d1f24d;
+            border-radius: 27px;
+            justify-content: center;
+            align-items: center;
+            min-height: 54px;
+            padding: 7px 7px 7px 18px;
+            text-decoration: none;
+            display: inline-flex;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .primary:hover {
+            transform: scale(1.05);
+        }
+        .primary.white-text-primary-button {
+            background-color: transparent;
+            min-height: auto;
+            padding: 0;
+            color: var(--white);
+            border: 2px solid #d1f24d;
+        }
+        .primary-button-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .primary-btn-wrap {
+            display: flex;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .primary-button-text {
+            white-space: nowrap;
+            transition: transform 0.3s ease;
+        }
+        .primary.white-text-primary-button .primary-button-text:first-child {
+            transform: translateX(0);
+        }
+        .primary.white-text-primary-button:hover .primary-button-text:first-child {
+            transform: translateX(-100%);
+        }
+        .primary-icon-wrap {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .primary:hover .primary-icon-wrap {
+            transform: translateX(5px);
+        }
+        .primary-button-icon {
+            width: 20px;
+            height: 20px;
+        }
+        @media screen and (max-width: 991px) {
+            .deesign-title {
+                letter-spacing: -3px;
+                max-width: 600px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            .star-image {
+                max-width: 70px;
+                top: 0;
+            }
+            .circle-image {
+                width: 120px;
+                bottom: 0;
+                right: 0;
+            }
+            .primary {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            .creative-section.creative {
+                padding-top: 80px;
+            }
+            .design-sticky-wrap {
+                top: 20%;
+            }
+            .design-top-wrap {
+                height: 500px;
+            }
+            .deesign-title {
+                letter-spacing: -2px;
+                max-width: 400px;
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+            .star-image {
+                max-width: 60px;
+            }
+            .circle-image {
+                width: 100px;
+                right: -20px;
+            }
+        }
+        @media screen and (max-width: 479px) {
+            .creative-section.creative {
+                height: auto;
+                padding-top: 40px;
+            }
+            .design-sticky-wrap {
+                position: relative;
+                top: 0;
+            }
+            .design-top-wrap {
+                height: 320px;
+            }
+            .deesign-title {
+                letter-spacing: -1px;
+                max-width: 250px;
+                margin-bottom: 20px;
+                font-size: 34px;
+            }
+            .text-gray {
+                color: var(--gray-100);
+            }
+            .line-image {
+                width: 50px;
+            }
+            .star-image {
+                max-width: 40px;
+            }
+            .circle-image {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="creative-section creative">
+        <div class="design-sticky-wrap">
+            <div class="w-layout-blockcontainer container w-container">
+                <div class="design-wrapper">
+                    <div class="design-top-wrap">
+                        <div class="section-sub-title">Creative Lead</div>
+                        <div class="content-wrap">
+                            <h2 class="deesign-title">
+                                <span class="text-gray _01">Short,</span> <span class="text-gray _02">human-</span><br>
+                                <span class="text-gray _03">centric</span> <span class="text-gray _04">bio</span> <span class="text-gray _05">focusing</span> <span class="text-gray _06">on</span> <span class="text-gray _07">passion</span>
+                            </h2>
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82614d08e943975665_line.svg" loading="lazy" alt="" class="line-image">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82f574b8ecbcb297a7_star.svg" loading="lazy" alt="" class="star-image">
+                            <img src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82a5019220097cdde1_circle.svg" loading="lazy" alt="" class="circle-image">
+                        </div>
+                        <div class="deesign-button-wrap">
+                            <a href="/contact" data-w-id="006cf04a-a071-4cfb-717a-9039b92b3510" class="primary white-text-primary-button w-inline-block">
+                                <div class="primary-button-wrapper white-button-wrapper">
+                                    <div class="primary-btn-wrap white-primary-btn-wrap">
+                                        <div class="primary-button-text white-text">Let’s Contact</div>
+                                        <div class="primary-button-text white-text">Let’s Contact</div>
+                                    </div>
+                                    <div style="background-color: rgb(0, 0, 0);" class="primary-icon-wrap blue-with-shadow">
+                                        <img loading="lazy" src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/687878a19f8acee9eeaf0cc6_arrow-left.svg" alt="" class="primary-button-icon v1">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const section = document.querySelector('.creative-section.creative');
+        const stickyWrap = document.querySelector('.design-sticky-wrap');
+        const titleSpans = document.querySelectorAll('.text-gray');
+        const lineImg = document.querySelector('.line-image');
+        const starImg = document.querySelector('.star-image');
+        const circleImg = document.querySelector('.circle-image');
+        let animationProgress = 0; 
+        function updateAnimations() {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top + window.scrollY;
+            const sectionHeight = section.offsetHeight;
+            const scrollY = window.scrollY;
+            animationProgress = Math.max(0, Math.min(1, (scrollY - sectionTop) / (sectionHeight - window.innerHeight)));
+            titleSpans.forEach((span, index) => {
+                const delay = index * 0.1; 
+                const opacity = Math.min(1, animationProgress + (0.2 - delay));
+                const scale = 0.9 + (0.1 * Math.min(1, (animationProgress - delay) / 0.8));
+                span.style.opacity = opacity;
+                span.style.transform = `scale(${scale})`;
+            });
+            lineImg.style.opacity = animationProgress;
+            lineImg.style.transform = `translateY(${ -100 + 100 * animationProgress }px) rotate(-45deg)`;
+            starImg.style.opacity = animationProgress;
+            const starX = -800 + 800 * animationProgress;
+            const starRot = 190 * animationProgress;
+            starImg.style.transform = `translateX(${starX}px) rotateZ(${starRot}deg)`;
+            circleImg.style.opacity = animationProgress;
+            const circleScale = 0.98459 * animationProgress;
+            const circleRot = 360 * animationProgress; 
+            circleImg.style.transform = `scale(${circleScale}) rotateZ(${circleRot}deg)`;
+        }
+        function scrollHandler() {
+            requestAnimationFrame(updateAnimations);
+        }
+        window.addEventListener('scroll', scrollHandler);
+        scrollHandler(); 
+    </script>
+</body>
+</html>

@@ -1,6 +1,90 @@
 /* =========================================================
 = = = = =   1. CREATIVE SECTION ONLY CSS   = = = = = = = = =
 ========================================================= */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+.hero-banner .hero-slide {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+}
+.hero-banner .hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.hero-banner .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+.hero-banner .hero-video-label {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 20;
+}
+.hero-banner .hero-product-wrap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 24rem; /* ~384px */
+  padding-right: 2.5rem;
+}
+.hero-banner .hero-product {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+.hero-banner .hero-title-wrap {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  z-index: 20;
+}
+.hero-banner .hero-title {
+  color: #fff;
+  font-weight: 800;
+  line-height: 0.95;
+  margin: 0;
+  font-size: 3rem;
+}
+.hero-banner .slick-dots {
+  bottom: 30px;
+}
+.hero-banner .slick-dots li button:before {
+  color: white;
+  font-size: 14px;
+}
+.hero-banner .slick-dots li.slick-active button:before {
+  color: #00d1ff;
+}
+
+@media (min-width: 768px) {
+  .hero-banner .hero-product-wrap { width: 31.25rem; }
+  .hero-banner .hero-title { font-size: 4.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .hero-banner .hero-product-wrap { width: 37.5rem; }
+  .hero-banner .hero-title { font-size: 6rem; }
+}
+
+@media (max-width: 767px) {
+  .hero-banner .hero-slide { min-height: 380px; }
+  .hero-banner .hero-product-wrap { width: 18rem; padding-right: 1rem; }
+  .hero-banner .hero-title { font-size: 2rem; }
+}
+
+
+/* =========================================================
+= = = = =   1. CREATIVE SECTION ONLY CSS   = = = = = = = = =
+========================================================= */
 
 .creative-section.creative.creative-foundation {
   height: 400vh;

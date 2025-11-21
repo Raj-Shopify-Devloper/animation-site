@@ -2,7 +2,7 @@ import CreativeSection from '../homepage-section/creative.jsx';
 import { useEffect, useRef, useState, useMemo } from "react";
 import DesignProcessSection from '../homepage-section/process.jsx';
 import OfferSection from '../homepage-section/faq.jsx';
-// import '../style/hero-banner.css'; // Add this line
+import HeroBanner from '../homepage-section/hero-banner.jsx';
 import { initHomeAnimations } from '../script/home-section';
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
     
   return (
     <>
+      <HeroBanner />
       <CreativeSection />
       <OfferSection />
       <DesignProcessSection />

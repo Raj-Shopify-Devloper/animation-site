@@ -8,9 +8,7 @@ const CreativeSection = () => {
         <div className="container">
           <div className="design-wrapper">
             <div className="design-top-wrap">
-              
               <div className="section-sub-title">Creative Lead</div>
-
               <div className="content-wrap">
                 <h2 className="deesign-title">
                   <span className="text-gray _01">Short,</span>{' '}
@@ -22,8 +20,6 @@ const CreativeSection = () => {
                   <span className="text-gray _06">on</span>{' '}
                   <span className="text-gray _07">passion</span>
                 </h2>
-
-                {/* Decorative Images */}
                 <img
                   src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82614d08e943975665_line.svg"
                   loading="lazy"
@@ -43,30 +39,6 @@ const CreativeSection = () => {
                   className="circle-image"
                 />
               </div>
-
-              <div className="deesign-button-wrap">
-                <a
-                  href="/contact"
-                  className="primary white-text-primary-button"
-                  data-w-id="006cf04a-a071-4cfb-717a-9039b92b3510"
-                >
-                  <div className="primary-button-wrapper white-button-wrapper">
-                    <div className="primary-btn-wrap white-primary-btn-wrap">
-                      <div className="primary-button-text white-text">Let’s Contact</div>
-                      <div className="primary-button-text white-text">Let’s Contact</div>
-                    </div>
-                    <div className="primary-icon-wrap blue-with-shadow" style={{ backgroundColor: 'rgb(0, 0, 0)' }}>
-                      <img
-                        loading="lazy"
-                        src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/687878a19f8acee9eeaf0cc6_arrow-left.svg"
-                        alt="Arrow icon"
-                        className="primary-button-icon v1"
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-
             </div>
           </div>
         </div>
@@ -74,5 +46,4 @@ const CreativeSection = () => {
     </section>
   );
 };
-
 export default CreativeSection;

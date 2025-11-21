@@ -1,0 +1,190 @@
+/* =========================================================
+= = = = = = = = =   1. COMMON / GLOBAL CSS   = = = = = = = =
+========================================================= */
+
+:root{
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --body-bg: #0184a0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-bg);
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  width: 100%;
+  max-width: 1345px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.w-container:before,
+.w-container:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+.design-sticky-wrap {
+  position: sticky;
+  top: 140px;
+  height: auto;
+}
+.design-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.design-top-wrap {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 665px;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.section-sub-title {
+  text-align: center;
+  color: var(--white);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.content-wrap {
+  position: relative;
+}
+.primary {
+  background-color: #d1f24d;
+  border-radius: 27px;
+  justify-content: center;
+  align-items: center;
+  min-height: 54px;
+  padding: 7px 7px 7px 18px;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  color: #000;
+}
+.primary:hover {
+  transform: scale(1.05);
+}
+.primary.white-text-primary-button {
+  background-color: transparent;
+  min-height: auto;
+  padding: 6px 10px;
+  color: var(--white);
+  border: 2px solid #d1f24d;
+}
+.primary-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+.primary-btn-wrap {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+}
+.primary-button-text {
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+.primary-icon-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background-color: rgb(41, 41, 41);
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.primary:hover .primary-icon-wrap {
+  transform: translateX(5px);
+}
+.primary-button-icon {
+  width: 20px;
+  height: 20px;
+}
+.box-one {
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  will-change: transform;
+  transform-origin: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box-two {
+  border: 1px dashed var(--white);
+  border-radius: 50%;
+  width: 665px;
+  height: 665px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inner-box-div {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.design-process-image {
+  width: auto;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: absolute;
+}
+@media screen and (max-width: 1200px) {
+  .design-process {
+    letter-spacing: -3px;
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .primary {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .design-top-wrap {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .design-sticky-wrap {
+    position: relative;
+    top: 0;
+  }
+  .design-top-wrap {
+    height: 320px;
+  }
+  .box-one,
+  .box-two {
+    width: 150px;
+    height: 150px;
+  }
+  .design-process-image {
+    height: 40px;
+  }
+}

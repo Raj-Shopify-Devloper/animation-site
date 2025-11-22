@@ -26,18 +26,6 @@ export default function OfferSection() {
     <section className="section offer-section">
       <div className="container">
         <div className="offer-wrap">
-
-          {/* Header */}
-          <div className="offer-header-wrap">
-            <div className="offer-header-content-wrap">
-              <h2 className="h2 text-center">What We Offer</h2>
-              <p className="paragraph-large text-center paragraph-color">
-                We provide a full range of real estate services, from buying and selling to renting
-                and property management—designed to meet your unique needs.
-              </p>
-            </div>
-          </div>
-
           {/* Video */}
           <div className="offer-video-wrap">
             <div className="background-video w-background-video">
@@ -63,10 +51,10 @@ export default function OfferSection() {
 
                     <div className="offer-heading-wrap">
                       <div className="offer-card-header-wrap">
-                        <h3 className="h3">{item.title}</h3>
+                        <h3 className="f-31 f-m-22 white-color second-font w-700 l-h-1-4">{item.title}</h3>
                       </div>
                       <div className="offer-card-description">
-                        <p className="paragraph-large paragraph-color">
+                        <p className="paragraph-large paragraph-color f-22 f-m-16 white-color w-500 l-h-1-4 second-font">
                           {item.desc}
                         </p>
                       </div>

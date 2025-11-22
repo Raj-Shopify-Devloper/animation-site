@@ -29,7 +29,7 @@ export function initHomeAnimations() {
     );
 
     // dpTopWrap.style.opacity = Math.min(1, progress * 2);
-    dpTopWrap.style.transform = `scale(${0.95 + 0.05 * progress})`;
+    dpTopWrap.style.transform = `scale(${1 + 0.05 * progress})`;
 
     dpBox1.style.transform = `translate(-50%, -50%) scale(${2 * progress})`;
     dpBox2.style.transform = `translate(-50%, -50%) scale(${3 * Math.max(0, progress - 0.3)})`;
@@ -95,7 +95,7 @@ export function initHomeAnimations() {
     crLineImg.style.transform = `translateX(${ -100 + 100 * progress }px) rotate(0deg)`;
 
     crStarImg.style.opacity = progress;
-    crStarImg.style.transform = `translateX(${ -800 + 800 * progress }px) rotateZ(${190 * progress}deg)`;
+    crStarImg.style.transform = `translateX(${ -300 + 300 * progress }px) rotateZ(${190 * progress}deg)`;
 
     crCircleImg.style.opacity = progress;
     crCircleImg.style.transform = `scale(${0.98459 * progress}) rotateZ(${360 * progress}deg)`;

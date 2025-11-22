@@ -5,6 +5,7 @@ import OfferSection from '../homepage-section/faq.jsx';
 import HeroBanner from '../homepage-section/hero-banner.jsx';
 import { initHomeAnimations } from '../script/home-section';
 import LogoSliderSection from '../homepage-section/logo-slider.jsx';
+import CrossScroll from '../homepage-section/cross-section.jsx';
 
 export default function Home() {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroBanner />
       <LogoSliderSection />
       <CreativeSection />
+      <CrossScroll />
       <OfferSection />
       <DesignProcessSection />
     </>

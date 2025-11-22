@@ -121,7 +121,7 @@ ul {
 :root {
     --first_font: 'AspireNarrowSCBlack';
     --second_font: 'Hind Vadodara', sans-serif;
-    --whit_color:#fff;
+    --white_color:#fff;
     --black_color:#000;
     --primary_color :#0184a0;
 }
@@ -132,7 +132,7 @@ ul {
     font-family: var(--second_font);
 }
 body .white-color{
-    color: var(--whit_color);
+    color: var(--white_color);
 }
 body .letter-0{
   letter-spacing:0;
@@ -147,7 +147,7 @@ body .primary-color{
     color: var(--primary_color);
 }
 body .bg-white-color{
-    background-color: var(--whit_color);
+    background-color: var(--white_color);
 }
 
 body .m-0{
@@ -197,8 +197,8 @@ body .w-800{
     body .f-110{
         font-size: 110px;
     }
-    body .f-90{
-        font-size: 90px;
+    body .f-70{
+        font-size: 70px;
     }
     body .f-72{
         font-size: 72px;
@@ -214,6 +214,15 @@ body .w-800{
     }
     body .f-36{
         font-size: 36px;
+    }
+    body .f-34{
+        font-size: 34px;
+    }
+    body .f-33{
+        font-size: 33px;
+    }
+    body .f-32{
+        font-size: 32px;
     }
     body .f-31{
         font-size: 31px;
@@ -253,8 +262,8 @@ body .w-800{
     body .f-110{
         font-size: 72px;
     }
-    body .f-90{
-        font-size: 64px;
+    body .f-70{
+        font-size: 54px;
     }
     body .f-72{
         font-size: 48px;
@@ -270,6 +279,15 @@ body .w-800{
     }
     body .f-36{
         font-size: 31px;
+    }
+    body .f-34{
+        font-size: 30px;
+    }
+    body .f-33{
+        font-size: 28px;
+    }
+    body .f-32{
+        font-size: 26px;
     }
     body .f-31{
         font-size: 22px;
@@ -374,17 +392,6 @@ body .w-800{
   position: relative;
   padding:0 0 20px;
 }
-.design-top-wrap {
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 665px;
-  transform: scale(0.95);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
 .section-sub-title {
   text-align: center;
   color: var(--white);
@@ -393,6 +400,11 @@ body .w-800{
 }
 .content-wrap {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+.left-content {
+    position: relative;
 }
 .primary {
   background-color: var(--primary_color);
@@ -496,20 +508,10 @@ body .w-800{
     align-items: center;
   }
 }
-
-@media screen and (max-width: 767px) {
-  .design-top-wrap {
-    height: 500px;
-  }
-}
-
 @media screen and (max-width: 479px) {
   .design-sticky-wrap {
     position: relative;
     top: 0;
-  }
-  .design-top-wrap {
-    height: 320px;
   }
   .box-one,
   .box-two {

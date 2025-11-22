@@ -6,10 +6,7 @@ export default function DesignProcessSection() {
       <div className="design-sticky-wrap">
         <div className="w-layout-blockcontainer container w-container">
           <div className="design-wrapper v2">
-            <div
-              className="design-top-wrap"
-              style={{ transform: "scale(0.95)" }}
-            >
+            <div className="design-top-wrap">
               <div className="section-sub-title">Creative Lead</div>
 
               <div className="content-wrap">

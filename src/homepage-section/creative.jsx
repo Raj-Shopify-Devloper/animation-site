@@ -1,5 +1,7 @@
 import React from 'react';
 import '../style/homepage.css';
+import Starimage from '../assets/start-image.png';
+import lineImage from '../assets/line-start.png'; 
 
 const CreativeSection = () => {
   return (
@@ -8,26 +10,26 @@ const CreativeSection = () => {
         <div className="container">
           <div className="design-wrapper">
             <div className="design-top-wrap">
-              <div className="section-sub-title">Creative Lead</div>
               <div className="content-wrap">
                 <h2 className="deesign-title">
-                  <span className="text-gray _01">Short,</span>{' '}
-                  <span className="text-gray _02">human-</span>
-                  <br />
-                  <span className="text-gray _03">centric</span>{' '}
-                  <span className="text-gray _04">bio</span>{' '}
-                  <span className="text-gray _05">focusing</span>{' '}
-                  <span className="text-gray _06">on</span>{' '}
-                  <span className="text-gray _07">passion</span>
+                  <span className="text-gray _01 f-90 f-m-48 first-font w-800 white-color l-h-1-2">FROM</span>{' '}
+                  <br></br>
+                  <span className="text-gray _02 f-90 f-m-48 first-font w-800 white-color l-h-1-2">FOUNDATION</span>
+                  <br></br>
+                  <span className="text-gray _03 f-90 f-m-48 first-font w-800 white-color l-h-1-2">TO FINISH</span>{' '}
+                  <br></br>
+                  <span className="text-gray _04 f-90 f-m-48 first-font w-800 white-color l-h-1-2">PICO HAS</span>{' '}
+                  <br></br>
+                  <span className="text-gray _05 f-90 f-m-48 first-font w-800 white-color l-h-1-2">YOU COVERED.</span>{' '}
                 </h2>
                 <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82614d08e943975665_line.svg"
+                  src={lineImage}
                   loading="lazy"
                   alt=""
                   className="line-image"
                 />
                 <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/6881df82f574b8ecbcb297a7_star.svg"
+                  src={Starimage}
                   loading="lazy"
                   alt=""
                   className="star-image"

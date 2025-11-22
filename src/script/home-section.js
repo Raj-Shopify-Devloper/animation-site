@@ -92,7 +92,7 @@ export function initHomeAnimations() {
     });
 
     crLineImg.style.opacity = progress;
-    crLineImg.style.transform = `translateY(${ -100 + 100 * progress }px) rotate(-45deg)`;
+    crLineImg.style.transform = `translateX(${ -100 + 100 * progress }px) rotate(0deg)`;
 
     crStarImg.style.opacity = progress;
     crStarImg.style.transform = `translateX(${ -800 + 800 * progress }px) rotateZ(${190 * progress}deg)`;

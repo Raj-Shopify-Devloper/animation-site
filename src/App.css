@@ -2,38 +2,369 @@
 = = = = = = = = =   1. COMMON / GLOBAL CSS   = = = = = = = =
 ========================================================= */
 
-:root{
-  --white: #ffffff;
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --body-bg: #0184a0;
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body {
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--body-bg);
-  font-family: sans-serif;
-  overflow-x: hidden;
+}
+*:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--second_font);
+  background-color: var(--primary_color);
+}
+.header-background {
+  padding-top: calc(var(--header-height) + 20px);
+  background: #1c1917;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@font-face {
+    font-family: 'AspireNarrowSCBlack';
+    src: url('./store-font/AspireNarrowSCBlack-Regular.eot');
+    src: url('./store-font/AspireNarrowSCBlack-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/AspireNarrowSCBlack-Regular.woff2') format('woff2'),
+        url('./store-font/AspireNarrowSCBlack-Regular.woff') format('woff'),
+        url('./store-font/AspireNarrowSCBlack-Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind Vadodara';
+    src: url('./store-font/HindVadodara-Light.eot');
+    src: url('./store-font/HindVadodara-Light.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/HindVadodara-Light.woff2') format('woff2'),
+        url('./store-font/HindVadodara-Light.woff') format('woff'),
+        url('./store-font/HindVadodara-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind Vadodara';
+    src: url('./store-font/HindVadodara-Medium.eot');
+    src: url('./store-font/HindVadodara-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/HindVadodara-Medium.woff2') format('woff2'),
+        url('./store-font/HindVadodara-Medium.woff') format('woff'),
+        url('./store-font/HindVadodara-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind Vadodara';
+    src: url('./store-font/HindVadodara-Regular.eot');
+    src: url('./store-font/HindVadodara-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/HindVadodara-Regular.woff2') format('woff2'),
+        url('./store-font/HindVadodara-Regular.woff') format('woff'),
+        url('./store-font/HindVadodara-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind Vadodara';
+    src: url('./store-font/HindVadodara-Bold.eot');
+    src: url('./store-font/HindVadodara-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/HindVadodara-Bold.woff2') format('woff2'),
+        url('./store-font/HindVadodara-Bold.woff') format('woff'),
+        url('./store-font/HindVadodara-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind Vadodara';
+    src: url('./store-font/HindVadodara-SemiBold.eot');
+    src: url('./store-font/HindVadodara-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./store-font/HindVadodara-SemiBold.woff2') format('woff2'),
+        url('./store-font/HindVadodara-SemiBold.woff') format('woff'),
+        url('./store-font/HindVadodara-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --first_font: 'AspireNarrowSCBlack';
+    --second_font: 'Hind Vadodara', sans-serif;
+    --whit_color:#fff;
+    --black_color:#000;
+    --primary_color :#0184a0;
+}
+.first-font{
+    font-family: var(--first_font);
+}
+.second-font{
+    font-family: var(--second_font);
+}
+body .white-color{
+    color: var(--whit_color);
+}
+body .letter-0{
+  letter-spacing:0;
+}
+body .gray-color{
+  color: var(--gray_color);
+}
+body .black-color{
+    color: var(--black_color);
+}
+body .primary-color{
+    color: var(--primary_color);
+}
+body .bg-white-color{
+    background-color: var(--whit_color);
+}
+
+body .m-0{
+  margin:0;
+}
+
+body .l-h-1{
+    line-height: 1;
+}
+body .l-h-1-1{
+    line-height: 1.1;
+}
+body .l-h-1-2{
+    line-height: 1.2;
+}
+body .l-h-1-3{
+    line-height: 1.3;           
+}
+body .l-h-1-4{
+    line-height: 1.4;           
+}
+body .l-h-1-5{
+    line-height: 1.5;           
+}
+body .l-h-1-6{
+    line-height: 1.6;           
+}
+body .l-h-1-7{
+    line-height: 1.7;           
+}
+body .w-400{
+    font-weight: 400;
+}
+body .w-500{
+    font-weight: 500;
+}
+body .w-600{
+    font-weight: 600;
+}
+body .w-700{
+    font-weight: 700;
+}
+body .w-800{
+    font-weight: 800;
+}
+@media screen and (min-width: 1024px) {
+    body .f-110{
+        font-size: 110px;
+    }
+    body .f-90{
+        font-size: 90px;
+    }
+    body .f-72{
+        font-size: 72px;
+    }
+    body .f-48{
+        font-size: 48px;
+    }
+    body .f-40{
+        font-size: 40px;
+    }
+    body .f-38{
+        font-size: 38px;
+    }
+    body .f-36{
+        font-size: 36px;
+    }
+    body .f-31{
+        font-size: 31px;
+    }
+    body .f-30{
+        font-size: 30px;
+    }
+    body .f-24{
+        font-size: 24px;
+    }
+    body .f-20{
+        font-size: 20px;
+    }
+    body .f-18{
+        font-size: 18px;
+    }
+    body .f-17{
+        font-size: 17px;
+    }
+    body .f-16{
+        font-size: 16px;
+    }
+    body .f-15{
+        font-size: 15px;
+    }
+    body .f-14{
+        font-size: 14px;
+    }
+    body .f-13{
+        font-size: 13px;
+    }
+    body .f-12{
+        font-size: 13px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    body .f-110{
+        font-size: 72px;
+    }
+    body .f-90{
+        font-size: 64px;
+    }
+    body .f-72{
+        font-size: 48px;
+    }
+    body .f-48{
+        font-size: 40px;
+    }
+    body .f-40{
+        font-size: 38px;
+    }
+    body .f-38{
+        font-size: 36px;
+    }
+    body .f-36{
+        font-size: 31px;
+    }
+    body .f-31{
+        font-size: 22px;
+    }
+    body .f-30{
+        font-size: 24px;
+    }
+    body .f-24{
+        font-size: 20px;
+    }
+    body .f-20{
+        font-size: 18px;
+    }
+    body .f-18{
+        font-size: 17px;
+    }
+    body .f-17{
+        font-size: 16px;
+    }
+    body .f-16{
+        font-size: 15px;
+    }
+    body .f-15{
+        font-size: 14px;
+    }
+    body .f-14{
+        font-size: 14px;
+    }
+    body .f-13{
+        font-size: 13px;
+    }
+    body .f-12{
+      font-size: 13px;
+    }
+}
+@media screen and (max-width:767px) {
+    body .f-m-48{
+        font-size: 48px;
+    }
+    body .f-m-40{
+        font-size: 40px;
+    }
+    body .f-m-38{
+        font-size: 38px;    
+    }
+    body .f-m-36{
+        font-size: 36px;
+    }
+    body .f-m-32{
+      font-size: 32px;
+    }
+    body .f-m-31{
+      font-size: 31px;
+    }
+    body .f-m-30{
+        font-size: 30px;
+    }
+    body .f-m-24{
+        font-size: 24px;
+    }
+    body .f-m-20{
+        font-size: 20px;
+    }
+    body .f-m-18{
+        font-size: 18px;
+    }
+    body .f-m-17{
+        font-size: 17px;
+    }
+    body .f-m-16{
+        font-size: 16px;
+    }
+    body .f-m-15{
+        font-size: 15px;
+    }
+    body .f-m-14{
+        font-size: 14px;
+    }
+    body .f-m-13{
+        font-size: 13px;
+    }
+    body .f-m-12{
+        font-size: 12px;
+    }
 }
 .container {
-  width: 100%;
   max-width: 1345px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
-.w-container:before,
-.w-container:after {
-  content: " ";
-  grid-area: 1 / 1 / 2 / 2;
-  display: table;
-}
 .design-sticky-wrap {
   position: sticky;
-  top: 140px;
+  top: 20%;
   height: auto;
 }
 .design-wrapper {
@@ -41,6 +372,7 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding:0 0 20px;
 }
 .design-top-wrap {
   z-index: 10;
@@ -63,7 +395,7 @@ body {
   position: relative;
 }
 .primary {
-  background-color: #d1f24d;
+  background-color: var(--primary_color);
   border-radius: 27px;
   justify-content: center;
   align-items: center;
@@ -84,7 +416,7 @@ body {
   min-height: auto;
   padding: 6px 10px;
   color: var(--white);
-  border: 2px solid #d1f24d;
+  border: 2px solid var(--primary_color);
 }
 .primary-button-wrapper {
   display: flex;

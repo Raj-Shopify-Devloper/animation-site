@@ -1,94 +1,219 @@
 /* =========================================================
-= = = = =   1. CREATIVE SECTION ONLY CSS   = = = = = = = = =
+= = = = =   CREATIVE SECTION ONLY CSS   = = = = = = = = =
 ========================================================= */
 .hero-banner {
   position: relative;
   overflow: hidden;
+  padding: 0 0 100px;
 }
 .hero-banner .hero-slide {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
 }
 .hero-banner .hero-background {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  margin: 0 0 30px;
 }
-.hero-banner .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
+.hero-banner .slick-slide.slick-active.slick-current h1{
+  animation: leftanimateSlideIn 0.5s ease-in-out;
 }
-.hero-banner .hero-video-label {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  z-index: 20;
+.hero-banner .slick-slide.slick-active.slick-current .hero-product-wrap img{
+  animation: rightanimateSlideIn 0.5s ease-in-out;
+}
+.hero-banner .slick-slide.slick-active.slick-current .hero-background img{
+  animation: topanimateSlideIn 0.5s ease-in-out;
+}
+.hero-banner .hero-background img {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: unset;
+  border-radius: 30px;
 }
 .hero-banner .hero-product-wrap {
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 2%;
+  top: auto;
+  bottom: 0;
+  transform: translateY(0);
   z-index: 10;
-  width: 24rem; /* ~384px */
-  padding-right: 2.5rem;
+  width: 25%;
+  padding-right: 0;
 }
 .hero-banner .hero-product {
   width: 100%;
   display: block;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-}
-.hero-banner .hero-title-wrap {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  z-index: 20;
+  max-width: 100%;
 }
 .hero-banner .hero-title {
-  color: #fff;
-  font-weight: 800;
-  line-height: 0.95;
   margin: 0;
-  font-size: 3rem;
+  padding:0 27% 0 0;
+}
+.hero-banner .slick-dots li button {
+  background: #fff;
+  border-radius: 50px;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.hero-banner .slick-dots li.slick-active button{
+  background: #fff;
+  opacity: 1;
+  width: 15px;
+  height: 15px;
+}
+.hero-banner .slick-dots li button:before{
+  display: none;
 }
 .hero-banner .slick-dots {
-  bottom: 30px;
+  bottom: 0;
 }
-.hero-banner .slick-dots li button:before {
-  color: white;
-  font-size: 14px;
+@keyframes topanimateSlideIn {
+  from {
+    transform: translate(0%,-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%,0%);
+    opacity: 1;
+  }
 }
-.hero-banner .slick-dots li.slick-active button:before {
-  color: #00d1ff;
+@keyframes leftanimateSlideIn {
+  from {
+    transform: translate(-50%,0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%,0%);
+    opacity: 1;
+  }
 }
-
-@media (min-width: 768px) {
-  .hero-banner .hero-product-wrap { width: 31.25rem; }
-  .hero-banner .hero-title { font-size: 4.5rem; }
-}
-
-@media (min-width: 1024px) {
-  .hero-banner .hero-product-wrap { width: 37.5rem; }
-  .hero-banner .hero-title { font-size: 6rem; }
+@keyframes rightanimateSlideIn {
+  from {
+    transform: translate(50%,0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%,0%);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 767px) {
-  .hero-banner .hero-slide { min-height: 380px; }
-  .hero-banner .hero-product-wrap { width: 18rem; padding-right: 1rem; }
-  .hero-banner .hero-title { font-size: 2rem; }
+  .hero-banner .hero-product-wrap {
+    top: auto;
+    bottom: 5%;
+    z-index: 10;
+    width: 48%;
+  }
+  .hero-banner .hero-title{
+    padding: 0;
+  }
+  .hero-banner .slick-dots{
+    position: unset;
+  }
+}
+@media (max-width: 550px) {
+  .hero-banner .hero-product-wrap{
+    top: 40%;
+    bottom: auto;
+  }
 }
 
+/* =========================================================
+= = = = =   LOGO SLIDER  = = = = = = = = =
+========================================================= */
+
+.logo-slider-section {
+  background: linear-gradient(135deg, #0184a0 0%, #00a8c9 100%);
+  padding: 1rem 0;
+  overflow: hidden;
+  margin: 0;
+}
+.logo-slider-section .logo-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.logo-slider-section .logo-slider {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  gap: 4rem;
+  padding: 2rem 0;
+  width: fit-content;
+}
+.logo-slider-section .logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+.logo-slider-section .logo-img {
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.logo-slider-section .logo-img:hover {
+  transform: scale(1.1);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 768px) {
+  .logo-slider-section .logo-slider-section {
+    padding: 2rem 0;
+  }
+
+  .logo-slider-section .logo-slider {
+    gap: 2rem;
+    animation-duration: 15s;
+  }
+
+  .logo-slider-section .logo-item {
+    min-width: 150px;
+  }
+
+  .logo-slider-section .logo-img {
+    max-width: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .logo-slider-section .logo-slider-section {
+    padding: 1.5rem 0;
+  }
+  .logo-slider-section .logo-slider {
+    gap: 1rem;
+    animation-duration: 12s;
+  }
+  .logo-slider-section .logo-item {
+    min-width: 120px;
+  }
+  .logo-slider-section .logo-img {
+    max-width: 100px;
+  }
+}
 
 /* =========================================================
-= = = = =   1. CREATIVE SECTION ONLY CSS   = = = = = = = = =
+= = = = =   CREATIVE SECTION ONLY CSS   = = = = = = = = =
 ========================================================= */
 
 .creative-section.creative.creative-foundation {
   height: 400vh;
-  padding-top: 135px;
+  padding-top: 20px;
   padding-bottom: 0;
   overflow: clip;
   position: relative;
@@ -97,22 +222,17 @@
 .creative-foundation.creative-section.creative .deesign-title h2,
 .creative-foundation .deesign-title {
   color: var(--white);
-  letter-spacing: -4.2px;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Anton, sans-serif;
-  font-size: 110px;
-  font-weight: 400;
-  line-height: 110%;
-  text-align: center;
+  text-align: start;
 }
 .creative-foundation .design-top-wrap {
   z-index: 10;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 665px;
+  height: auto;
   display: flex;
   position: relative;
 }
@@ -123,36 +243,34 @@
   margin-top: 24px;
   margin-bottom: 40px;
 }
-
 .creative-foundation .text-gray {
-  color: var(--white);
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 .creative-foundation .line-image {
   position: absolute;
-  inset: 60% auto 0% 0%;
+  inset: auto auto -7% 0%;
   width: 100px;
   opacity: 0;
   transform: translateY(-100px) rotate(-45deg);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .creative-foundation .star-image {
-  position: absolute;
-  inset: -50px 0% auto auto;
-  width: 80px;
-  opacity: 0;
-  transform: translateX(-800px) rotateZ(0deg);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+    position: absolute;
+    inset: 0px 0% auto auto;
+    width: 140px;
+    opacity: 0;
+    transform: translateX(-800px) rotateZ(0deg);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .creative-foundation .circle-image {
-  position: absolute;
-  inset: auto 70px -30px auto;
-  width: 150px;
-  opacity: 0;
-  transform: scale(0) rotateZ(0deg);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    position: absolute;
+    inset: auto 0% 16% auto;
+    width: 150px;
+    opacity: 0;
+    transform: scale(0) rotateZ(0deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .creative-foundation .primary.white-text-primary-button {
   background-color: transparent;
@@ -259,12 +377,13 @@
 
 
 /* =========================================================
-   3. SECTION WRAPPER
+   SECTION WRAPPER
 ========================================================= */
 
 .offer-section {
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 0 0;
+  overflow: hidden;
 }
 
 .offer-section .offer-wrap {
@@ -308,7 +427,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
 }
 .offer-section .offer-card-wrap {
   width: 100%;
@@ -461,20 +579,14 @@
 }
 
 /* =========================================================
-= = = = = = = =   3. PROCESS SECTION ONLY CSS   = = = = = = =
+= = = = = = = =   PROCESS SECTION ONLY CSS   = = = = = = =
 ========================================================= */
 
 .creative-section.design-process-section {
   height: 400vh;
-  padding-top: 135px;
+  padding-top: 20px;
   padding-bottom: 0;
   overflow: clip;
-  position: relative;
-}
-.design-process-section .design-wrapper.v2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
 }
 .design-process-section .design-top-wrap {
@@ -483,10 +595,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 665px; 
+  height: auto; 
   position: relative;
   transform: scale(0.95);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.design-process-section .design-wrapper.v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 .design-process-section .design-process {
   color: var(--white);

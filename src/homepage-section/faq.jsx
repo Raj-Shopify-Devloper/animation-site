@@ -1,4 +1,6 @@
 import React from "react";
+import Faqimage from "../assets/faq-image.png";
+
 
 export default function OfferSection() {
   const offers = [
@@ -29,7 +31,7 @@ export default function OfferSection() {
           {/* Video */}
           <div className="offer-video-wrap">
             <div className="background-video w-background-video">
-              <video autoPlay loop muted playsInline>
+              {/* <video autoPlay loop muted playsInline>
                 <source
                   src="https://cdn.prod.website-files.com/683fc56e70e79d2548e20ab9%2F684ec9f089b0b2f2f2fe5531_Homlo%20Video-transcode.mp4"
                   type="video/mp4"
@@ -38,7 +40,8 @@ export default function OfferSection() {
                   src="https://cdn.prod.website-files.com/683fc56e70e79d2548e20ab9%2F684ec9f089b0b2f2f2fe5531_Homlo%20Video-transcode.webm"
                   type="video/webm"
                 />
-              </video>
+              </video> */}
+              <img src={Faqimage} alt="Background" />
             </div>
           </div>
 
@@ -86,7 +89,7 @@ export default function OfferSection() {
           </div>
 
           {/* Button */}
-          <a href="/services" className="button-secondary primary w-button">
+          <a href="/services" className="primary f-30 f-m-22 w-600 white-color second-font offer-view-more-button text-uppercase">
             View More Services
           </a>
 

@@ -6,6 +6,7 @@ import HeroBanner from '../homepage-section/hero-banner.jsx';
 import { initHomeAnimations } from '../script/home-section';
 import LogoSliderSection from '../homepage-section/logo-slider.jsx';
 import CrossScroll from '../homepage-section/cross-section.jsx';
+import StatsCounterSection from '../homepage-section/stats-counter.jsx';
 
 export default function Home() {
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function Home() {
       <CrossScroll />
       <OfferSection />
       <DesignProcessSection />
+      <StatsCounterSection />
     </>
   );
 }

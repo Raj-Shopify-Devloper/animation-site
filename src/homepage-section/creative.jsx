@@ -7,7 +7,7 @@ import Manicon from '../assets/foundation-image.png';
 
 const CreativeSection = () => {
   return (
-    <section className="creative-section creative creative-foundation">
+    <section className="creative-section creative creative-foundation sticky-section">
       <div className="design-sticky-wrap">
         <div className="container">
           <div className="design-wrapper">

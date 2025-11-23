@@ -1,3 +1,6 @@
+import React from "react";
+import Strengthman from '../assets/strength-man.png'; ;
+
 export default function DesignProcessSection() {
   return (
     <section
@@ -7,44 +10,20 @@ export default function DesignProcessSection() {
         <div className="w-layout-blockcontainer container w-container">
           <div className="design-wrapper v2">
             <div className="design-top-wrap">
-              <div className="section-sub-title">Creative Lead</div>
+              <div className="section-sub-title f-30 f-m-20 w-400 second-font white-color">CONSTRUCTION EXCELLENCE</div>
 
               <div className="content-wrap">
                 <h2 className="design-process">
-                  Design <br /> Process
+                  <span className="f-110 f-m-40 w-500 white-color first-font l-h-1">
+                  STRENGTH 
+                  <br/> 
+                  YOU CAN 
+                  <br/> 
+                  </span>
+                  <b className="f-170 f-m-48 w-500 white-color first-font l-h-1">TRUST</b>
                 </h2>
               </div>
-
-              <div className="deesign-button-wrap">
-                <a
-                  href="#"
-                  data-w-id="f5469736-b807-3254-33c1-17ba90b98437"
-                  className="primary white-text-primary-button w-inline-block"
-                >
-                  <div className="primary-button-wrapper white-button-wrapper">
-                    <div className="primary-btn-wrap white-primary-btn-wrap">
-                      <div className="primary-button-text white-text">
-                        Let’s Contact
-                      </div>
-                      <div className="primary-button-text white-text">
-                        Let’s Contact
-                      </div>
-                    </div>
-
-                    <div
-                      className="primary-icon-wrap blue-with-shadow"
-                      style={{ backgroundColor: "rgb(41, 41, 41)" }}
-                    >
-                      <img
-                        loading="lazy"
-                        src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/687878a19f8acee9eeaf0cc6_arrow-left.svg"
-                        alt=""
-                        className="primary-button-icon v1"
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
+                <img src={Strengthman} alt="Strengthman" className="strengt-hman" />
             </div>
             <div
               className="box-one _1"
@@ -58,37 +37,18 @@ export default function DesignProcessSection() {
 
             <div className="box-two" style={{ opacity: 0 }}>
               <div className="inner-box-div">
-                <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/68996126eabbac800eb718d1_one.svg"
-                  loading="lazy"
-                  alt=""
-                  className="design-process-image _1"
-                  style={{ opacity: 0, transform: "translateX(-150px)" }}
-                />
-
-                <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/689961261bda74f989d16d7c_two.svg"
-                  loading="lazy"
-                  alt=""
-                  className="design-process-image _2"
-                  style={{ opacity: 0, transform: "translateX(-50px)" }}
-                />
-
-                <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/68996126eabbac800eb718d1_one.svg"
-                  loading="lazy"
-                  alt=""
-                  className="design-process-image _3"
-                  style={{ opacity: 0, transform: "translateX(-150px)" }}
-                />
-
-                <img
-                  src="https://cdn.prod.website-files.com/6875b66038bb2a9e79587de1/689961260a1b77e9f4a525e9_four.svg"
-                  loading="lazy"
-                  alt=""
-                  className="design-process-image _4"
-                  style={{ opacity: 0, transform: "translateX(-150px)" }}
-                />
+                <div className="design-process-image _1 black-color f-48 first-font f-m-28 w-500 l-h-1" style={{ opacity: 0, transform: "translateX(-150px)" }}>
+                  RELIABILITY
+                </div>  
+                <div className="design-process-image _2 black-color f-48 first-font f-m-28 w-500 l-h-1" style={{ opacity: 0, transform: "translateX(-50px)" }}>
+                  STRENGTH
+                </div>
+                <div className="design-process-image _3 black-color f-48 first-font f-m-28 w-500 l-h-1" style={{ opacity: 0, transform: "translateX(-150px)" }}>
+                  EASE OF USE
+                </div>
+                <div className="design-process-image _4 black-color f-48 first-font f-m-28 w-500 l-h-1" style={{ opacity: 0, transform: "translateX(-150px)" }}>
+                  TRIUST
+                </div>
               </div>
             </div>
           </div>

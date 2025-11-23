@@ -1,6 +1,31 @@
 // home-section.js
 
+
+
 export function initHomeAnimations() {
+
+  // const targets = document.querySelectorAll(".design-sticky-wrap");
+
+  // const observer = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+
+  //       if (entry.intersectionRatio >= 0.85) {
+  //         entry.target.classList.add("active");
+  //       } else {
+  //         entry.target.classList.remove("active");
+  //       }
+
+  //     });
+  //   },
+  //   {
+  //     threshold: [0, 0.85, 1] 
+  //   }
+  // );
+
+  // targets.forEach((el) => observer.observe(el));
+
+
 
   // ============================ design process section Start ============================ //
 
@@ -38,7 +63,7 @@ export function initHomeAnimations() {
     const boxTwoProg = Math.max(0, (progress - boxTwoStart) / (0.09 + boxTwoStart));
     dpBoxTwo.style.opacity = dpEaseOutCubic(boxTwoProg);
 
-    dpImages.forEach((img, index) => {
+    dpImages.forEach((div, index) => {
       const delay = index * 0.04;
       const prog = Math.max(0, progress - 0.8 - delay);
       const opacity = Math.min(1, prog * 20);
@@ -46,8 +71,8 @@ export function initHomeAnimations() {
       let translateX = index === 1 ? -50 : -150;
       translateX += Math.min(1, prog) * Math.abs(translateX);
 
-      img.style.opacity = opacity;
-      img.style.transform = `translateX(${translateX}px)`;
+      div.style.opacity = opacity;
+      div.style.transform = `translateX(${translateX}px)`;
     });
   }
 

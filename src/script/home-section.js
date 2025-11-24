@@ -71,9 +71,9 @@ export function initHomeAnimations() {
   let crTitleSpans = document.querySelectorAll(".text-gray");
   let crLineImg = document.querySelector(".line-image");
   let crStarImg = document.querySelector(".star-image");
-  let crCircleImg = document.querySelector(".circle-image");
+  let crCircleImg = document.querySelector(".circle-image"); // Now targets the img directly
 
-  if (!crSection) return;
+  if (!crSection || !crLineImg || !crStarImg || !crCircleImg) return;
 
   function updateCreativeSection() {
     const rect = crSection.getBoundingClientRect();
@@ -86,6 +86,7 @@ export function initHomeAnimations() {
       Math.min(1, (scrollY - crTop) / (crHeight - window.innerHeight))
     );
 
+    // Animate title spans
     crTitleSpans.forEach((span, index) => {
       const delay = index * 0.1;
       const opacity = Math.min(1, progress + (0.2 - delay));
@@ -94,12 +95,15 @@ export function initHomeAnimations() {
       span.style.transform = `scale(${scale})`;
     });
 
+    // Animate line image
     crLineImg.style.opacity = progress;
-    crLineImg.style.transform = `translateX(${ -100 + 100 * progress }px) rotate(0deg)`;
+    crLineImg.style.transform = `translateX(${-100 + 100 * progress}px) rotate(0deg)`;
 
+    // Animate star image
     crStarImg.style.opacity = progress;
-    crStarImg.style.transform = `translateX(${ -300 + 300 * progress }px) rotateZ(${190 * progress}deg)`;
+    crStarImg.style.transform = `translateX(${-300 + 300 * progress}px) rotateZ(${190 * progress}deg)`;
 
+    // Animate circle image
     crCircleImg.style.opacity = progress;
     crCircleImg.style.transform = `scale(${0.98459 * progress}) rotateZ(${360 * progress}deg)`;
   }

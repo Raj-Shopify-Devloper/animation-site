@@ -30,7 +30,11 @@ const CreativeSection = () => {
                   </h2>
                   <img src={lineImage} loading="lazy" alt="line-image" className="line-image"/>
                   <img src={Starimage} loading="lazy" alt="star-image" className="star-image"/>
-                  <img src={streemImage} loading="lazy" alt="circle-image" className="circle-image"/>
+                  <div className="circle-image-wrapper">
+                    <a href="/products" className="circle-link">
+                      <img src={streemImage} loading="lazy" alt="circle-image" className="circle-image"/>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

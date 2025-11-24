@@ -1,32 +1,10 @@
 // home-section.js
 
+import { button } from "framer-motion/client";
+
 
 
 export function initHomeAnimations() {
-
-  // const targets = document.querySelectorAll(".design-sticky-wrap");
-
-  // const observer = new IntersectionObserver(
-  //   (entries) => {
-  //     entries.forEach((entry) => {
-
-  //       if (entry.intersectionRatio >= 0.85) {
-  //         entry.target.classList.add("active");
-  //       } else {
-  //         entry.target.classList.remove("active");
-  //       }
-
-  //     });
-  //   },
-  //   {
-  //     threshold: [0, 0.85, 1] 
-  //   }
-  // );
-
-  // targets.forEach((el) => observer.observe(el));
-
-
-
   // ============================ design process section Start ============================ //
 
   let dpSection = document.querySelector(".creative-section.design-process-section");
@@ -134,4 +112,28 @@ export function initHomeAnimations() {
   updateCreativeSection();
 
   // ======================= creative section End ======================= //
+
+
+  // Footer button
+   const scrollToTopButton = document.querySelector(".scroll-top-btn");
+
+    if (!scrollToTopButton) return;
+
+    function toggleScrollButton() {
+      if (window.scrollY > 300) {
+        scrollToTopButton.classList.add("show");
+      } else {
+        scrollToTopButton.classList.remove("show");
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      requestAnimationFrame(toggleScrollButton);
+    });
+
+    scrollToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    toggleScrollButton();
 }

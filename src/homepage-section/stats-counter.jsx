@@ -62,8 +62,8 @@ export default function StatsCounterSection() {
             <div className="stats-content">
                 {statsData.map((item, index) => (
                     <div key={index} className="stats-box">
-                        <div className="stats-number f-70 f-m-22 w-800 white-color second-font l-h-1">{counts[index]}+</div>
-                        <div className="stats-label f-28 f-m-18 white-color w-500 second-font l-h-1">{item.label}</div>
+                        <div className="stats-number f-70 f-m-38 w-800 white-color second-font l-h-1">{counts[index]}+</div>
+                        <div className="stats-label f-28 f-m-22 white-color w-500 second-font l-h-1">{item.label}</div>
                     </div>
                 ))}
             </div>

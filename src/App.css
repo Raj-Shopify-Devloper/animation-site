@@ -238,6 +238,9 @@ body .w-800{
     body .f-28{
         font-size: 28px;
     }
+    body .f-26{
+        font-size: 26px;
+    }
     body .f-24{
         font-size: 24px;
     }
@@ -280,13 +283,13 @@ body .w-800{
         font-size: 48px;
     }
     body .f-48{
-        font-size: 40px;
+        font-size: 36px;
     }
     body .f-40{
-        font-size: 38px;
+        font-size: 36px;
     }
     body .f-38{
-        font-size: 36px;
+        font-size: 32px;
     }
     body .f-36{
         font-size: 31px;
@@ -308,6 +311,9 @@ body .w-800{
     }
     body .f-28{
         font-size: 22px;
+    }
+    body .f-26{
+        font-size: 24px;
     }
     body .f-24{
         font-size: 20px;
@@ -359,8 +365,17 @@ body .w-800{
     body .f-m-30{
         font-size: 30px;
     }
+    body .f-m-28{
+        font-size: 28px;
+    }
+    body .f-m-26{
+        font-size: 26px;
+    }
     body .f-m-24{
         font-size: 24px;
+    }
+    body .f-m-22{
+        font-size: 22px;
     }
     body .f-m-20{
         font-size: 20px;
@@ -412,11 +427,6 @@ body .w-800{
   color: var(--white);
   font-size: 18px;
   margin-bottom: 10px;
-}
-.content-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
 }
 .left-content {
     position: relative;
@@ -485,12 +495,6 @@ body .w-800{
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   position: absolute;
 }
-@media screen and (max-width: 1200px) {
-  .design-process {
-    letter-spacing: -3px;
-    font-size: 80px;
-  }
-}
 
 @media screen and (max-width: 991px) {
   .primary {
@@ -498,12 +502,10 @@ body .w-800{
     align-items: center;
   }
 }
+
 @media screen and (max-width: 479px) {
   .design-sticky-wrap {
     position: relative;
     top: 0;
-  }
-  .design-process-image {
-    height: 40px;
   }
 }

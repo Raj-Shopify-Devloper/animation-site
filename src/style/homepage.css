@@ -235,6 +235,10 @@
   height: auto;
   display: flex;
   position: relative;
+  width: 100%;
+}
+.creative-foundation .man-image {
+    margin: 0 0 0 auto;
 }
 .creative-foundation .deesign-title {
   text-align: center;
@@ -256,21 +260,29 @@
   transform: translateY(-100px) rotate(-45deg);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+.creative-foundation .content-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 67%;
+}
 .creative-foundation .star-image {
-    position: absolute;
-    inset: 0px 0% auto auto;
-    width: 100px;
-    opacity: 0;
-    transform: translateX(-800px) rotateZ(0deg);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+  position: absolute;
+  inset: 0px 0% auto auto;
+  width: 100px;
+  opacity: 0;
+  transform: translateX(-800px) rotateZ(0deg);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .creative-foundation .circle-image {
-    position: absolute;
-    inset: auto 0% 16% auto;
-    width: 150px;
-    opacity: 0;
-    transform: scale(0) rotateZ(0deg);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: absolute;
+  inset: auto 0% 20% auto;
+  width: 150px;
+  opacity: 0;
+  transform: scale(0) rotateZ(0deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .creative-foundation .primary.white-text-primary-button {
   background-color: transparent;
@@ -300,7 +312,7 @@
   transition: transform 0.3s ease;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
   .creative-foundation .deesign-title {
     letter-spacing: -3px;
     max-width: 600px;
@@ -313,11 +325,15 @@
   }
   .creative-foundation .circle-image {
     width: 120px;
-    bottom: 0;
     right: 0;
   }
 }
 
+@media screen and (max-width: 990px) {
+  .creative-foundation .content-wrap{
+    max-width: 85%;
+  }
+}
 @media screen and (max-width: 767px) {
   .creative-foundation.creative-section.creative {
     padding-top: 80px;
@@ -325,53 +341,58 @@
   .creative-foundation .design-sticky-wrap {
     top: 20%;
   }
-  .creative-foundation .design-top-wrap {
-    height: 500px;
-  }
-  .deesign-title {
+  .creative-foundation .deesign-title {
     letter-spacing: -2px;
     max-width: 400px;
     margin-top: 15px;
     margin-bottom: 25px;
   }
   .creative-foundation .star-image {
-    max-width: 60px;
-  }
-  .circle-image {
-    width: 100px;
-    right: -20px;
+    max-width: 70px;
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 650px) {
   .creative-foundation.creative-section.creative {
     height: auto;
     padding-top: 40px;
+  }
+  .creative-foundation .design-top-wrap{
+    height: 100%;
+  }
+  .creative-foundation .man-image {
+    margin: 0 auto;
   }
   .creative-foundation .design-sticky-wrap {
     position: relative;
     top: 0;
   }
-  .creative-foundation .design-top-wrap {
-    height: 320px;
+  .creative-foundation.creative-section.creative h2 span {
+    opacity: 1 !important;
+    transform: unset;
   }
   .creative-foundation .deesign-title {
-    letter-spacing: -1px;
-    max-width: 250px;
     margin-bottom: 20px;
-    font-size: 34px;
-  }
-  .creative-foundation .text-gray {
-    color: var(--gray-100);
   }
   .creative-foundation .line-image {
-    width: 50px;
+    width: 90px;
   }
   .creative-foundation .star-image {
-    max-width: 40px;
+    max-width: 70px;
+    transform: unset !important;
+    opacity: 1 !important;
   }
   .creative-foundation .circle-image {
-    width: 60px;
+    width: 115px;
+    opacity: 1 !important;
+    transform: unset !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .creative-foundation  .content-wrap{
+    grid-template-columns: 1fr;
+    max-width: 100%;
   }
 }
 
@@ -379,31 +400,94 @@
    SECTION WRAPPER
 ========================================================= */
 
-.cross-section {
-  margin: 0;
-  padding: 0;
+.infinite-scroll {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding: 0 15px;
+}
+.infinite-scroll .container {
   overflow: hidden;
   position: relative;
+  height: 240px;             
 }
-.cross-section .tape-1 {
-  background-color: #a8d0db;
-  transform: rotate(5deg);
-  z-index: 1;
-  color: #004d57;
+.infinite-scroll .infinite-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.cross-section .tape-2 {
-  background-color: #004d57;
+.infinite-scroll .banner {
+  position: absolute;
+  left: -50%;
+  width: 200%;
+  padding: 20px 0;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.infinite-scroll .banner-track {
+  display: flex;
+  animation: scroll linear infinite;
+}
+.infinite-scroll .banner-light {
+  background-color: #004956;
   transform: rotate(-5deg);
   z-index: 2;
+  top: 43%;
 }
-.cross-section .scrolling-track {
-  display: inline-flex;
-  white-space: nowrap;
-  will-change: transform;
+.infinite-scroll .banner-light .banner-track {
+  animation-duration: 25s;
+  animation-direction: reverse;
 }
-.cross-section .scrolling-track span {
-  padding-right: 40px;
+.infinite-scroll .banner-light .separator {
+  color: #008594;
+}
+.infinite-scroll .banner-dark {
+  background-color: #99cfdb;
+  transform: rotate(5deg);
+  z-index: 1;
+  top: 45%;
+}
+.infinite-scroll .banner-dark .banner-track {
+  animation-duration: 20s;
+}
+.infinite-scroll .banner-dark .separator {
+  color: #0883a2;
+}
+.infinite-scroll .text-item {
+  padding: 0 12px;
   display: inline-block;
+}
+.infinite-scroll .separator {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 767px) {
+  .infinite-scroll .banner-light{
+    transform: rotate(-10deg);
+  }
+  .infinite-scroll .container{
+    height: 190px;
+  }
+  .infinite-scroll .banner-dark {
+    transform: rotate(10deg);
+    top: 43%;
+  }
+  .infinite-scroll .banner{
+    padding: 12px 0;
+  }
 }
 
 
@@ -415,6 +499,7 @@
   width: 100%;
   padding:  0px 0 0;
   overflow: hidden;
+  margin: -50px 0 0;  
 }
 
 .offer-section .offer-wrap {
@@ -573,35 +658,45 @@
   transition: all 0.5s ease-in-out;
 }
 
-@media (max-width: 991px) {
-  .offer-section .background-video {
-    height: 450px;
-  }
-}
-
 @media (max-width: 767px) {
-  .offer-section .background-video {
-    height: 380px;
+  .offer-section .offer-heading-wrap {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 479px) {
-  .offer-section .background-video {
-    height: 280px;
+  .offer-section .offer-card{
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    transform: translate3d(0px, -15px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   }
-}
-@media (max-width: 991px) {
-  .offer-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+  .offer-section .offer-card:hover .offer-card-imag,
+  .offer-section .offer-card .offer-card-image{
+    transform:unset;
   }
-  .offer-section .offer-image-wrap {
-    margin-bottom: 0;
+  .offer-section .offer-image-wrap{
+    opacity: 1;
+    top: 0;
   }
-
   .offer-section .offer-card-image {
     top: 0;
+  }
+  .offer-section .offer-view-more-button {
+    margin: 50px 0 0;
+  }
+  .offer-section .paragraph-large.paragraph-color{
+    margin: 0;
+  }
+  .offer-section .offer-button-wrap {
+    padding: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .offer-section .offer-card .offer-image-wrap {
+    display: none;
+  }
+  .offer-section .offer-collection-list{
+    gap: 50px;
+  }
+  .offer-section .offer-collection-list{
+    margin: 20px auto 0;
   }
 }
 
@@ -611,7 +706,7 @@
 
 .creative-section.design-process-section {
   height: 400vh;
-  padding-top: 20px;
+  padding-top: 80px;
   padding-bottom: 0;
   overflow: clip;
   position: relative;
@@ -736,51 +831,110 @@
   inset: auto -13% 10% auto;
 }
 @media screen and (max-width: 1200px) {
-  .design-process-section .design-process {
-    letter-spacing: -3px;
-    font-size: 80px;
-  }
   .design-process-section .design-process-image._1 {
     inset: auto auto 10% 40px;
   }
+  .design-process-section .design-process-image._2 {
+    inset: 4% auto auto -5%;
+  }
+  .design-process-section .design-process-image._3 {
+    inset: 10% -250px auto auto;
+  }
   .design-process-section .design-process-image._4 {
-    inset: auto 0px 5% auto;
+    inset: auto -20% 5% auto;
+  }
+  .design-process-section img.strengt-hman {
+    max-width: 239px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .creative-section.design-process-section {
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
+  .design-process-section .design-process-image._3 {
+    inset: 7% -240px auto auto;
+  }
+  .design-process-section .box-two{
+    width: 550px;
+    height: 550px;
+  }
+  .design-process-section .w-layout-blockcontainer.container.w-container {
+    height: auto;
+    margin: auto;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .design-process-section .creative-section.design-process-section {
+  .creative-section.design-process-section {
     padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .design-process-section .design-process-image._3 {
+    inset: 7% -20% auto auto;
+  }
+  .design-process-section .design-process-image._2 {
+    inset: 0% auto auto 12%;
+  }
+  .design-process-section .design-process-image._1 {
+    inset: auto auto 10% 20%;
   }
   .design-process-section .design-top-wrap {
+    height: 400px;
+  }
+  .design-process-section .box-two {
+    width: 500px;
     height: 500px;
   }
-  .design-process-section .design-process {
-    letter-spacing: -2px;
-    font-size: 60px;
+  .design-process-section .design-process-image{
+    padding: 0 19px 10px;
+  }
+  .design-process-section img.strengt-hman {
+    max-width: 139px;
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 580px) {
+  .creative-section.design-process-section{
+    height: auto;
+  }
   .design-process-section .creative-section.design-process-section {
     height: auto;
     padding-top: 40px;
+  }
+  .design-process-section .design-process-image._2 {
+    inset: 0% auto auto 0;
+  }
+  .design-process-section .design-process-image._3 {
+    inset: 7% 0 auto auto;
+  }
+  .design-process-section .design-process-image._1 {
+    inset: auto auto 10% 0;
+  }
+  .design-process-section .design-process-image._4 {
+    inset: auto 0 5% auto;
+  }
+  .design-process-section .design-process-image{
+    opacity: 1 !important;
+    transform: unset !important;
+  }
+  .design-process-section .design-top-wrap{
+    height: 330px;
+  }
+  .design-process-section .box-two{
+    opacity: 1 !important;
+  }
+  .design-process-section .box-one{
+    display:none;
   }
   .design-process-section .design-sticky-wrap {
     position: relative;
     top: 0;
   }
-  .design-process-section .box-one,
+  .design-process-section .box-one, 
   .design-process-section .box-two {
-    width: 150px;
-    height: 150px;
-  }
-  .design-process-section .design-top-wrap {
-    height: 320px;
-  }
-  .design-process-section .design-process {
-    letter-spacing: -1px;
-    font-size: 34px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -813,14 +967,130 @@
   text-transform: uppercase;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
   .stats-section {
     flex-direction: column;
     gap: 30px;
   }
+  .stats-section .stats-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 50px;
+    justify-content: space-between;
+  }
+  .stats-section .stats-label,
+  .stats-section .stats-number{
+    text-align: center;
+  }
+  .stats-section .stats-box{
+    justify-content: center;
+  }
+}
 
-  .stats-number {
-    font-size: 38px;
+
+/* =========================================================
+= = = = = = = =   ROTATING TEXT CSS   = = = = = = =
+========================================================= */
+
+.lets-talk-section {
+  position: relative;
+  width: 100%;
+  background-color: #0184a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 50px 0;
+}
+.lets-talk-section .lets-talk-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+}
+.lets-talk-section .side-text {
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.85;
+  transition: transform 0.05s linear;
+  user-select: none;
+}
+.lets-talk-section .left { transform: translateX(-200px); }
+.lets-talk-section .right { transform: translateX(200px); }
+.lets-talk-section .center-icon-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lets-talk-section .whatsapp-icon svg path {
+  fill: #fff;
+}
+.lets-talk-section .rotating-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateText 18s linear infinite;
+}
+.lets-talk-section .rotating-text svg {
+  width: 100%;
+  height: 100%;
+}
+.lets-talk-section .whatsapp-icon {
+  position: absolute;
+  z-index: 10;
+  color: var(--white_color);
+  padding: 16px;
+  border-radius: 50%;
+  display: flex;
+  transition: transform 0.3s ease;
+  border: 3px solid var(--white_color);
+}
+.lets-talk-section .whatsapp-icon:hover {
+  transform: scale(1.15);
+}
+.lets-talk-section .whatsapp-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 2.5;
+}
+@keyframes rotateText {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .lets-talk-section .center-icon-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lets-talk-section .center-icon-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+  .lets-talk-section .whatsapp-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lets-talk-section .lets-talk-container {
+    gap: 10px;
+  }
+  .lets-talk-section .lets-talk-container{
+    flex-direction: column;
+  }
+  .lets-talk-section .side-text {
+    opacity: 1;
   }
 }

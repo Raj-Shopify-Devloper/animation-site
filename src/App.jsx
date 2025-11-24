@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './component/header.jsx';
 import Home from './pages/home.jsx';
 import Footer from './component/footer.jsx';
+import PecoGrid from './pages/peco-grid.jsx';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<PecoGrid />} />
         </Routes>
         <Footer />
-      </div> 
+      </div>
     </BrowserRouter>
   );
 }

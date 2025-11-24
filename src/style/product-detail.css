@@ -1,0 +1,175 @@
+.product-detail-page {
+    background-color: #0084a0;
+    min-height: 100vh;
+    padding: 4rem 0;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.product-detail-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-detail-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.product-detail-info-section {
+    flex: 1.2;
+}
+
+.product-detail-title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.product-detail-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.product-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.product-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    fill: white;
+}
+
+.feature-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.feature-sublabel {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.technical-details-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.technical-header {
+    background: white;
+    color: #0084a0;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.technical-subheader {
+    background: #006f8a;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.technical-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.technical-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.technical-table tr:last-child td {
+    border-bottom: none;
+}
+
+.technical-table td:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    width: 40%;
+    font-weight: 600;
+}
+
+.technical-footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pack-size {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.pack-size span {
+    font-weight: 700;
+    font-size: 2rem;
+    background: white;
+    color: #0084a0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .product-detail-title {
+        font-size: 3rem;
+    }
+
+    .product-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

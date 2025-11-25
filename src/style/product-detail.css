@@ -2,8 +2,15 @@
     background-color: #0084a0;
     min-height: 100vh;
     padding: 4rem 0;
-    color: white;
+    color: var(--white_color);
     font-family: 'Outfit', sans-serif;
+}
+
+.product-detail-title {
+    text-align: center;
+    padding: 0 15px;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
 }
 
 .product-detail-container {
@@ -19,6 +26,8 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 50px;
 }
 
 .product-detail-image {
@@ -28,39 +37,29 @@
 }
 
 .product-detail-info-section {
-    flex: 1.2;
-}
-
-.product-detail-title {
-    font-size: 4rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-bottom: 0.5rem;
+    flex: 1;
 }
 
 .product-detail-subtitle {
-    font-size: 2rem;
-    font-weight: 700;
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 1rem;
-    display: inline-block;
+    border-bottom: 3px solid var(--white_color);
+    padding-bottom: 2rem;
+    display: inline-flex;
+    flex-direction: column;
     width: 100%;
+    gap: 15px;
 }
 
 .product-description {
-    font-size: 1rem;
-    line-height: 1.6;
     margin-bottom: 3rem;
-    opacity: 0.9;
 }
 
 .product-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 2rem;
+    margin-bottom: 1rem;
+    max-width: 280px;
 }
 
 .feature-item {
@@ -68,27 +67,44 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
+}
+
+.product-icon {
+    background: var(--white_color);
+    width: 100%;
+    padding: 8px 5px;
+    height: 100%;
+}
+
+.product-icon svg {
+    max-width: 60px;
+}
+
+.product-icon svg path {
+    stroke: #0084a0;
+    stroke-width: 1px;
 }
 
 .feature-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 0.5rem;
-    fill: white;
-}
-
-.feature-label {
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    fill: var(--white_color);
 }
 
 .feature-sublabel {
-    font-size: 0.8rem;
+    margin: 10px 0 0;
     opacity: 0.8;
+}
+
+.product-icon span.feature-label~svg {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.product-features-grid .feature-item {
+    width: calc(50% - 16px);
 }
 
 .technical-details-section {
@@ -98,7 +114,7 @@
 }
 
 .technical-header {
-    background: white;
+    background: var(--white_color);
     color: #0084a0;
     padding: 0.8rem;
     text-align: center;
@@ -152,7 +168,7 @@
 .pack-size span {
     font-weight: 700;
     font-size: 2rem;
-    background: white;
+    background: var(--white_color);
     color: #0084a0;
     padding: 0.2rem 0.8rem;
     border-radius: 50%;
@@ -167,9 +183,5 @@
 
     .product-detail-title {
         font-size: 3rem;
-    }
-
-    .product-features-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }

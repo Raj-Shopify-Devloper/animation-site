@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../style/product-list.css';
-import productImage from '../assets/hero-product.png'; // Using hero-product as placeholder
+import productImage from '../assets/hero-product.png';
 
 const ProductList = () => {
     const [activeTab, setActiveTab] = useState('TILE ADHESIVE');

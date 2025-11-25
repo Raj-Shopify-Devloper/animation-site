@@ -1,26 +1,41 @@
 import React from "react";
 import Faqimage from "../assets/faq-image.png";
+import pecobondImage from '../assets/pecobond.png';
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
+import smoothPutty from '../assets/smooth-putty.png';
 
 
 export default function OfferSection() {
   const offers = [
     {
-      title: "New Construction",
-      desc: "Discover modern homes in newly built developments with the latest features and finishes.",
-      img: "https://cdn.prod.website-files.com/6841891f073a397916bb2895/6848160d25770a537e53b383_Service%20Three.webp",
-      link: "/service/new-construction",
+      title: "TILE ADHESIVE",
+      desc: "deliver unmatched bonding strength for every tile, every surface. For flawless finishes that last for years.",
+      img: pecobondImage,
+      link: "/products",
     },
     {
-      title: "Rental Solutions",
-      desc: "Flexible rental options and expert guidance to match you with the perfect property, fast.",
-      img: "https://cdn.prod.website-files.com/6841891f073a397916bb2895/68481662be6a588500af1de8_Service%20Four.webp",
-      link: "/service/rental-solutions",
+      title: "GROUT & SEALANTS",
+      desc: "Seal the gaps, protect the beauty, ensure durable joints and long-lasting elegance.",
+      img: epoxyGroutBucket,
+      link: "/products",
     },
     {
-      title: "Land Development",
-      desc: "Expert land planning and preparation for projects of any size—built for growth and sustainability.",
-      img: "https://cdn.prod.website-files.com/6841891f073a397916bb2895/6848169251df92f3e82b2909_Service%20Five.webp",
-      link: "/service/land-development",
+      title: "WATER PROOFING",
+      desc: "Guard your spaces from leaks and dampness. Engineered to protect, built to perform.",
+      img: epoxyGroutBucket,
+      link: "/products",
+    },
+    {
+      title: "BLOCK JOINTING MORTAR",
+      desc: "Stronger walls start with stronger bonds, ensures precision, durability, and perfect alignment.",
+      img: epoxyGroutBucket,
+      link: "/products",
+    },
+    {
+      title: "WALL PUTTY",
+      desc: "Create the perfect base for perfect walls, delivers a smooth, crack-free finish for premium painting.",
+      img: smoothPutty,
+      link: "/products",
     },
   ];
 
@@ -54,7 +69,7 @@ export default function OfferSection() {
 
                     <div className="offer-heading-wrap">
                       <div className="offer-card-header-wrap">
-                        <h3 className="f-31 f-m-22 white-color second-font w-700 l-h-1-4">{item.title}</h3>
+                        <h3 className="f-26 f-m-22 white-color second-font w-700 l-h-1-4">{item.title}</h3>
                       </div>
                       <div className="offer-card-description">
                         <p className="paragraph-large paragraph-color f-22 f-m-16 white-color w-500 l-h-1-4 second-font">

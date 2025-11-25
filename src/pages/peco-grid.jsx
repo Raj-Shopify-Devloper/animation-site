@@ -4,8 +4,6 @@ import ProductDetail from '../product-section/ProductDetail.jsx';
 import '../style/product-detail.css';
 import '../style/product-list.css';
 
-
-
 function PecoGrid() {
     return (
         <>

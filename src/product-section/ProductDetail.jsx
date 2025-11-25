@@ -1,11 +1,12 @@
 import React from 'react';
 import productImage from '../assets/pecogrip.png';
+import potLife from '../assets/time-min.png';
 
 const ProductDetail = () => {
     return (
         <div className="product-detail-page">
             <h1 className="product-detail-title f-170 f-m-48 w-800 first-font l-h-1">TILE ADHESIVE</h1>
-            <div className="product-detail-container">
+            <div className="product-detail-container container">
                 <div className="product-detail-image-section">
                     <img src={productImage} alt="Peco Grip" className="product-detail-image" />
                 </div>
@@ -65,62 +66,58 @@ const ProductDetail = () => {
                         </div>
                         <div className="feature-item">
                             <div className='product-icon'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 3423 836" fill="none">
-                                    <path d="M1907.3 127.039L1907.69 127.961L1874.2 141.957L1845.7 154.458L1815.22 169.448L1784.73 184.938L1784.74 184.938L1752.74 202.433L1723.25 219.434L1723.24 219.433L1688.75 239.927L1646.75 265.428L1605.77 292.915L1605.77 292.916L1559.27 323.916L1559.27 323.918L1518.77 350.418L1518.75 350.43L1474.25 376.93L1474.24 376.938L1474.22 376.946L1436.72 395.946L1409.22 409.945L1409.2 409.958L1409.17 409.968L1377.17 421.968L1377.17 421.97L1349.67 431.97L1349.63 431.982L1349.59 431.99L1317.59 438.49L1317.57 438.495L1317.54 438.498L1275.54 442.498L1275.52 442.5H1244.44L1244.38 442.487L1197.88 431.987L1197.83 431.977L1197.79 431.955L1154.79 412.455L1154.75 412.438L1154.72 412.415L1124.22 391.915L1124.18 391.893L1124.15 391.864L1099.15 368.364L1099.14 368.351L1099.12 368.336L1080.12 347.336L1080.11 347.32L1080.1 347.305L1052.1 310.805L1052.09 310.791L1052.08 310.776L1027.58 273.776L1027.57 273.77L1027.57 273.763L993.069 217.763L965.09 175.793L937.608 139.817L909.138 107.352L875.678 76.8877L846.216 55.415L818.269 38.9463L787.301 24.9609L748.857 11.4805L718.924 4.99512L675.471 1H635.029L593.06 6.49609L593.059 6.49512L550.603 13.4883L517.635 21.9805L470.658 36.9727L436.697 50.957L401.721 66.4463L369.771 84.917L343.276 102.914L343.275 102.913L316.309 122.889L273.339 159.862L234.373 200.328L212.389 228.309L175.921 280.761L148.927 326.753L121.447 378.713L94.9561 441.694L71.4736 506.646L49.9736 577.146L27.4873 669.09L11.4873 757.09L0.999117 835.5H3417.69H3423L3118 586.5L2829 365L2665 249L2590.5 201L2469 126.5L2400.5 96.5L2320.5 72L2268.5 64.5L2214 59L2148 61.5L2084.5 70.5L2029 83.5L1954 107.5L1907.3 127.039Z" fill="#868686" />
-                                </svg>
+                                <img src={potLife} alt="" />
                             </div>
                             <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">POTLIFE</span>
                         </div>
                         <div className="feature-item">
                             <div className='product-icon'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 3423 836" fill="none">
-                                    <path d="M1907.3 127.039L1907.69 127.961L1874.2 141.957L1845.7 154.458L1815.22 169.448L1784.73 184.938L1784.74 184.938L1752.74 202.433L1723.25 219.434L1723.24 219.433L1688.75 239.927L1646.75 265.428L1605.77 292.915L1605.77 292.916L1559.27 323.916L1559.27 323.918L1518.77 350.418L1518.75 350.43L1474.25 376.93L1474.24 376.938L1474.22 376.946L1436.72 395.946L1409.22 409.945L1409.2 409.958L1409.17 409.968L1377.17 421.968L1377.17 421.97L1349.67 431.97L1349.63 431.982L1349.59 431.99L1317.59 438.49L1317.57 438.495L1317.54 438.498L1275.54 442.498L1275.52 442.5H1244.44L1244.38 442.487L1197.88 431.987L1197.83 431.977L1197.79 431.955L1154.79 412.455L1154.75 412.438L1154.72 412.415L1124.22 391.915L1124.18 391.893L1124.15 391.864L1099.15 368.364L1099.14 368.351L1099.12 368.336L1080.12 347.336L1080.11 347.32L1080.1 347.305L1052.1 310.805L1052.09 310.791L1052.08 310.776L1027.58 273.776L1027.57 273.77L1027.57 273.763L993.069 217.763L965.09 175.793L937.608 139.817L909.138 107.352L875.678 76.8877L846.216 55.415L818.269 38.9463L787.301 24.9609L748.857 11.4805L718.924 4.99512L675.471 1H635.029L593.06 6.49609L593.059 6.49512L550.603 13.4883L517.635 21.9805L470.658 36.9727L436.697 50.957L401.721 66.4463L369.771 84.917L343.276 102.914L343.275 102.913L316.309 122.889L273.339 159.862L234.373 200.328L212.389 228.309L175.921 280.761L148.927 326.753L121.447 378.713L94.9561 441.694L71.4736 506.646L49.9736 577.146L27.4873 669.09L11.4873 757.09L0.999117 835.5H3417.69H3423L3118 586.5L2829 365L2665 249L2590.5 201L2469 126.5L2400.5 96.5L2320.5 72L2268.5 64.5L2214 59L2148 61.5L2084.5 70.5L2029 83.5L1954 107.5L1907.3 127.039Z" fill="#868686" />
-                                </svg>
+                                <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">TYPE 1T</span>
                             </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">ADHESIVE</span>
+                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">COLOUR</span>
                         </div>
                     </div>
 
                     <div className="technical-details-section">
-                        <div className="technical-header">TECHNICAL DETAILS</div>
-                        <div className="technical-subheader">CONFORMS TO IS 15477-2004 : TYPE-1 T</div>
+                        <div className="technical-header f-20 f-m-16 w-600 l-h-1-2 second-font primary-color">TECHNICAL DETAILS</div>
+                        <div className="technical-subheader f-20 f-m-16 w-600 l-h-1-2 second-font white-color">CONFORMS TO IS 15477-2004 : TYPE-1 T</div>
                         <table className="technical-table">
                             <tbody>
                                 <tr>
-                                    <td>Coverage</td>
-                                    <td>Approx 45-55 sq.ft per 20kg bag</td>
+                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Coverage</td>
+                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">Approx 45-55 sq.ft per 20kg bag</td>
                                 </tr>
                                 <tr>
-                                    <td>Tensile Adhesion<br />Annex A (Clause 5.1)</td>
-                                    <td>0.75 - 0.80 N/mm²</td>
+                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Tensile Adhesion<br />Annex A (Clause 5.1)</td>
+                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">0.75 - 0.80 N/mm²</td>
                                 </tr>
                                 <tr>
-                                    <td>Shear Adhesion<br />Annex B (Clause 5.2)</td>
-                                    <td>1.1 - 1.2 N/mm²</td>
+                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Shear Adhesion<br />Annex B (Clause 5.2)</td>
+                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">1.1 - 1.2 N/mm²</td>
                                 </tr>
                                 <tr>
-                                    <td>Slip Resistance<br />Annex E (Clause 5.5)</td>
-                                    <td>0.40-0.45 mm</td>
+                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Slip Resistance<br />Annex E (Clause 5.5)</td>
+                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">0.40-0.45 mm</td>
                                 </tr>
                                 <tr>
-                                    <td>Minimum Bed<br />Thickness required</td>
-                                    <td>3 mm using 6MM X 6MM Notched trowel</td>
+                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Minimum Bed<br />Thickness required</td>
+                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">3 mm using 6MM X 6MM Notched trowel</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="technical-footer">
+                        <div className="technical-footer f-20 f-m-14 w-500 l-h-1-2 second-font white-color">
                             *Actual Coverage depends on substrate condition & method of application
                         </div>
                     </div>
 
-                    <div className="pack-size">
-                        Pack Size <span>20</span> kg
+                    <div className="pack-size f-28 f-m-20 w-400 l-h-1-2 second-font white-color">
+                        Pack Size <span className='f-32 f-m-20 w-800 l-h-1-2 second-font primary-color'>20</span> kg
                     </div>
 
-                    <div style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.9rem', opacity: 0.8 }}>
-                        <p>Shelf Life</p>
-                        <p>12 months from the date of manufacturing.</p>
-                        <p>Stored in a original sealed sacks in a dry and closed place.</p>
+                    <div className='shelf-life'>
+                        <p className='f-20 f-m-16 w-600 l-h-1-2 second-font white-color' style={{ textAlign: 'center' }}>Shelf Life</p>
+                        <p className='f-20 f-m-16 w-400 l-h-1-2 second-font white-color' style={{ textAlign: 'center', opacity: 0.8 }}>12 months from the date of manufacturing.</p>
+                        <p className='f-20 f-m-16 w-400 l-h-1-2 second-font white-color' style={{ textAlign: 'center', opacity: 0.8 }}>Stored in a original sealed sacks in a dry and closed place.</p>
                     </div>
                 </div>
             </div>

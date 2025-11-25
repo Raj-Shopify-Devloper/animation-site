@@ -4,7 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import backgroundVideoThumbnail from "../assets/hero-image.png";
-import pecoshieldProductImage from "../assets/hero-product.png";
+import pecoshieldProductImage from "../assets/pecoshield-2k.png";
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
+import smoothPutty from '../assets/smooth-putty.png';
 
 const HeroBanner = () => {
   const slides = [
@@ -18,15 +20,15 @@ const HeroBanner = () => {
     {
       id: 2,
       background: backgroundVideoThumbnail,
-      product: pecoshieldProductImage,
+      product: epoxyGroutBucket,
       title: "WATER PROOFING SYSTEM",
       videoLabel: false,
     },
     {
       id: 3,
       background: backgroundVideoThumbnail,
-      product: pecoshieldProductImage,
-      title: "WATER PROOFING SYSTEM",
+      product: smoothPutty,
+      title: "WALL PUTTY",
       videoLabel: false,
     }
   ];
@@ -73,15 +75,14 @@ const HeroBanner = () => {
               </div>
               <div className="hero-title-wrap">
                 <h1 className="hero-title f-110 f-m-48 white-color w-800 l-h-1 first-font">{item.title}</h1>
-                <div className="hero-product-wrap">
+                <div className="pecoshield-2k-wrap">
                   <img
                     src={item.product}
                     alt="Product"
-                    className="hero-product"
+                    className="pecoshield-2k"
                   />
                 </div>
               </div>
-
             </div>
           ))}
         </Slider>

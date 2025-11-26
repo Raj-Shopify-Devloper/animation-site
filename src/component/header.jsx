@@ -37,7 +37,7 @@ const Header = () => {
         </div>
         <nav className="nav-desktop">
           <ul className="nav-list">
-            <li><a href="/" className="nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font">ABOUT US</a></li>
+            <li><a href="/about" className="nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font">ABOUT US</a></li>
             <li><a href="/products" className="nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font">PRODUCTS</a></li>
             <li><a href="/portfolio" className="nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font">DOWNLOAD</a></li>
             <li><a href="/contact" className="nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font">CONTACT</a></li>
@@ -94,7 +94,7 @@ const Header = () => {
           </div>
           <ul className="menu-list-custom">
             <li>
-              <a href="/" className="menu-link" onClick={closeMenu}>ABOUT US</a>
+              <a href="/about" className="menu-link" onClick={closeMenu}>ABOUT US</a>
               <span className="dropdown-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
               </span>

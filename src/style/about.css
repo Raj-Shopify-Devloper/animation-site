@@ -1,0 +1,184 @@
+.about-page {
+    padding-top: 80px;
+    /* Adjust based on header height */
+    background-color: #008594;
+    /* Teal background from design */
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    /* Assuming font family */
+    overflow-x: hidden;
+}
+
+.about-section {
+    padding: 60px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* About Us Section */
+.about-us .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-us .text-content {
+    flex: 1;
+}
+
+.about-us p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.about-us .image-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-figure img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mission & Vision Sections */
+.mission-section,
+.vision-section {
+    background-color: #e0e6e9;
+    /* Light gray/blue background */
+    color: #333;
+}
+
+.vision-section {
+    background-color: #008594;
+    color: #fff;
+}
+
+.mission-content,
+.vision-content {
+    position: relative;
+}
+
+.mission-content p,
+.vision-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Founder Section */
+.founder-section {
+    background-color: #e0e6e9;
+    color: #333;
+}
+
+.founder-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.founder-text {
+    flex: 1;
+}
+
+.founder-name {
+    font-size: 1.5rem;
+    color: #008594;
+    margin-bottom: 15px;
+}
+
+.founder-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Animations & Decorative Elements */
+.star-img {
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    width: 80px;
+    z-index: 1;
+}
+
+.star-img-small {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+}
+
+.line-img {
+    width: 100px;
+    display: block;
+}
+
+.decorative-line {
+    margin-top: 20px;
+}
+
+.decorative-line-center {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating {
+    animation: rotate-star 10s linear infinite;
+}
+
+@keyframes rotate-star {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .about-us .content-wrapper,
+    .founder-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .star-img {
+        right: 0;
+        top: -30px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}

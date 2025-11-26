@@ -5,6 +5,7 @@ import Header from './component/header.jsx';
 import Home from './pages/home.jsx';
 import Footer from './component/footer.jsx';
 import PecoGrid from './pages/peco-grid.jsx';
+import About from './pages/about.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<PecoGrid />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>

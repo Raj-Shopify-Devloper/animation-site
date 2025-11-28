@@ -73,7 +73,8 @@
   transition: width 0.3s ease;
 }
 
-.header .nav-link:hover {
+.header .nav-link:hover,
+.header .nav-link.active {
   color: #0066ff;
 }
 
@@ -81,7 +82,8 @@ button.menu-toggle.active span.hamburger-line {
   background: var(--black_color);
 }
 
-.header .nav-link:hover::after {
+.header .nav-link:hover::after,
+.header .nav-link.active::after {
   width: 100%;
 }
 
@@ -369,7 +371,8 @@ button.menu-toggle.active span.hamburger-line {
   transition: color 0.3s;
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link.active {
   color: #0084a0;
 }
 

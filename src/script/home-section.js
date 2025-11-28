@@ -71,7 +71,7 @@ export function initHomeAnimations() {
   let crTitleSpans = document.querySelectorAll(".text-gray");
   let crLineImg = document.querySelector(".line-image");
   let crStarImg = document.querySelector(".star-image");
-  let crCircleImg = document.querySelector(".circle-image"); // Now targets the img directly
+  let crCircleImg = document.querySelector(".circle-image");
 
   if (!crSection || !crLineImg || !crStarImg || !crCircleImg) return;
 
@@ -81,31 +81,34 @@ export function initHomeAnimations() {
     const crHeight = crSection.offsetHeight;
     const scrollY = window.scrollY;
 
-    const progress = Math.max(
+    let progress = Math.max(
       0,
       Math.min(1, (scrollY - crTop) / (crHeight - window.innerHeight))
     );
 
+    // ⭐ Speed increase: finish animation at 60% instead of 100%
+    let speedProgress = Math.min(1, progress / 0.1);
+
     // Animate title spans
     crTitleSpans.forEach((span, index) => {
       const delay = index * 0.1;
-      const opacity = Math.min(1, progress + (0.2 - delay));
-      const scale = 0.9 + 0.1 * Math.min(1, (progress - delay) / 0.8);
+      const opacity = Math.min(1, speedProgress + (1 - delay));
+      const scale = 0.9 + 0.1 * Math.min(1, (speedProgress - delay) / 0.8);
       span.style.opacity = opacity;
       span.style.transform = `scale(${scale})`;
     });
 
     // Animate line image
-    crLineImg.style.opacity = progress;
-    crLineImg.style.transform = `translateX(${-100 + 100 * progress}px) rotate(0deg)`;
+    crLineImg.style.opacity = speedProgress;
+    crLineImg.style.transform = `translateX(${-100 + 100 * speedProgress}px) rotate(0deg)`;
 
     // Animate star image
-    crStarImg.style.opacity = progress;
-    crStarImg.style.transform = `translateX(${-300 + 300 * progress}px) rotateZ(${190 * progress}deg)`;
+    crStarImg.style.opacity = speedProgress;
+    crStarImg.style.transform = `translateX(${-150 + 150 * speedProgress}px) rotateZ(${190 * speedProgress}deg)`;
 
     // Animate circle image
-    crCircleImg.style.opacity = progress;
-    crCircleImg.style.transform = `scale(${0.98459 * progress}) rotateZ(${360 * progress}deg)`;
+    crCircleImg.style.opacity = speedProgress;
+    crCircleImg.style.transform = `scale(${0.98459 * speedProgress}) rotateZ(${360 * speedProgress}deg)`;
   }
 
   function crScrollHandler() {
@@ -115,29 +118,30 @@ export function initHomeAnimations() {
   window.addEventListener("scroll", crScrollHandler);
   updateCreativeSection();
 
+
   // ======================= creative section End ======================= //
 
 
   // Footer button
-   const scrollToTopButton = document.querySelector(".scroll-top-btn");
+  const scrollToTopButton = document.querySelector(".scroll-top-btn");
 
-    if (!scrollToTopButton) return;
+  if (!scrollToTopButton) return;
 
-    function toggleScrollButton() {
-      if (window.scrollY > 300) {
-        scrollToTopButton.classList.add("show");
-      } else {
-        scrollToTopButton.classList.remove("show");
-      }
+  function toggleScrollButton() {
+    if (window.scrollY > 300) {
+      scrollToTopButton.classList.add("show");
+    } else {
+      scrollToTopButton.classList.remove("show");
     }
+  }
 
-    window.addEventListener("scroll", () => {
-      requestAnimationFrame(toggleScrollButton);
-    });
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(toggleScrollButton);
+  });
 
-    scrollToTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-    toggleScrollButton();
+  toggleScrollButton();
 }

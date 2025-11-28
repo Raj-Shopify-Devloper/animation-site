@@ -1,21 +1,27 @@
 .site-footer {
     color: var(--white_color);
     position: relative;
+    z-index: 1;
     padding: 0 0 50px;
+    background-color: var(--primary_color);
 }
+
 .site-footer .footer-logo-section img.logo-image {
     max-width: 420px;
 }
+
 .site-footer .footer-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
+
 .site-footer .peco-logo .tm {
     position: absolute;
     top: 0;
     right: -25px;
 }
+
 .site-footer .company-name {
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -24,6 +30,7 @@
     padding: 0 0 10px;
     margin: 0 0 10px;
 }
+
 .site-footer .industry {
     font-size: 14px;
     font-weight: 400;
@@ -31,6 +38,7 @@
     letter-spacing: 1px;
     margin-bottom: 25px;
 }
+
 .site-footer .info-item svg {
     background: var(--white_color);
     border-radius: 50px;
@@ -38,24 +46,29 @@
     height: auto;
     margin: 5px 0 0;
 }
+
 .site-footer .contact-info {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
 .site-footer .info-item {
     display: grid;
     grid-template-columns: 20px 1fr;
     align-items: start;
     gap: 10px;
 }
+
 .site-footer .info-item span a {
     text-decoration: none;
 }
+
 .site-footer .info-item i {
     margin-top: 3px;
     font-size: 14px;
 }
+
 .scroll-top-btn {
     position: fixed;
     bottom: 40px;
@@ -75,19 +88,24 @@
     z-index: 1000;
     animation: bounce 2s infinite;
 }
+
 .scroll-top-btn {
     background-color: var(--primary_color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .scroll-top-btn:hover {
     background-color: var(--primary_color);
     transform: translateY(-5px);
 }
+
 .scroll-top-btn.show {
     opacity: 1;
     visibility: visible;
 }
+
 @keyframes bounce {
+
     0%,
     20%,
     50%,

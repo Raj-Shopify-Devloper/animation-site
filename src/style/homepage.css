@@ -539,7 +539,7 @@
 .infinite-scroll .separator {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 10px;
+  margin: -8px 10px 0;
 }
 
 @keyframes scroll {
@@ -662,6 +662,7 @@
   grid-template-columns: 1fr 275px auto;
   justify-content: space-between;
   gap: 16px;
+  align-items: center;
   padding-bottom: 30px;
   text-decoration: none;
   position: relative;
@@ -820,7 +821,7 @@
 
 .creative-section.design-process-section {
   height: 200vh;
-  padding: 200px 0;
+  padding: 200px 0 0;
   overflow: clip;
   position: relative;
 }
@@ -962,7 +963,7 @@
 }
 
 .design-process-section .design-process-image._4 {
-  inset: auto -13% 10% auto;
+  inset: auto -30% 10% auto;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1168,128 +1169,96 @@
 = = = = = = = =   ROTATING TEXT CSS   = = = = = = =
 ========================================================= */
 
-.lets-talk-section {
+/* Let's Connect Section */
+.lets-connect {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 40vh;
   overflow: hidden;
-  padding: 50px 0;
-}
-
-.lets-talk-section .lets-talk-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
+  align-items: center;
 }
 
-.lets-talk-section .side-text {
-  text-transform: uppercase;
+.contact-btn span.arrow {
+  display: flex;
+}
+
+.scrolling-text-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.scrolling-text-row {
+  display: flex;
   white-space: nowrap;
-  opacity: 0.85;
-  transition: transform 0.05s linear;
-  user-select: none;
+  overflow: hidden;
 }
 
-.lets-talk-section .left {
-  transform: translateX(-200px);
+.scrolling-text {
+  font-size: 12vw;
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  padding-right: 20px;
+  animation: scroll 20s linear infinite;
+  line-height: 0.9;
 }
 
-.lets-talk-section .right {
-  transform: translateX(200px);
+.scrolling-text-row.reverse .scrolling-text {
+  animation-direction: reverse;
 }
 
-.lets-talk-section .center-icon-wrapper {
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cta-container {
   position: relative;
-  width: 180px;
-  height: 180px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lets-talk-section .whatsapp-icon svg path {
-  fill: #fff;
-}
-
-.lets-talk-section .rotating-text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  animation: rotateText 18s linear infinite;
-}
-
-.lets-talk-section .rotating-text svg {
-  width: 100%;
-  height: 100%;
-}
-
-.lets-talk-section .whatsapp-icon {
-  position: absolute;
   z-index: 10;
-  color: var(--white_color);
-  padding: 16px;
-  border-radius: 50%;
-  display: flex;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #111;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.contact-btn .arrow svg {
+  width: 20px;
+  height: 20px;
   transition: transform 0.3s ease;
-  border: 3px solid var(--white_color);
 }
 
-.lets-talk-section .whatsapp-icon:hover {
-  transform: scale(1.15);
-}
-
-.lets-talk-section .whatsapp-icon svg {
-  width: 48px;
-  height: 48px;
-  stroke-width: 2.5;
-}
-
-@keyframes rotateText {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 1024px) {
-  .lets-talk-section .center-icon-wrapper {
-    width: 130px;
-    height: 130px;
-  }
-}
-
-@media (max-width: 768px) {
-  .lets-talk-section .center-icon-wrapper {
-    width: 110px;
-    height: 110px;
-  }
-
-  .lets-talk-section .whatsapp-icon svg {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .lets-talk-section .lets-talk-container {
-    gap: 10px;
-  }
-
-  .lets-talk-section .lets-talk-container {
-    flex-direction: column;
-  }
-
-  .lets-talk-section .side-text {
-    opacity: 1;
-  }
+.contact-btn:hover .arrow svg {
+  transform: translateX(5px);
 }

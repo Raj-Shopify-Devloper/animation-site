@@ -42,7 +42,7 @@ export function initHomeAnimations() {
     dpBoxTwo.style.opacity = dpEaseOutCubic(boxTwoProg);
 
     dpImages.forEach((div, index) => {
-      const delay = index * 0.04;
+      const delay = index * 0.001;
       const prog = Math.max(0, progress - 0.8 - delay);
       const opacity = Math.min(1, prog * 20);
 

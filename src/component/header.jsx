@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../style/header.css';
 import logoImage from '../assets/logo.png';
 import { initHeaderFunctionality, getSearchSuggestions } from '../script/header-functionality';
+import { initLogoAnimation } from '../script/logo-animation';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const location = useLocation();
 
   const handleSearchChange = (e) => {
     const query = e.target.value;
@@ -18,6 +20,11 @@ const Header = () => {
   useEffect(() => {
     initHeaderFunctionality();
   }, []);
+
+  useEffect(() => {
+    const cleanup = initLogoAnimation();
+    return cleanup;
+  }, [location]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,7 +38,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container container">
         {/* Logo */}
-        <div className="header-logo">
+        <div className="header-logo" id="header-logo">
           <NavLink to="/" className="logo-link">
             <img src={logoImage} alt="Pecos Shield Logo" className="logo-image" />
           </NavLink>

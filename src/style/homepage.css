@@ -127,6 +127,10 @@
 }
 
 @media (max-width: 767px) {
+  .hero-banner {
+    padding: 50px 0;
+  }
+
   .hero-banner .pecoshield-2k-wrap {
     top: auto;
     bottom: 5%;
@@ -156,7 +160,7 @@
 
 .logo-slider-section {
   background: linear-gradient(135deg, #0184a0 0%, #00a8c9 100%);
-  padding: 10px 0;
+  padding: 30px 0;
   overflow: hidden;
   margin: 3rem 0;
 }
@@ -387,8 +391,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .creative-foundation.creative-section.creative {
-    padding-top: 80px;
+  .creative-section.creative.creative-foundation {
+    padding: 50px 0;
   }
 
   .creative-foundation .design-sticky-wrap {
@@ -553,6 +557,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .infinite-scroll {
+    padding: 0;
+  }
+
   .infinite-scroll .banner-light {
     transform: rotate(-10deg);
   }
@@ -764,6 +772,10 @@
 }
 
 @media (max-width: 767px) {
+  .offer-section {
+    padding: 50px 0;
+  }
+
   .offer-section .offer-heading-wrap {
     grid-template-columns: 1fr;
   }
@@ -1120,7 +1132,7 @@
 .stats-section {
   background: #007996;
   color: #ffffff;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .stats-section .stats-content {
@@ -1261,4 +1273,548 @@
 
 .contact-btn:hover .arrow svg {
   transform: translateX(5px);
+}
+
+/* =========================================================
+   LETS TALK NEW SECTION
+========================================================= */
+
+.lets-talk-new {
+  background-color: #000;
+}
+
+.design-process-section .design-top-wrap {
+  height: 330px;
+}
+
+.design-process-section .box-two {
+  opacity: 1 !important;
+}
+
+.design-process-section .box-one {
+  display: none;
+}
+
+.design-process-section .design-sticky-wrap {
+  position: relative;
+  top: 0;
+}
+
+.design-process-section .box-one,
+.design-process-section .box-two {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .design-process-section .box-one,
+  .design-process-section .box-two {
+    max-height: 350px;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* =========================================================
+= = = = = = = =   STATS COUNTER CSS   = = = = = = =
+========================================================= */
+
+
+.stats-section {
+  background: #007996;
+  color: #ffffff;
+  padding: 100px 0;
+}
+
+.stats-section .stats-content {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stats-section .stats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats-section .stats-label {
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stats-section .stats-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 50px;
+    justify-content: space-between;
+  }
+
+  .stats-section .stats-label,
+  .stats-section .stats-number {
+    text-align: center;
+  }
+
+  .stats-section .stats-box {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+= = = = = = = =   ROTATING TEXT CSS   = = = = = = =
+========================================================= */
+
+/* Let's Connect Section */
+.lets-connect {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-btn span.arrow {
+  display: flex;
+}
+
+.scrolling-text-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.scrolling-text-row {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  font-size: 12vw;
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  padding-right: 20px;
+  animation: scroll 20s linear infinite;
+  line-height: 0.9;
+}
+
+.scrolling-text-row.reverse .scrolling-text {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cta-container {
+  position: relative;
+  z-index: 10;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #111;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.contact-btn .arrow svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:hover .arrow svg {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   LETS TALK NEW SECTION
+========================================================= */
+
+.lets-talk-new {
+  background-color: #000;
+}
+
+.design-process-section .design-top-wrap {
+  height: 330px;
+}
+
+.design-process-section .box-two {
+  opacity: 1 !important;
+}
+
+.design-process-section .box-one {
+  display: none;
+}
+
+.design-process-section .design-sticky-wrap {
+  position: relative;
+  top: 0;
+}
+
+.design-process-section .box-one,
+.design-process-section .box-two {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .design-process-section .box-one,
+  .design-process-section .box-two {
+    max-height: 350px;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* =========================================================
+= = = = = = = =   STATS COUNTER CSS   = = = = = = =
+========================================================= */
+
+
+.stats-section {
+  background: #007996;
+  color: #ffffff;
+  padding: 100px 0;
+}
+
+.stats-section .stats-content {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stats-section .stats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats-section .stats-label {
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stats-section .stats-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 50px;
+    justify-content: space-between;
+  }
+
+  .stats-section .stats-label,
+  .stats-section .stats-number {
+    text-align: center;
+  }
+
+  .stats-section .stats-box {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+= = = = = = = =   ROTATING TEXT CSS   = = = = = = =
+========================================================= */
+
+/* Let's Connect Section */
+.lets-connect {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-btn span.arrow {
+  display: flex;
+}
+
+.scrolling-text-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.scrolling-text-row {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  font-size: 12vw;
+  font-weight: 900;
+  color: #333;
+  text-transform: uppercase;
+  padding-right: 20px;
+  animation: scroll 20s linear infinite;
+  line-height: 0.9;
+}
+
+.scrolling-text-row.reverse .scrolling-text {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =========================================================
+   LETS TALK NEW IMPLEMENTATION
+========================================================= */
+
+section.lets-talk-section-new {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer_text_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.footer_text {
+  font-family: 'AspireNarrowSCBlack', sans-serif;
+  font-size: 8vw;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.circle_button.footer {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.curve_text_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: rotateText 10s linear infinite;
+  pointer-events: none;
+}
+
+.circle_link.footer {
+  width: 60%;
+  height: 60%;
+  background-color: #c4b5fd;
+  /* Light purple from previous design */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.circle_button.footer:hover .circle_link.footer {
+  transform: scale(1.1);
+}
+
+.cirle_link_svg.footer {
+  width: 30px;
+  height: 30px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cirle_link_svg.footer svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 991px) {
+  .footer_text_wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer_text {
+    font-size: 12vw;
+  }
+
+  .circle_button.footer {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* =========================================================
+   VIDEO POPUP CSS
+========================================================= */
+
+.video-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.video-popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-popup-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.close-popup-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.popup-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-popup-content {
+    width: 95%;
+  }
+
+  .close-popup-btn {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+  }
 }

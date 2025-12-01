@@ -7,6 +7,7 @@ import backgroundVideoThumbnail from "../assets/hero-image.png";
 import pecoshieldProductImage from "../assets/pecoshield-2k.png";
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
 import smoothPutty from '../assets/smooth-putty.png';
+import { delay } from "framer-motion/dom";
 
 const HeroBanner = () => {
   const slides = [
@@ -14,21 +15,24 @@ const HeroBanner = () => {
       id: 1,
       background: backgroundVideoThumbnail,
       product: pecoshieldProductImage,
-      title: "CONSTRUCTION SOLUTIONS",
+      title: "CONSTRUCTION",
+      subtext: "SOLUTIONS",
       videoLabel: true,
     },
     {
       id: 2,
       background: backgroundVideoThumbnail,
       product: epoxyGroutBucket,
-      title: "WATER PROOFING SYSTEM",
+      title: "CONSTRUCTION",
+      subtext: "SOLUTIONS",
       videoLabel: false,
     },
     {
       id: 3,
       background: backgroundVideoThumbnail,
       product: smoothPutty,
-      title: "WALL PUTTY",
+      title: "CONSTRUCTION",
+      subtext: "SOLUTIONS",
       videoLabel: false,
     }
   ];
@@ -36,28 +40,14 @@ const HeroBanner = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    delay: 0,
+    autoplaySpeed: 1800,
     fade: true,
-    arrows: false,
-
-    beforeChange: (current, next) => {
-      const slides = document.querySelectorAll(".hero-slide");
-
-      slides.forEach((slide) => {
-        slide.classList.remove("fade-animate");
-      });
-
-      setTimeout(() => {
-        const nextSlide = slides[next];
-        if (nextSlide) {
-          nextSlide.classList.add("fade-animate");
-        }
-      }, 20);
-    },
+    arrows: false
   };
 
   return (
@@ -74,7 +64,7 @@ const HeroBanner = () => {
                 />
               </div>
               <div className="hero-title-wrap">
-                <h1 className="hero-title f-110 f-m-48 white-color w-800 l-h-1 first-font">{item.title}</h1>
+                <h1 className="hero-title f-110 f-m-48 white-color w-800 l-h-1 first-font">{item.title}<span className="designers" data-text={item.subtext}> {item.subtext}</span></h1>
                 <div className="pecoshield-2k-wrap">
                   <img
                     src={item.product}

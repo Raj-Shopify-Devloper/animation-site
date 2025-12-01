@@ -7,7 +7,6 @@ import '../style/product-list.css';
 function PecoGrid() {
     return (
         <>
-            <ProductDetail />
             <ProductList />
         </>
     );

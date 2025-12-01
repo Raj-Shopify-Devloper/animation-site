@@ -1,127 +1,404 @@
+// ProductDetail.jsx
 import React from 'react';
-import productImage from '../assets/pecogrip.png';
-import potLife from '../assets/time-min.png';
+import ProductList from './ProductList';
+import { useParams } from 'react-router-dom';
+
+// Import all images
+import productImage from '../assets/pecoshield-2k.png';
+import pecobondImage from '../assets/pecobond.png';
+import pecoflexImage from '../assets/pecoFlex.png';
+import pecogripImage from '../assets/pecogrip.png';
+import pecoPrime from '../assets/pecoprime.png';
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
+import epoxyGrout from '../assets/epoxy-grout.png';
+import polumerTileGrout from '../assets/polumer-tile-grout.png';
+import smoothPutty from '../assets/smooth-putty.png';
+import pecoExtreme from '../assets/peco-extreme.png';
+import potLifeIcon from '../assets/time-min.png';
+
+const products = {
+    pecogrip: {
+        name: 'Peco Grip',
+        title: 'TILE ADHESIVE',
+        subtitle: 'Peco Grip',
+        type: 'Type 1T C1TE',
+        description:
+            'PecoGrip is a polymer modified grey cement-based adhesive for fixing of ceramic tiles on internal floor and walls. Its usage extends to Ceramic, fully vitrified, Terracotta, bricks & Porous Stones/Tiles as well. It is water resistant and does not allow cracking of tiles.',
+        image: pecogripImage,
+        features: [
+            { icon: 'indoor', label: 'INDOOR USAGE' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+            { icon: 'clock', label: 'SET TIME' },
+            { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
+            { icon: 'potlife', label: 'POTLIFE', image: potLifeIcon },
+            { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 1T' },
+        ],
+        standard: 'CONFORMS TO IS 15477-2004 : TYPE-1 T',
+        technicalData: [
+            { label: 'Coverage', value: 'Approx 45-55 sq.ft per 20kg bag' },
+            { label: 'Tensile Adhesion<br />Annex A (Clause 5.1)', value: '0.75 - 0.80 N/mm²' },
+            { label: 'Shear Adhesion<br />Annex B (Clause 5.2)', value: '1.1 - 1.2 N/mm²' },
+            { label: 'Slip Resistance<br />Annex E (Clause 5.5)', value: '0.40-0.45 mm' },
+            { label: 'Minimum Bed<br />Thickness required', value: '3 mm using 6MM X 6MM Notched trowel' },
+        ],
+        coverageNote: '*Actual Coverage depends on substrate condition & method of application',
+        packSize: '20',
+        shelfLife: '12 months from the date of manufacturing.',
+        shelfLifeNote: 'Stored in a original sealed sacks in a dry and closed place.',
+    },
+    pecobond: {
+        name: 'PecoBond',
+        title: 'TILE ADHESIVE',
+        subtitle: 'PecoBond',
+        type: 'Type 1T :- C1TE',
+        description: 'PecoBond is a high-quality tile adhesive suitable for various applications. It provides strong adhesion and durability.',
+        image: pecobondImage,
+        features: [
+            { icon: 'indoor', label: 'INDOOR USAGE' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+            { icon: 'clock', label: 'SET TIME' },
+            { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
+        ],
+        standard: 'CONFORMS TO IS STANDARD',
+        technicalData: [
+            { label: 'Coverage', value: 'Depends on application' },
+        ],
+        coverageNote: '*Actual Coverage depends on substrate condition & method of application',
+        packSize: '20',
+        shelfLife: '12 months',
+        shelfLifeNote: 'Store in dry place',
+    },
+    pecoflex: {
+        name: 'PecoFlex',
+        title: 'TILE ADHESIVE',
+        subtitle: 'PecoFlex',
+        type: 'Type 2T :- C2TE',
+        description: 'PecoFlex is a flexible tile adhesive designed for areas subject to movement or vibration.',
+        image: pecoflexImage,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'CONFORMS TO IS STANDARD',
+        technicalData: [
+            { label: 'Coverage', value: 'Depends on application' },
+        ],
+        coverageNote: '*Actual Coverage depends on substrate condition & method of application',
+        packSize: '20',
+        shelfLife: '12 months',
+        shelfLifeNote: 'Store in dry place',
+    },
+    pecoprime: {
+        name: 'PecoPrime',
+        title: 'TILE ADHESIVE',
+        subtitle: 'PecoPrime',
+        type: 'Premium Tile Adhesive',
+        description: 'PecoPrime is a premium grade adhesive for demanding applications.',
+        image: pecoPrime,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'Premium Grade',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '20',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    pecoextreme: {
+        name: 'PecoExtreme',
+        title: 'TILE ADHESIVE',
+        subtitle: 'PecoExtreme',
+        type: 'High Performance',
+        description: 'PecoExtreme offers high performance for heavy duty tiling.',
+        image: pecoExtreme,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'High Performance',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '20',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'epoxy-grout-bucket': {
+        name: 'Epoxy Grout (Bucket)',
+        title: 'GROUT & SEALANTS',
+        subtitle: 'Epoxy Grout',
+        type: '3-Part Epoxy Grout',
+        description: 'A 3-part epoxy grout system for high chemical and stain resistance.',
+        image: epoxyGroutBucket,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'Epoxy Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: 'Bucket',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'epoxy-grout': {
+        name: 'Epoxy Grout',
+        title: 'GROUT & SEALANTS',
+        subtitle: 'Epoxy Grout',
+        type: 'Stain-Free Epoxy',
+        description: 'Stain-free epoxy grout for hygienic and durable joints.',
+        image: epoxyGrout,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'Epoxy Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: 'Kit',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'polymer-tile-grout': {
+        name: 'Polymer Tile Grout',
+        title: 'GROUT & SEALANTS',
+        subtitle: 'Polymer Grout',
+        type: 'Anti-Fungal Grout',
+        description: 'Polymer modified tile grout with anti-fungal properties.',
+        image: polumerTileGrout,
+        features: [
+            { icon: 'indoor', label: 'INDOOR / OUTDOOR' },
+            { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
+        ],
+        standard: 'Polymer Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '1',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'pecoshield-2k': {
+        name: 'PecoShield 2K',
+        title: 'WATER PROOFING',
+        subtitle: 'PecoShield 2K',
+        type: 'Two Component Waterproofing',
+        description: 'Two component waterproofing coating for concrete and masonry.',
+        image: productImage,
+        features: [],
+        standard: 'Waterproofing Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: 'Kit',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'pecoflex-coat': {
+        name: 'PecoFlex Coat',
+        title: 'WATER PROOFING',
+        subtitle: 'PecoFlex Coat',
+        type: 'Flexible Waterproofing',
+        description: 'Flexible waterproofing coating.',
+        image: productImage,
+        features: [],
+        standard: 'Waterproofing Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: 'Kit',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'pecoacrylic': {
+        name: 'PecoAcrylic',
+        title: 'WATER PROOFING',
+        subtitle: 'PecoAcrylic',
+        type: 'Acrylic Polymer',
+        description: 'Acrylic polymer for waterproofing applications.',
+        image: productImage,
+        features: [],
+        standard: 'Waterproofing Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: 'Bucket',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'block-jointing-mortar': {
+        name: 'Block Jointing Mortar',
+        title: 'BLOCK JOINTING MORTAR',
+        subtitle: 'Block Jointing Mortar',
+        type: 'Thin Bed Mortar',
+        description: 'Thin bed mortar for AAC blocks.',
+        image: productImage,
+        features: [],
+        standard: 'Mortar Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '5',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'aac-block-adhesive': {
+        name: 'AAC Block Adhesive',
+        title: 'BLOCK JOINTING MORTAR',
+        subtitle: 'AAC Block Adhesive',
+        type: 'High Strength',
+        description: 'High strength adhesive for AAC blocks.',
+        image: productImage,
+        features: [],
+        standard: 'Adhesive Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '5',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    },
+    'smooth-putty': {
+        name: 'Smooth Putty',
+        title: 'WALL PUTTY',
+        subtitle: 'Smooth Putty',
+        type: 'White Cement Based',
+        description: 'White cement based wall putty for smooth finish.',
+        image: smoothPutty,
+        features: [],
+        standard: 'Putty Standard',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '5',
+        shelfLife: '12 months',
+        shelfLifeNote: '',
+    }
+};
+
+const IndoorIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#0184a0" stroke="none">
+            <path d="M2360 5084 c-73 -34 -102 -62 -1158 -1117 -596 -595 -1098 -1105 -1117 -1133 -76 -113 -98 -285 -55 -415 65 -193 219 -307 440 -325 l79 -7 3 -816 c3 -801 4 -817 24 -871 73 -192 187 -307 363 -367 65 -22 75 -22 551 -23 467 0 486 1 518 20 18 11 41 34 52 52 19 32 20 52 20 668 0 433 4 648 11 675 17 60 64 121 117 152 l47 28 316 0 316 0 49 -30 c55 -34 107 -111 118 -172 3 -21 6 -318 6 -661 0 -675 -2 -649 55 -702 l27 -25 481 -3 c322 -2 499 1 534 8 138 29 298 151 361 275 70 140 66 83 70 981 l3 812 82 7 c198 17 333 105 413 270 34 68 34 71 34 205 0 135 0 136 -36 210 -34 73 -61 101 -1132 1172 -1071 1071 -1099 1098 -1172 1132 -74 36 -75 36 -210 36 -135 0 -136 0 -210 -36z m277 -274 c36 -14 2148 -2124 2168 -2166 35 -74 9 -168 -58 -212 -39 -26 -48 -27 -207 -32 -180 -5 -201 -11 -237 -67 -17 -25 -18 -89 -23 -928 -5 -823 -6 -903 -22 -936 -27 -57 -66 -98 -122 -127 l-51 -27 -357 -3 -357 -4 -3 579 c-3 566 -4 579 -26 643 -59 173 -174 295 -342 359 -64 25 -70 25 -402 29 -283 3 -347 1 -400 -12 -207 -53 -370 -220 -414 -425 -11 -52 -14 -183 -14 -619 l0 -554 -357 4 -358 3 -55 30 c-67 37 -115 98 -129 165 -7 35 -11 329 -11 918 0 842 -1 868 -20 899 -37 61 -57 67 -240 73 -159 5 -168 6 -207 32 -67 44 -93 138 -58 212 19 39 2131 2152 2165 2165 34 13 102 13 137 1z" />
+        </g>
+    </svg>
+);
+
+const ClockIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#0184a0" stroke="none">
+            <path d="M2236 5104 c-271 -35 -525 -113 -781 -239 -264 -130 -461 -271 -665 -476 -393 -393 -634 -883 -710 -1444 -6 -44 -14 -153 -17 -242 l-6 -163 241 0 242 0 0 85 0 85 -155 0 -155 0 0 58 c0 80 33 297 64 418 45 176 117 368 187 498 l30 55 102 -61 c56 -33 116 -69 134 -79 l32 -20 41 72 c34 57 40 73 29 80 -8 5 -65 39 -127 75 -61 36 -115 70 -118 75 -11 19 150 231 280 368 106 110 390 341 420 341 3 0 39 -58 81 -130 42 -71 79 -130 83 -130 14 0 132 72 132 81 0 9 -60 117 -132 237 l-20 32 119 56 c231 110 513 188 767 213 60 6 118 11 128 11 17 0 18 -12 18 -155 l0 -155 80 0 80 0 0 155 c0 143 1 155 18 155 10 0 68 -5 128 -11 165 -16 343 -54 506 -109 143 -47 378 -151 378 -166 0 -4 -34 -65 -76 -135 -42 -71 -74 -132 -71 -136 8 -12 135 -78 140 -73 2 3 37 61 77 130 41 69 75 127 76 128 9 13 255 -180 367 -287 121 -116 336 -382 337 -417 0 -6 -59 -46 -130 -88 l-130 -76 27 -48 c16 -27 35 -59 43 -72 l16 -23 132 78 c73 43 134 76 136 74 27 -30 140 -295 176 -414 54 -175 100 -428 100 -547 l0 -58 -155 0 -155 0 0 -85 0 -85 157 0 156 0 -6 -97 c-16 -262 -95 -554 -218 -811 -42 -89 -62 -121 -71 -116 -7 4 -29 17 -48 29 -19 12 -74 45 -122 73 l-88 51 -40 -69 c-22 -37 -40 -70 -40 -73 0 -2 56 -37 125 -77 69 -40 128 -77 131 -81 17 -29 -277 -385 -396 -479 l-36 -28 9 80 c7 60 6 82 -3 88 -13 8 -141 22 -147 16 -6 -6 -55 -448 -50 -452 5 -5 449 -55 454 -51 1 2 4 39 6 83 l2 79 -82 8 -82 9 122 121 c403 403 633 859 723 1437 22 140 26 516 6 655 -81 577 -317 1058 -712 1454 -204 205 -401 346 -665 476 -262 130 -512 205 -795 240 -154 19 -482 18 -634 -1z" />
+            <path d="M2480 3621 l0 -689 -26 -6 c-67 -17 -151 -95 -188 -175 -30 -65 -28 -186 3 -257 26 -60 87 -123 151 -156 62 -32 179 -37 252 -12 69 25 149 99 177 164 l22 50 454 0 455 0 0 85 0 85 -455 0 -454 0 -20 44 c-28 65 -93 130 -156 157 l-55 24 0 688 0 687 -80 0 -80 0 0 -689z m149 -861 c102 -52 112 -195 19 -262 -25 -17 -46 -23 -88 -23 -92 0 -152 59 -152 151 0 114 119 186 221 134z" />
+            <path d="M723 2445 c-197 -32 -402 -110 -533 -204 -46 -33 -100 -83 -100 -93 0 -7 123 -152 268 -316 l65 -73 61 59 c83 80 134 117 203 150 51 23 70 27 158 27 84 0 107 -4 146 -23 87 -43 130 -147 92 -222 -26 -50 -126 -121 -334 -235 -261 -143 -351 -204 -450 -305 -71 -70 -94 -103 -127 -171 -46 -99 -69 -184 -77 -294 -3 -44 -8 -101 -11 -127 l-5 -48 816 0 815 0 0 235 0 235 -437 2 -438 3 60 47 c33 26 141 96 240 155 99 58 212 128 250 154 134 92 225 208 265 338 25 78 27 221 5 306 -49 188 -207 331 -428 386 -107 27 -382 35 -504 14z" />
+            <path d="M2428 1753 l-528 -677 0 -238 0 -238 445 0 445 0 0 -220 0 -220 265 0 265 0 0 220 0 220 140 0 140 0 0 240 0 240 -140 0 -140 0 0 675 0 675 -182 0 -183 0 -527 -677z m419 -670 c-2 -2 -96 -2 -209 -1 l-205 3 206 268 206 268 3 -267 c1 -147 1 -269 -1 -271z" />
+            <path d="M100 230 l0 -230 60 0 60 0 0 90 0 90 85 0 85 0 0 -90 0 -90 55 0 55 0 0 230 0 230 -55 0 -55 0 0 -90 0 -90 -85 0 -85 0 0 90 0 90 -60 0 -60 0 0 -230z" />
+            <path d="M773 436 c-174 -81 -168 -346 9 -420 21 -9 61 -16 90 -16 168 1 276 173 204 325 -58 123 -180 168 -303 111z m147 -91 c91 -47 75 -215 -22 -239 -51 -13 -94 7 -119 55 -25 51 -24 98 4 140 38 57 84 71 137 44z" />
+            <path d="M1242 298 c3 -152 5 -166 28 -208 36 -66 93 -92 186 -88 60 3 77 8 109 32 63 48 78 97 83 274 l5 152 -62 0 -61 0 0 -142 c0 -125 -3 -147 -20 -175 -22 -36 -60 -50 -99 -37 -45 16 -56 55 -59 212 l-3 142 -56 0 -55 0 4 -162z" />
+            <path d="M1810 231 l0 -231 55 0 55 0 0 70 0 70 33 0 c29 0 36 -6 73 -67 l40 -68 62 -3 c38 -2 62 1 62 7 0 6 -20 43 -44 83 l-44 72 32 39 c27 34 31 47 31 97 0 63 -16 95 -69 134 -24 18 -45 21 -157 24 l-129 4 0 -231z" />
+            <path d="M2415 449 c-17 -4 -44 -22 -60 -39 -23 -24 -30 -41 -33 -88 -4 -54 -2 -60 26 -89 19 -19 57 -38 101 -53 76 -24 97 -40 87 -66 -9 -23 -90 -14 -146 15 -23 12 -44 21 -45 19 -14 -16 -44 -91 -40 -98 3 -5 30 -18 61 -29 76 -29 186 -29 234 0 41 25 47 33 60 80 24 85 -14 135 -130 174 -90 30 -109 45 -85 69 22 21 60 20 114 -4 24 -11 45 -20 47 -20 5 0 44 78 44 89 0 5 -25 19 -55 30 -58 22 -128 26 -180 10z" />
+        </g>
+    </svg>
+);
+
+const GreyColorIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3423 836" fill="none">
+        <path d="M1907.3 127.039L1907.69 127.961L1874.2 141.957L1845.7 154.458L1815.22 169.448L1784.73 184.938L1784.74 184.938L1752.74 202.433L1723.25 219.434L1723.24 219.433L1688.75 239.927L1646.75 265.428L1605.77 292.915L1605.77 292.916L1559.27 323.916L1559.27 323.918L1518.77 350.418L1518.75 350.43L1474.25 376.93L1474.24 376.938L1474.22 376.946L1436.72 395.946L1409.22 409.945L1409.2 409.958L1409.17 409.968L1377.17 421.968L1377.17 421.97L1349.67 431.97L1349.63 431.982L1349.59 431.99L1317.59 438.49L1317.57 438.495L1317.54 438.498L1275.54 442.498L1275.52 442.5H1244.44L1244.38 442.487L1197.88 431.987L1197.83 431.977L1197.79 431.955L1154.79 412.455L1154.75 412.438L1154.72 412.415L1124.22 391.915L1124.18 391.913L1124.15 391.864L1099.15 368.364L1099.14 368.351L1099.12 368.336L1080.12 347.336L1080.11 347.32L1080.1 347.305L1052.1 310.805L1052.09 310.791L1052.08 310.776L1027.58 273.776L1027.57 273.77L1027.57 273.763L993.069 217.763L965.09 175.793L937.608 139.817L909.138 107.352L875.678 76.8877L846.216 55.415L818.269 38.9463L787.301 24.9609L748.857 11.4805L718.924 4.99512L675.471 1H635.029L593.06 6.49609L593.059 6.49512L550.603 13.4883L517.635 21.9805L470.658 36.9727L436.697 50.957L401.721 66.4463L369.771 84.917L343.276 102.914L343.275 102.913L316.309 122.889L273.339 159.862L234.373 200.328L212.389 228.309L175.921 280.761L148.927 326.753L121.447 378.713L94.9561 441.694L71.4736 506.646L49.9736 577.146L27.4873 669.09L11.4873 757.09L0.999117 835.5H3417.69H3423L3118 586.5L2829 365L2665 249L2590.5 201L2469 126.5L2400.5 96.5L2320.5 72L2268.5 64.5L2214 59L2148 61.5L2084.5 70.5L2029 83.5L1954 107.5L1907.3 127.039Z" fill="#868686" />
+    </svg>
+);
 
 const ProductDetail = () => {
+    const { slug } = useParams();
+    const product = products[slug];
+
+    if (!product) {
+        return <div className="product-detail-page">Product not found</div>;
+    }
+
+    const renderFeatureIcon = (feature) => {
+        switch (feature.icon) {
+            case 'indoor':
+                return <IndoorIcon />;
+            case 'clock':
+                return <ClockIcon />;
+            case 'color':
+                return <GreyColorIcon />;
+            case 'potlife':
+                return <img src={feature.image} alt="Pot Life" />;
+            case 'water':
+            default:
+                return null;
+        }
+    };
+
     return (
-        <div className="product-detail-page">
-            <h1 className="product-detail-title f-170 f-m-48 w-800 first-font l-h-1">TILE ADHESIVE</h1>
-            <div className="product-detail-container container">
-                <div className="product-detail-image-section">
-                    <img src={productImage} alt="Peco Grip" className="product-detail-image" />
-                </div>
-
-                <div className="product-detail-info-section">
-                    <h2 className="product-detail-subtitle f-110 f-m-48 w-600 l-h-1 white-color second-font">
-                        Peco Grip <span className='white-color f-48 f-m-32 w-500 l-h-1 second-font'>Type 1T C1TE</span>
-                    </h2>
-
-                    <p className="product-description f-20 f-m-16 w-400 l-h-1-2 second-font">
-                        PecoGrip is a polymer modified grey cement-based adhesive for fixing of ceramic tiles on internal floor and walls. Its usage extends to Ceramic, fully vitrified, Terracotta, bricks & Porous Stones/Tiles as well. It is water resistant and does not allow cracking of tiles.
-                    </p>
-
-                    <div className="product-features-grid">
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#0184a0" stroke="none">
-                                        <path d="M2360 5084 c-73 -34 -102 -62 -1158 -1117 -596 -595 -1098 -1105 -1117 -1133 -76 -113 -98 -285 -55 -415 65 -193 219 -307 440 -325 l79 -7 3 -816 c3 -801 4 -817 24 -871 73 -192 187 -307 363 -367 65 -22 75 -22 551 -23 467 0 486 1 518 20 18 11 41 34 52 52 19 32 20 52 20 668 0 433 4 648 11 675 17 60 64 121 117 152 l47 28 316 0 316 0 49 -30 c55 -34 107 -111 118 -172 3 -21 6 -318 6 -661 0 -675 -2 -649 55 -702 l27 -25 481 -3 c322 -2 499 1 534 8 138 29 298 151 361 275 70 140 66 83 70 981 l3 812 82 7 c198 17 333 105 413 270 34 68 34 71 34 205 0 135 0 136 -36 210 -34 73 -61 101 -1132 1172 -1071 1071 -1099 1098 -1172 1132 -74 36 -75 36 -210 36 -135 0 -136 0 -210 -36z m277 -274 c36 -14 2148 -2124 2168 -2166 35 -74 9 -168 -58 -212 -39 -26 -48 -27 -207 -32 -180 -5 -201 -11 -237 -67 -17 -25 -18 -89 -23 -928 -5 -823 -6 -903 -22 -936 -27 -57 -66 -98 -122 -127 l-51 -27 -357 -3 -357 -4 -3 579 c-3 566 -4 579 -26 643 -59 173 -174 295 -342 359 -64 25 -70 25 -402 29 -283 3 -347 1 -400 -12 -207 -53 -370 -220 -414 -425 -11 -52 -14 -183 -14 -619 l0 -554 -357 4 -358 3 -55 30 c-67 37 -115 98 -129 165 -7 35 -11 329 -11 918 0 842 -1 868 -20 899 -37 61 -57 67 -240 73 -159 5 -168 6 -207 32 -67 44 -93 138 -58 212 19 39 2131 2152 2165 2165 34 13 102 13 137 1z" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">INDOOR USAGE</span>
-                        </div>
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">4-5 Ltr PER BAG</span>
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">WATER MIXING</span>
-                        </div>
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#0184a0" stroke="none">
-                                        <path d="M2236 5104 c-271 -35 -525 -113 -781 -239 -264 -130 -461 -271 -665 -476 -393 -393 -634 -883 -710 -1444 -6 -44 -14 -153 -17 -242 l-6 -163 241 0 242 0 0 85 0 85 -155 0 -155 0 0 58 c0 80 33 297 64 418 45 176 117 368 187 498 l30 55 102 -61 c56 -33 116 -69 134 -79 l32 -20 41 72 c34 57 40 73 29 80 -8 5 -65 39 -127 75 -61 36 -115 70 -118 75 -11 19 150 231 280 368 106 110 390 341 420 341 3 0 39 -58 81 -130 42 -71 79 -130 83 -130 14 0 132 72 132 81 0 9 -60 117 -132 237 l-20 32 119 56 c231 110 513 188 767 213 60 6 118 11 128 11 17 0 18 -12 18 -155 l0 -155 80 0 80 0 0 155 c0 143 1 155 18 155 10 0 68 -5 128 -11 165 -16 343 -54 506 -109 143 -47 378 -151 378 -166 0 -4 -34 -65 -76 -135 -42 -71 -74 -132 -71 -136 8 -12 135 -78 140 -73 2 3 37 61 77 130 41 69 75 127 76 128 9 13 255 -180 367 -287 121 -116 336 -382 337 -417 0 -6 -59 -46 -130 -88 l-130 -76 27 -48 c16 -27 35 -59 43 -72 l16 -23 132 78 c73 43 134 76 136 74 27 -30 140 -295 176 -414 54 -175 100 -428 100 -547 l0 -58 -155 0 -155 0 0 -85 0 -85 157 0 156 0 -6 -97 c-16 -262 -95 -554 -218 -811 -42 -89 -62 -121 -71 -116 -7 4 -29 17 -48 29 -19 12 -74 45 -122 73 l-88 51 -40 -69 c-22 -37 -40 -70 -40 -73 0 -2 56 -37 125 -77 69 -40 128 -77 131 -81 17 -29 -277 -385 -396 -479 l-36 -28 9 80 c7 60 6 82 -3 88 -13 8 -141 22 -147 16 -6 -6 -55 -448 -50 -452 5 -5 449 -55 454 -51 1 2 4 39 6 83 l2 79 -82 8 -82 9 122 121 c403 403 633 859 723 1437 22 140 26 516 6 655 -81 577 -317 1058 -712 1454 -204 205 -401 346 -665 476 -262 130 -512 205 -795 240 -154 19 -482 18 -634 -1z" />
-                                        <path d="M2480 3621 l0 -689 -26 -6 c-67 -17 -151 -95 -188 -175 -30 -65 -28 -186 3 -257 26 -60 87 -123 151 -156 62 -32 179 -37 252 -12 69 25 149 99 177 164 l22 50 454 0 455 0 0 85 0 85 -455 0 -454 0 -20 44 c-28 65 -93 130 -156 157 l-55 24 0 688 0 687 -80 0 -80 0 0 -689z m149 -861 c102 -52 112 -195 19 -262 -25 -17 -46 -23 -88 -23 -92 0 -152 59 -152 151 0 114 119 186 221 134z" />
-                                        <path d="M723 2445 c-197 -32 -402 -110 -533 -204 -46 -33 -100 -83 -100 -93 0 -7 123 -152 268 -316 l65 -73 61 59 c83 80 134 117 203 150 51 23 70 27 158 27 84 0 107 -4 146 -23 87 -43 130 -147 92 -222 -26 -50 -126 -121 -334 -235 -261 -143 -351 -204 -450 -305 -71 -70 -94 -103 -127 -171 -46 -99 -69 -184 -77 -294 -3 -44 -8 -101 -11 -127 l-5 -48 816 0 815 0 0 235 0 235 -437 2 -438 3 60 47 c33 26 141 96 240 155 99 58 212 128 250 154 134 92 225 208 265 338 25 78 27 221 5 306 -49 188 -207 331 -428 386 -107 27 -382 35 -504 14z" />
-                                        <path d="M2428 1753 l-528 -677 0 -238 0 -238 445 0 445 0 0 -220 0 -220 265 0 265 0 0 220 0 220 140 0 140 0 0 240 0 240 -140 0 -140 0 0 675 0 675 -182 0 -183 0 -527 -677z m419 -670 c-2 -2 -96 -2 -209 -1 l-205 3 206 268 206 268 3 -267 c1 -147 1 -269 -1 -271z" />
-                                        <path d="M100 230 l0 -230 60 0 60 0 0 90 0 90 85 0 85 0 0 -90 0 -90 55 0 55 0 0 230 0 230 -55 0 -55 0 0 -90 0 -90 -85 0 -85 0 0 90 0 90 -60 0 -60 0 0 -230z" />
-                                        <path d="M773 436 c-174 -81 -168 -346 9 -420 21 -9 61 -16 90 -16 168 1 276 173 204 325 -58 123 -180 168 -303 111z m147 -91 c91 -47 75 -215 -22 -239 -51 -13 -94 7 -119 55 -25 51 -24 98 4 140 38 57 84 71 137 44z" />
-                                        <path d="M1242 298 c3 -152 5 -166 28 -208 36 -66 93 -92 186 -88 60 3 77 8 109 32 63 48 78 97 83 274 l5 152 -62 0 -61 0 0 -142 c0 -125 -3 -147 -20 -175 -22 -36 -60 -50 -99 -37 -45 16 -56 55 -59 212 l-3 142 -56 0 -55 0 4 -162z" />
-                                        <path d="M1810 231 l0 -231 55 0 55 0 0 70 0 70 33 0 c29 0 36 -6 73 -67 l40 -68 62 -3 c38 -2 62 1 62 7 0 6 -20 43 -44 83 l-44 72 32 39 c27 34 31 47 31 97 0 63 -16 95 -69 134 -24 18 -45 21 -157 24 l-129 4 0 -231z" />
-                                        <path d="M2415 449 c-17 -4 -44 -22 -60 -39 -23 -24 -30 -41 -33 -88 -4 -54 -2 -60 26 -89 19 -19 57 -38 101 -53 76 -24 97 -40 87 -66 -9 -23 -90 -14 -146 15 -23 12 -44 21 -45 19 -14 -16 -44 -91 -40 -98 3 -5 30 -18 61 -29 76 -29 186 -29 234 0 41 25 47 33 60 80 24 85 -14 135 -130 174 -90 30 -109 45 -85 69 22 21 60 20 114 -4 24 -11 45 -20 47 -20 5 0 44 78 44 89 0 5 -25 19 -55 30 -58 22 -128 26 -180 10z" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">SET TIME</span>
-                        </div>
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">GREY</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 3423 836" fill="none">
-                                    <path d="M1907.3 127.039L1907.69 127.961L1874.2 141.957L1845.7 154.458L1815.22 169.448L1784.73 184.938L1784.74 184.938L1752.74 202.433L1723.25 219.434L1723.24 219.433L1688.75 239.927L1646.75 265.428L1605.77 292.915L1605.77 292.916L1559.27 323.916L1559.27 323.918L1518.77 350.418L1518.75 350.43L1474.25 376.93L1474.24 376.938L1474.22 376.946L1436.72 395.946L1409.22 409.945L1409.2 409.958L1409.17 409.968L1377.17 421.968L1377.17 421.97L1349.67 431.97L1349.63 431.982L1349.59 431.99L1317.59 438.49L1317.57 438.495L1317.54 438.498L1275.54 442.498L1275.52 442.5H1244.44L1244.38 442.487L1197.88 431.987L1197.83 431.977L1197.79 431.955L1154.79 412.455L1154.75 412.438L1154.72 412.415L1124.22 391.915L1124.18 391.893L1124.15 391.864L1099.15 368.364L1099.14 368.351L1099.12 368.336L1080.12 347.336L1080.11 347.32L1080.1 347.305L1052.1 310.805L1052.09 310.791L1052.08 310.776L1027.58 273.776L1027.57 273.77L1027.57 273.763L993.069 217.763L965.09 175.793L937.608 139.817L909.138 107.352L875.678 76.8877L846.216 55.415L818.269 38.9463L787.301 24.9609L748.857 11.4805L718.924 4.99512L675.471 1H635.029L593.06 6.49609L593.059 6.49512L550.603 13.4883L517.635 21.9805L470.658 36.9727L436.697 50.957L401.721 66.4463L369.771 84.917L343.276 102.914L343.275 102.913L316.309 122.889L273.339 159.862L234.373 200.328L212.389 228.309L175.921 280.761L148.927 326.753L121.447 378.713L94.9561 441.694L71.4736 506.646L49.9736 577.146L27.4873 669.09L11.4873 757.09L0.999117 835.5H3417.69H3423L3118 586.5L2829 365L2665 249L2590.5 201L2469 126.5L2400.5 96.5L2320.5 72L2268.5 64.5L2214 59L2148 61.5L2084.5 70.5L2029 83.5L1954 107.5L1907.3 127.039Z" fill="#868686" />
-                                </svg>
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">COLOUR</span>
-                        </div>
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <img src={potLife} alt="" />
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">POTLIFE</span>
-                        </div>
-                        <div className="feature-item">
-                            <div className='product-icon'>
-                                <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">TYPE 1T</span>
-                            </div>
-                            <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">COLOUR</span>
-                        </div>
+        <>
+            <div className="product-detail-page">
+                <h1 className="product-detail-title f-170 f-m-48 w-800 first-font l-h-1">{product.title}</h1>
+                <div className="product-detail-container container">
+                    <div className="product-detail-image-section">
+                        <img src={product.image} alt={product.name} className="product-detail-image" />
                     </div>
 
-                    <div className="technical-details-section">
-                        <div className="technical-header f-20 f-m-16 w-600 l-h-1-2 second-font primary-color">TECHNICAL DETAILS</div>
-                        <div className="technical-subheader f-20 f-m-16 w-600 l-h-1-2 second-font white-color">CONFORMS TO IS 15477-2004 : TYPE-1 T</div>
-                        <table className="technical-table">
-                            <tbody>
-                                <tr>
-                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Coverage</td>
-                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">Approx 45-55 sq.ft per 20kg bag</td>
-                                </tr>
-                                <tr>
-                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Tensile Adhesion<br />Annex A (Clause 5.1)</td>
-                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">0.75 - 0.80 N/mm²</td>
-                                </tr>
-                                <tr>
-                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Shear Adhesion<br />Annex B (Clause 5.2)</td>
-                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">1.1 - 1.2 N/mm²</td>
-                                </tr>
-                                <tr>
-                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Slip Resistance<br />Annex E (Clause 5.5)</td>
-                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">0.40-0.45 mm</td>
-                                </tr>
-                                <tr>
-                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color">Minimum Bed<br />Thickness required</td>
-                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">3 mm using 6MM X 6MM Notched trowel</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div className="technical-footer f-20 f-m-14 w-500 l-h-1-2 second-font white-color">
-                            *Actual Coverage depends on substrate condition & method of application
+                    <div className="product-detail-info-section">
+                        <h2 className="product-detail-subtitle f-110 f-m-48 w-600 l-h-1 white-color second-font">
+                            {product.subtitle}{' '}
+                            <span className="white-color f-48 f-m-32 w-500 l-h-1 second-font">{product.type}</span>
+                        </h2>
+
+                        <p className="product-description f-20 f-m-16 w-400 l-h-1-2 second-font">
+                            {product.description}
+                        </p>
+
+                        <div className="product-features-grid">
+                            {product.features.map((feature, index) => (
+                                <div className="feature-item" key={index}>
+                                    <div className="product-icon">
+                                        <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">{feature.sublabel}</span>
+                                        {renderFeatureIcon(feature)}
+                                    </div>
+                                    <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">
+                                        {feature.label}
+                                    </span>
+                                </div>
+                            ))}
                         </div>
-                    </div>
 
-                    <div className="pack-size f-28 f-m-20 w-400 l-h-1-2 second-font white-color">
-                        Pack Size <span className='f-32 f-m-20 w-800 l-h-1-2 second-font primary-color'>20</span> kg
-                    </div>
+                        <div className="technical-details-section">
+                            <div className="technical-header f-20 f-m-16 w-600 l-h-1-2 second-font primary-color">
+                                TECHNICAL DETAILS
+                            </div>
+                            <div className="technical-subheader f-20 f-m-16 w-600 l-h-1-2 second-font white-color">
+                                {product.standard}
+                            </div>
+                            <table className="technical-table">
+                                <tbody>
+                                    {product.technicalData.map((row, i) => (
+                                        <tr key={i}>
+                                            <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color" dangerouslySetInnerHTML={{ __html: row.label }} />
+                                            <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color">{row.value}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            <div className="technical-footer f-20 f-m-14 w-500 l-h-1-2 second-font white-color">
+                                {product.coverageNote}
+                            </div>
+                        </div>
 
-                    <div className='shelf-life'>
-                        <p className='f-20 f-m-16 w-600 l-h-1-2 second-font white-color' style={{ textAlign: 'center' }}>Shelf Life</p>
-                        <p className='f-20 f-m-16 w-400 l-h-1-2 second-font white-color' style={{ textAlign: 'center', opacity: 0.8 }}>12 months from the date of manufacturing.</p>
-                        <p className='f-20 f-m-16 w-400 l-h-1-2 second-font white-color' style={{ textAlign: 'center', opacity: 0.8 }}>Stored in a original sealed sacks in a dry and closed place.</p>
+                        <div className="pack-size f-28 f-m-20 w-400 l-h-1-2 second-font white-color">
+                            Pack Size <span className="f-32 f-m-20 w-800 l-h-1-2 second-font primary-color">{product.packSize}</span> kg
+                        </div>
+
+                        <div className="shelf-life">
+                            <p className="f-20 f-m-16 w-600 l-h-1-2 second-font white-color" style={{ textAlign: 'center' }}>
+                                Shelf Life
+                            </p>
+                            <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
+                                {product.shelfLife}
+                            </p>
+                            <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
+                                {product.shelfLifeNote}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <ProductList />
+        </>
     );
 };
 

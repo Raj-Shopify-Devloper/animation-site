@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// Import all images
 import productImage from '../assets/pecoshield-2k.png';
 import pecobondImage from '../assets/pecobond.png';
 import pecoflexImage from '../assets/pecoFlex.png';
@@ -12,6 +15,7 @@ import pecoExtreme from '../assets/peco-extreme.png';
 
 const ProductList = () => {
     const [activeTab, setActiveTab] = useState('TILE ADHESIVE');
+    const navigate = useNavigate();
 
     const categories = [
         'TILE ADHESIVE',
@@ -21,87 +25,96 @@ const ProductList = () => {
         'WALL PUTTY'
     ];
 
+    // Products with URL added exactly as you wanted
     const adhesives = [
-        { id: 1, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: pecobondImage },
-        { id: 2, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: pecoflexImage },
-        { id: 3, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: pecogripImage },
-        { id: 4, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: pecoPrime },
-        { id: 5, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: pecoExtreme }
+        { id: 1, name: 'PecoBond', type: 'Type 1T :- C1TE', image: pecobondImage, url: '/product/pecobond' },
+        { id: 2, name: 'PecoFlex', type: 'Type 2T :- C2TE', image: pecoflexImage, url: '/product/pecoflex' },
+        { id: 3, name: 'PecoGrip', type: 'Type 4T :- C2TES1', image: pecogripImage, url: '/product/pecogrip' },
+        { id: 4, name: 'PecoPrime', type: 'Premium Tile Adhesive', image: pecoPrime, url: '/product/pecoprime' },
+        { id: 5, name: 'PecoExtreme', type: 'High Performance', image: pecoExtreme, url: '/product/pecoextreme' }
     ];
+
     const grouts = [
-        { id: 1, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: epoxyGroutBucket },
-        { id: 2, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: epoxyGrout },
-        { id: 3, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: polumerTileGrout }
+        { id: 1, name: 'Epoxy Grout (Bucket)', type: '3-Part Epoxy Grout', image: epoxyGroutBucket, url: '/product/epoxy-grout-bucket' },
+        { id: 2, name: 'Epoxy Grout', type: 'Stain-Free Epoxy', image: epoxyGrout, url: '/product/epoxy-grout' },
+        { id: 3, name: 'Polymer Tile Grout', type: 'Anti-Fungal Grout', image: polumerTileGrout, url: '/product/polymer-tile-grout' }
     ];
+
     const waterproofing = [
-        { id: 1, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage },
-        { id: 2, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage },
-        { id: 3, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage }
+        { id: 1, name: 'PecoShield 2K', type: 'Two Component Waterproofing', image: productImage, url: '/product/pecoshield-2k' },
+        { id: 2, name: 'PecoFlex Coat', type: 'Flexible Waterproofing', image: productImage, url: '/product/pecoflex-coat' },
+        { id: 3, name: 'PecoAcrylic', type: 'Acrylic Polymer', image: productImage, url: '/product/pecoacrylic' }
     ];
+
     const mortar = [
-        { id: 1, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage },
-        { id: 2, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage },
-        { id: 3, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: productImage }
+        { id: 1, name: 'Block Jointing Mortar', type: 'Thin Bed Mortar', image: productImage, url: '/product/block-jointing-mortar' },
+        { id: 2, name: 'AAC Block Adhesive', type: 'High Strength', image: productImage, url: '/product/aac-block-adhesive' }
     ];
+
     const putty = [
-        { id: 1, name: 'PecoGrip', type: 'Type 1T :- C1TE', image: smoothPutty }
+        { id: 1, name: 'Smooth Putty', type: 'White Cement Based', image: smoothPutty, url: '/product/smooth-putty' }
     ];
+
+    // Get products based on active tab
+    const getCurrentProducts = () => {
+        switch (activeTab) {
+            case 'TILE ADHESIVE': return adhesives;
+            case 'GROUT & SEALANTS': return grouts;
+            case 'WATER PROOFING': return waterproofing;
+            case 'BLOCK JOINTING MORTAR': return mortar;
+            case 'WALL PUTTY': return putty;
+            default: return [];
+        }
+    };
+
+    const currentProducts = getCurrentProducts();
+
+    // Handle click - redirect to product.url
+    const handleProductClick = (product) => {
+        window.open(product.url, '_blank');
+    };
 
     return (
         <div className="product-list-page">
             <div className="product-list-container container">
+                {/* Category Tabs */}
                 <div className="product-category-heading">
                     <div className="product-category-tabs">
                         {categories.map((category) => (
-                            <button key={category} className={`category-tab f-22 f-m-18 l-h-1 w-500 white-color first-font ${activeTab === category ? 'active' : ''}`} onClick={() => setActiveTab(category)}>
+                            <button
+                                key={category}
+                                className={`category-tab f-22 f-m-18 l-h-1 w-500 white-color first-font ${activeTab === category ? 'active' : ''}`}
+                                onClick={() => setActiveTab(category)}
+                            >
                                 {category}
                             </button>
                         ))}
                     </div>
                 </div>
 
+                {/* Product Grid */}
                 <div className="product-grid">
-                    {activeTab === 'TILE ADHESIVE' ? adhesives.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">{product.name}</h3>
+                    {currentProducts.map((product) => (
+                        <div
+                            key={product.id}
+                            className="product-card"
+                            onClick={() => handleProductClick(product)}
+                            style={{ cursor: 'pointer' }}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => e.key === 'Enter' && handleProductClick(product)}
+                        >
+                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">
+                                {product.name}
+                            </h3>
                             <div className="product-image-container">
                                 <img src={product.image} alt={product.name} className="product-card-image" />
                             </div>
-                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">{product.type}</p>
+                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">
+                                {product.type}
+                            </p>
                         </div>
-                    )) : activeTab === 'GROUT & SEALANTS' ? grouts.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">{product.name}</h3>
-                            <div className="product-image-container">
-                                <img src={product.image} alt={product.name} className="product-card-image" />
-                            </div>
-                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">{product.type}</p>
-                        </div>
-                    )) : activeTab === 'WATER PROOFING' ? waterproofing.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">{product.name}</h3>
-                            <div className="product-image-container">
-                                <img src={product.image} alt={product.name} className="product-card-image" />
-                            </div>
-                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">{product.type}</p>
-                        </div>
-                    )) : activeTab === 'BLOCK JOINTING MORTAR' ? mortar.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">{product.name}</h3>
-                            <div className="product-image-container">
-                                <img src={product.image} alt={product.name} className="product-card-image" />
-                            </div>
-                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">{product.type}</p>
-                        </div>
-                    )) : activeTab === 'WALL PUTTY' ? putty.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <h3 className="product-title f-48 f-m-32 l-h-1 w-500 white-color first-font">{product.name}</h3>
-                            <div className="product-image-container">
-                                <img src={product.image} alt={product.name} className="product-card-image" />
-                            </div>
-                            <p className="product-subtitle f-28 f-m-18 l-h-1 w-500 white-color second-font">{product.type}</p>
-                        </div>
-                    )) : null}
+                    ))}
                 </div>
             </div>
         </div>

@@ -96,7 +96,7 @@ const Header = () => {
               <img src={logoImage} alt="Pecos Shield Logo" className="menu-logo-image" />
             </NavLink>
           </div>
-          <div className="menu-vertical-text first-font">PECO</div>
+          <div className="menu-vertical-text first-font">PecoPecoPecoPecoPecoPecoPecoPecoPeco</div>
         </div>
         <div className="menu-right-panel">
           <div className="menu-top-bar">

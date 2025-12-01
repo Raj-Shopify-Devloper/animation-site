@@ -104,12 +104,6 @@
     opacity: 0.8;
 }
 
-.product-icon span.feature-label~svg {
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
-
 .product-features-grid .feature-item {
     width: calc(50% - 16px);
 }
@@ -200,6 +194,10 @@
 @media (max-width: 768px) {
     .product-detail-page {
         padding: 2rem 0 0rem;
+    }
+
+    .product-detail-container {
+        flex-direction: column;
     }
 
     .product-detail-title {

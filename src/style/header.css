@@ -69,13 +69,13 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #0066ff, #00d4ff);
+  background: linear-gradient(135deg, #99cfdb, #00495673);
   transition: width 0.3s ease;
 }
 
 .header .nav-link:hover,
 .header .nav-link.active {
-  color: #0066ff;
+  color: #99cfdb;
 }
 
 button.menu-toggle.active span.hamburger-line {
@@ -260,17 +260,29 @@ button.menu-toggle.active span.hamburger-line {
 }
 
 .menu-vertical-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
   writing-mode: vertical-rl;
-  text-orientation: mixed;
   font-size: 15rem;
   font-weight: 900;
   color: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(180deg);
   white-space: nowrap;
   pointer-events: none;
+  line-height: 1;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%) rotate(180deg) translateY(0vh);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(180deg) translateY(100vh);
+  }
 }
 
 .menu-right-panel {

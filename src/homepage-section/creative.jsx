@@ -38,10 +38,22 @@ const CreativeSection = () => {
                       <span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">YOU COVERED.</span>{' '}
                     </h2>
                     <img src={lineImage} loading="lazy" alt="line-image" className="line-image" />
-                    <img src={Starimage} loading="lazy" alt="star-image" className="star-image" />
-                    <div className="circle-image-wrapper" onClick={togglePopup} style={{ cursor: 'pointer' }}>
+                    <div className="star-image-wrapper star-image">
+                      <img src={Starimage} loading="lazy" alt="star-image" className="curve_text_image" />
+                    </div>
+                    <div className="circle-image-wrapper circle-image" onClick={togglePopup} style={{ cursor: 'pointer' }}>
                       <div className="circle-link">
-                        <img src={streemImage} loading="lazy" alt="circle-image" className="circle-image" />
+                        <svg viewBox="0 0 100 100" className="curve_text_image" width="auto" height="auto">
+                          <defs>
+                            <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                          </defs>
+                          <text fontSize="9.2" fontWeight="600" fill="#fff">
+                            <textPath xlinkHref="#circle">
+                              STRANTH YOU CAN TRUST • STRANTH YOU CAN TRUST •
+                            </textPath>
+                          </text>
+                        </svg>
+                        <img src={streemImage} loading="lazy" alt="circle-image" />
                       </div>
                     </div>
                   </div>

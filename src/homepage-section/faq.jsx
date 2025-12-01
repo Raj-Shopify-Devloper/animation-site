@@ -1,5 +1,6 @@
 import React from "react";
-import Faqimage from "../assets/faq-image.png";
+import Faqimage from "../assets/our-product-bg.png";
+import productImage from "../assets/our-product.png";
 import pecobondImage from '../assets/pecobond.png';
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
 import smoothPutty from '../assets/smooth-putty.png';
@@ -11,32 +12,31 @@ export default function OfferSection() {
       title: "TILE ADHESIVE",
       desc: "deliver unmatched bonding strength for every tile, every surface. For flawless finishes that last for years.",
       img: pecobondImage,
-      link: "/products",
+      link: "/product/pecobond",
     },
     {
       title: "GROUT & SEALANTS",
       desc: "Seal the gaps, protect the beauty, ensure durable joints and long-lasting elegance.",
       img: epoxyGroutBucket,
-      link: "/products",
+      link: "/product/epoxy-grout-bucket",
     },
     {
       title: "WATER PROOFING",
       desc: "Guard your spaces from leaks and dampness. Engineered to protect, built to perform.",
       img: epoxyGroutBucket,
-      link: "/products",
-    },
-    {
-      title: "BLOCK JOINTING MORTAR",
-      desc: "Stronger walls start with stronger bonds, ensures precision, durability, and perfect alignment.",
-      img: epoxyGroutBucket,
-      link: "/products",
+      link: "/product/epoxy-grout-bucket",
     },
     {
       title: "WALL PUTTY",
       desc: "Create the perfect base for perfect walls, delivers a smooth, crack-free finish for premium painting.",
       img: smoothPutty,
-      link: "/products",
+      link: "/product/smooth-putty",
     },
+    {
+      title: "BLOCK JOINTING MORTAR",
+      desc: "Stronger walls start with stronger bonds, ensures precision, durability, and perfect alignment.",
+      link: "/product/smooth-putty",
+    }
   ];
 
   return (
@@ -45,18 +45,9 @@ export default function OfferSection() {
         <div className="offer-wrap">
           {/* Video */}
           <div className="offer-video-wrap">
-            <div className="background-video w-background-video">
-              {/* <video autoPlay loop muted playsInline>
-                <source
-                  src="https://cdn.prod.website-files.com/683fc56e70e79d2548e20ab9%2F684ec9f089b0b2f2f2fe5531_Homlo%20Video-transcode.mp4"
-                  type="video/mp4"
-                />
-                <source
-                  src="https://cdn.prod.website-files.com/683fc56e70e79d2548e20ab9%2F684ec9f089b0b2f2f2fe5531_Homlo%20Video-transcode.webm"
-                  type="video/webm"
-                />
-              </video> */}
-              <img src={Faqimage} alt="Background" />
+            <div className="offer-video-background w-background-video">
+              <img src={Faqimage} alt="Background" className="offer-video-bg-image" />
+              <img src={productImage} alt="Product" className="offer-video-product-image" />
             </div>
           </div>
 
@@ -65,7 +56,7 @@ export default function OfferSection() {
             <div className="offer-collection-list">
               {offers.map((item, index) => (
                 <div className="offer-collection-item" key={index}>
-                  <a href={item.link} className="offer-card">
+                  <a href={item.link} className="offer-card" target="_blank" rel="noopener noreferrer">
 
                     <div className="offer-heading-wrap">
                       <div className="offer-card-header-wrap">
@@ -96,7 +87,6 @@ export default function OfferSection() {
                         </div>
                       </div>
                     </div>
-
                   </a>
                 </div>
               ))}
@@ -104,8 +94,8 @@ export default function OfferSection() {
           </div>
 
           {/* Button */}
-          <a href="/services" className="primary f-30 f-m-22 w-600 white-color second-font offer-view-more-button text-uppercase">
-            View More Services
+          <a href="/products" className="primary f-30 f-m-22 w-600 white-color second-font offer-view-more-button text-uppercase">
+            VIEW ALL PRODUCTS
           </a>
 
         </div>

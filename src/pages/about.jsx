@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import '../style/about.css';
 import starImage from '../assets/start-image.png';
+import aboutStarimage from '../assets/about-star.png';
 import lineImage from '../assets/line-start.png';
-import strengthManImage from '../assets/strength-man.png';
+import aboutLineImage from '../assets/about-line.png';
+import founderImage from '../assets/about-founder-image.png';
+import strengthManImage from '../assets/about-foundation-image.png';
 import LetsTalkSection from '../homepage-section/lets-talk.jsx';
 
 // Centralized content — just edit this object!
@@ -32,7 +35,7 @@ const ABOUT_CONTENT = {
         name: "Hitarth Patel",
         title: "FOUNDER",
         description: "As the visionary founder, Hitarth Patel established PECO on the simple, powerful promise of building with trust. His leadership drives the commitment to providing the high-quality, durable solutions that give every builder confidence in their final result.",
-        image: null // Add founder image path here when available
+        image: founderImage // Add founder image path here when available
     }
 };
 
@@ -59,84 +62,83 @@ const About = () => {
     const { aboutUs, mission, vision, founder } = ABOUT_CONTENT;
 
     return (
-        <div className="about-page">
+        <>
+            <div className="about-page">
+                <section className="about-section about-us">
+                    <div className="container">
+                        <div className="content-wrapper">
+                            <div className="text-content animate-on-scroll">
+                                <h1 className="section-title f-110 f-m-48 white-color w-700 first-font">{aboutUs.title}</h1>
+                                {aboutUs.paragraphs.map((para, i) => (
+                                    <p className='f-22 f-m-18 white-color w-400 second-font l-h-1-2' key={i}>{para}</p>
+                                ))}
+                                <div className="decorative-line">
+                                    <img src={starImage} alt="Star" className="star-image-wrapper star-image star-img rotating" />
+                                    <img src={lineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
+                                </div>
+                            </div>
+                            <div className="image-content animate-on-scroll">
+                                <div className="hero-figure">
+                                    <img src={aboutUs.heroImage} alt={aboutUs.heroAlt} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            {/* About Us Section */}
-            <section className="about-section about-us">
-                <div className="container">
-                    <div className="content-wrapper">
-                        <div className="text-content animate-on-scroll">
-                            <h1 className="section-title">{aboutUs.title}</h1>
-                            {aboutUs.paragraphs.map((para, i) => (
-                                <p key={i}>{para}</p>
-                            ))}
-                            <div className="decorative-line">
+                {/* Mission Section */}
+                <section className="about-section mission-section">
+                    <div className="container">
+                        <div className="mission-content animate-on-scroll">
+                            <h2 className="section-title f-110 f-m-48 primary-color w-700 first-font">{mission.title}</h2>
+                            <img src={aboutStarimage} alt="Star" className="star-img-small rotating" />
+                            <p className='f-22 f-m-18 black-color w-400 second-font'>{mission.text}</p>
+                            <div className="decorative-line-center">
+                                <img src={aboutLineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Vision Section */}
+                <section className="about-section vision-section">
+                    <div className="container">
+                        <div className="vision-content animate-on-scroll">
+                            <h2 className="section-title f-110 f-m-48 white-color w-700 first-font">{vision.title}</h2>
+                            <img src={starImage} alt="Star" className="star-img-small rotating" />
+                            <p className='f-22 f-m-18 white-color w-400 second-font l-h-1-2'>{vision.text}</p>
+                            <div className="decorative-line-center">
                                 <img src={lineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
                             </div>
                         </div>
-                        <div className="image-content animate-on-scroll">
-                            <img src={starImage} alt="Star" className="star-img rotating" />
-                            <div className="hero-figure">
-                                <img src={aboutUs.heroImage} alt={aboutUs.heroAlt} />
+                    </div>
+                </section>
+
+                {/* Founder Section */}
+                <section className="about-section founder-section">
+                    <div className="container">
+                        <div className="founder-wrapper">
+                            <div className="founder-text animate-on-scroll">
+                                <h2 className="section-title f-110 f-m-48 primary-color w-700 first-font">{founder.title}</h2>
+                                <img src={aboutStarimage} alt="Star" className="star-img-small rotating" />
+                                <h3 className="founder-name f-48 f-m-24 primary-color w-700 second-font">{founder.name}</h3>
+                                <p className='f-22 f-m-18 black-color w-400 second-font l-h-1-2'>{founder.description}</p>
+                            </div>
+                            <div className="founder-image animate-on-scroll">
+                                <div className="founder-placeholder">
+                                    {founder.image ? (
+                                        <img src={founder.image} alt={founder.name} />
+                                    ) : (
+                                        <div className="placeholder-text">Founder Photo Coming Soon</div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* Mission Section */}
-            <section className="about-section mission-section">
-                <div className="container">
-                    <div className="mission-content animate-on-scroll">
-                        <h2 className="section-title">{mission.title}</h2>
-                        <img src={starImage} alt="Star" className="star-img-small rotating" />
-                        <p>{mission.text}</p>
-                        <div className="decorative-line-center">
-                            <img src={lineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Vision Section */}
-            <section className="about-section vision-section">
-                <div className="container">
-                    <div className="vision-content animate-on-scroll">
-                        <h2 className="section-title">{vision.title}</h2>
-                        <img src={starImage} alt="Star" className="star-img-small rotating" />
-                        <p>{vision.text}</p>
-                        <div className="decorative-line-center">
-                            <img src={lineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Founder Section */}
-            <section className="about-section founder-section">
-                <div className="container">
-                    <div className="founder-wrapper">
-                        <div className="founder-text animate-on-scroll">
-                            <h2 className="section-title">{founder.title}</h2>
-                            <h3 className="founder-name">{founder.name}</h3>
-                            <p>{founder.description}</p>
-                        </div>
-                        <div className="founder-image animate-on-scroll">
-                            <img src={starImage} alt="Star" className="star-img-small rotating" />
-                            <div className="founder-placeholder">
-                                {founder.image ? (
-                                    <img src={founder.image} alt={founder.name} />
-                                ) : (
-                                    <div className="placeholder-text">Founder Photo Coming Soon</div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+                </section>
+            </div>
             <LetsTalkSection />
-        </div>
+        </>
     );
 };
 

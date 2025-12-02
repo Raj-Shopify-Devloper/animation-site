@@ -5,6 +5,7 @@ import Starimage from '../assets/start-image.png';
 import lineImage from '../assets/line-start.png';
 import streemImage from '../assets/streem-round.png';
 import Manicon from '../assets/foundation-image.png';
+import video from '../assets/video/launch-video.mp4';
 
 const CreativeSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -31,11 +32,11 @@ const CreativeSection = () => {
                       <br></br>
                       <span className="text-gray _02 f-70 f-m-48 first-font w-800 white-color l-h-1-2">FOUNDATION</span>
                       <br></br>
-                      <span className="text-gray _03 f-70 f-m-48 first-font w-800 white-color l-h-1-2">TO FINISH</span>{' '}
+                      <span className="text-gray _03 f-70 f-m-48 first-font w-800 white-color l-h-1-2">TO </span><span className="text-gray _03 f-70 f-m-48 first-font w-800 white-color l-h-1-2">FINISH</span>{' '}
                       <br></br>
-                      <span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">PICO HAS</span>{' '}
+                      <span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">PICO </span><span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">HAS</span>{' '}
                       <br></br>
-                      <span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">YOU COVERED.</span>{' '}
+                      <span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">YOU </span><span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">COVERED.</span>{' '}
                     </h2>
                     <img src={lineImage} loading="lazy" alt="line-image" className="line-image" />
                     <div className="star-image-wrapper star-image">
@@ -93,7 +94,7 @@ const CreativeSection = () => {
                   controls
                   autoPlay
                   className="popup-video"
-                  src="/src/assets/video/launch-video.mp4"
+                  src={video}
                 >
                   Your browser does not support the video tag.
                 </video>

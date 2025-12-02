@@ -3,7 +3,7 @@ import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import backgroundVideoThumbnail from "../assets/hero-image.png";
+import backgroundVideoThumbnail from "../assets/video/banner-first.mp4";
 import pecoshieldProductImage from "../assets/pecoshield-2k.png";
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
 import smoothPutty from '../assets/smooth-putty.png';
@@ -57,10 +57,12 @@ const HeroBanner = () => {
           {slides.map((item) => (
             <div key={item.id} className="hero-slide fade-animate">
               <div className="hero-background">
-                <img
+                <video
                   src={item.background}
-                  alt="Slide Background"
-                  className="hero-bg-img"
+                  autoPlay
+                  muted
+                  loop
+                  className="hero-bg-video"
                 />
               </div>
               <div className="hero-title-wrap">

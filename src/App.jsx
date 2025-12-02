@@ -8,6 +8,8 @@ import Footer from './component/footer.jsx';
 import PecoGrid from './pages/peco-grid.jsx';
 import About from './pages/about.jsx';
 import ProductDetail from './product-section/ProductDetail.jsx';
+import Download from './pages/download.jsx';
+import Contact from './pages/contact.jsx';
 
 import { useLocation } from 'react-router-dom';
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<PecoGrid />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
+          <Route path="/download" element={<Download />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

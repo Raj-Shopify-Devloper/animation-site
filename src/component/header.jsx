@@ -63,7 +63,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/portfolio"
+                to="/download"
                 className={({ isActive }) => `nav-link f-22 f-m-16 white-color l-h-1-4 w-500 second-font ${isActive ? 'active' : ''}`}
               >
                 DOWNLOAD
@@ -155,7 +155,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/portfolio"
+                to="/download"
                 className={({ isActive }) => `menu-link ${isActive ? 'active' : ''}`}
                 onClick={closeMenu}
               >

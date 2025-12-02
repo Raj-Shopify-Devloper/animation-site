@@ -66,7 +66,6 @@ export function initHomeAnimations() {
 
 
   // ======================= creative section Start ======================= //
-
   let crSection = document.querySelector(".creative-section.creative");
   let crTitleSpans = document.querySelectorAll(".text-gray");
   let crLineImg = document.querySelector(".line-image");
@@ -86,27 +85,42 @@ export function initHomeAnimations() {
       Math.min(1, (scrollY - crTop) / (crHeight - window.innerHeight))
     );
 
-    // ⭐ Speed increase: finish animation at 60% instead of 100%
-    let speedProgress = Math.min(1, progress / 0.1);
+    let speedProgress = Math.min(1, progress / 0.6);
+    const totalSpans = crTitleSpans.length;
+    if (totalSpans > 0) {
+      crTitleSpans.forEach((span, index) => {
+        if (index === 0) {
+          span.style.opacity = 1;
+          span.style.transform = `scale(1)`;
+          return;
+        }
 
-    // Animate title spans
-    crTitleSpans.forEach((span, index) => {
-      const delay = index * 0.1;
-      const opacity = Math.min(1, speedProgress + (1 - delay));
-      const scale = 0.9 + 0.1 * Math.min(1, (speedProgress - delay) / 0.8);
-      span.style.opacity = opacity;
-      span.style.transform = `scale(${scale})`;
-    });
+        const startProgress = index / totalSpans;
+        const endProgress = (index + 1) / totalSpans;
+        let localProgress = 0.3;
+        if (speedProgress >= startProgress && speedProgress <= endProgress) {
+          localProgress = (speedProgress - startProgress) / (endProgress - startProgress);
+        } else if (speedProgress > endProgress) {
+          localProgress = 1;
+        }
 
-    // Animate line image
+        let opacity = localProgress;
+        if (index === 1) {
+          opacity = 0.3 + 0.7 * localProgress;
+        }
+
+        const scale = 0.9 + 0.1 * localProgress;
+        span.style.opacity = opacity;
+        span.style.transform = `scale(${scale})`;
+      });
+    }
+
     crLineImg.style.opacity = speedProgress;
     crLineImg.style.transform = `translateX(${-100 + 100 * speedProgress}px) rotate(0deg)`;
 
-    // Animate star image
     crStarImg.style.opacity = speedProgress;
     crStarImg.style.transform = `translateX(${-150 + 150 * speedProgress}px) rotateZ(${190 * speedProgress}deg)`;
 
-    // Animate circle image
     crCircleImg.style.opacity = speedProgress;
     crCircleImg.style.transform = `scale(${0.98459 * speedProgress}) rotateZ(${360 * speedProgress}deg)`;
   }
@@ -117,7 +131,6 @@ export function initHomeAnimations() {
 
   window.addEventListener("scroll", crScrollHandler);
   updateCreativeSection();
-
 
   // ======================= creative section End ======================= //
 

@@ -7,6 +7,12 @@ import smoothPutty from '../assets/smooth-putty.png';
 
 
 export default function OfferSection() {
+  const maintitle = [
+    {
+      firstTitle: "Our",
+      secondTitle: "Products",
+    }
+  ];
   const offers = [
     {
       title: "TILE ADHESIVE",
@@ -17,13 +23,11 @@ export default function OfferSection() {
     {
       title: "GROUT & SEALANTS",
       desc: "Seal the gaps, protect the beauty, ensure durable joints and long-lasting elegance.",
-      img: epoxyGroutBucket,
       link: "/product/epoxy-grout-bucket",
     },
     {
       title: "WATER PROOFING",
       desc: "Guard your spaces from leaks and dampness. Engineered to protect, built to perform.",
-      img: epoxyGroutBucket,
       link: "/product/epoxy-grout-bucket",
     },
     {
@@ -47,6 +51,12 @@ export default function OfferSection() {
           <div className="offer-video-wrap">
             <div className="offer-video-background w-background-video">
               <img src={Faqimage} alt="Background" className="offer-video-bg-image" />
+              {maintitle.map((item, index) => (
+                <h2 className="offer-title first-font f-170 f-m-48 white-color w-700 l-h-1-4" key={index}>
+                  <span class="transparent-text">{item.firstTitle} </span>
+                  {item.secondTitle}
+                </h2>
+              ))}
               <img src={productImage} alt="Product" className="offer-video-product-image" />
             </div>
           </div>

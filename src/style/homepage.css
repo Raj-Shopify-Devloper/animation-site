@@ -62,11 +62,11 @@
   animation: rightanimateSlideIn 0.5s ease-in-out;
 }
 
-.hero-banner .slick-slide.slick-active.slick-current .hero-background img {
+.hero-banner .slick-slide.slick-active.slick-current .hero-background video {
   animation: topanimateSlideIn 0.5s ease-in-out;
 }
 
-.hero-banner .hero-background img {
+.hero-banner .hero-background video {
   height: 550px;
   width: 100%;
   object-fit: cover;
@@ -288,7 +288,7 @@
 ========================================================= */
 
 .creative-section.creative.creative-foundation {
-  height: 150vh;
+  height: 200vh;
   padding: 200px 0;
   overflow: clip;
   position: relative;
@@ -330,7 +330,7 @@
 .creative-foundation .text-gray {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .creative-foundation .line-image {
@@ -694,9 +694,9 @@
 
 .offer-video-background.w-background-video img.offer-video-product-image {
   position: absolute;
-  max-width: 70%;
+  max-width: 65%;
   margin: 0 auto;
-  bottom: 15%;
+  bottom: 0.9%;
   left: 0;
   right: 0;
 }
@@ -730,6 +730,25 @@
   border-radius: 8px;
   position: relative;
   overflow: hidden;
+}
+
+.offer-section h2.offer-title {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  align-items: center;
+  line-height: 0.7;
+  left: 0;
+  right: 0;
+  font-size: 220px;
+}
+
+.offer-section h2.offer-title span.transparent-text {
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #fff;
+  position: relative;
+  color: transparent;
 }
 
 .offer-section .background-video video {
@@ -861,9 +880,25 @@
   transition: all 0.5s ease-in-out;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 1024px) {
+  .offer-section h2.offer-title {
+    font-size: 130px !important;
+    top: 15% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .offer-section {
     padding: 50px 0;
+  }
+
+  .offer-section h2.offer-title {
+    font-size: 90px !important;
+    top: 15% !important;
+  }
+
+  .offer-section h2.offer-title span.transparent-text {
+    -webkit-text-stroke-width: 2px !important;
   }
 
   .offer-section .offer-heading-wrap {
@@ -903,9 +938,18 @@
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .offer-section .offer-card .offer-image-wrap {
     display: none;
+  }
+
+  .offer-section h2.offer-title {
+    font-size: 50px !important;
+    top: 17% !important;
+  }
+
+  .offer-section h2.offer-title span.transparent-text {
+    -webkit-text-stroke-width: 2px !important;
   }
 
   .offer-section .offer-collection-list {

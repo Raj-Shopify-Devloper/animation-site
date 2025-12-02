@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../style/about.css';
 import starImage from '../assets/start-image.png';
 import aboutStarimage from '../assets/about-star.png';
+import { initHomeAnimations } from '../script/home-section';
 import lineImage from '../assets/line-start.png';
 import aboutLineImage from '../assets/about-line.png';
 import founderImage from '../assets/about-founder-image.png';
@@ -41,6 +42,9 @@ const ABOUT_CONTENT = {
 
 const About = () => {
     useEffect(() => {
+        initHomeAnimations();
+    }, []);
+    useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -70,7 +74,7 @@ const About = () => {
                             <div className="text-content animate-on-scroll">
                                 <h1 className="section-title f-110 f-m-48 white-color w-700 first-font">{aboutUs.title}</h1>
                                 {aboutUs.paragraphs.map((para, i) => (
-                                    <p className='f-22 f-m-18 white-color w-400 second-font l-h-1-2' key={i}>{para}</p>
+                                    <p className='f-22 f-m-16 white-color w-400 second-font l-h-1-2' key={i}>{para}</p>
                                 ))}
                                 <div className="decorative-line">
                                     <img src={starImage} alt="Star" className="star-image-wrapper star-image star-img rotating" />
@@ -92,7 +96,7 @@ const About = () => {
                         <div className="mission-content animate-on-scroll">
                             <h2 className="section-title f-110 f-m-48 primary-color w-700 first-font">{mission.title}</h2>
                             <img src={aboutStarimage} alt="Star" className="star-img-small rotating" />
-                            <p className='f-22 f-m-18 black-color w-400 second-font'>{mission.text}</p>
+                            <p className='f-22 f-m-16 black-color w-400 second-font'>{mission.text}</p>
                             <div className="decorative-line-center">
                                 <img src={aboutLineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
                             </div>
@@ -106,7 +110,7 @@ const About = () => {
                         <div className="vision-content animate-on-scroll">
                             <h2 className="section-title f-110 f-m-48 white-color w-700 first-font">{vision.title}</h2>
                             <img src={starImage} alt="Star" className="star-img-small rotating" />
-                            <p className='f-22 f-m-18 white-color w-400 second-font l-h-1-2'>{vision.text}</p>
+                            <p className='f-22 f-m-16 white-color w-400 second-font l-h-1-2'>{vision.text}</p>
                             <div className="decorative-line-center">
                                 <img src={lineImage} alt="Decorative Line" className="line-img animate-on-scroll" />
                             </div>
@@ -122,7 +126,7 @@ const About = () => {
                                 <h2 className="section-title f-110 f-m-48 primary-color w-700 first-font">{founder.title}</h2>
                                 <img src={aboutStarimage} alt="Star" className="star-img-small rotating" />
                                 <h3 className="founder-name f-48 f-m-24 primary-color w-700 second-font">{founder.name}</h3>
-                                <p className='f-22 f-m-18 black-color w-400 second-font l-h-1-2'>{founder.description}</p>
+                                <p className='f-22 f-m-16 black-color w-400 second-font l-h-1-2'>{founder.description}</p>
                             </div>
                             <div className="founder-image animate-on-scroll">
                                 <div className="founder-placeholder">

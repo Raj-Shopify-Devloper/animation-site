@@ -10,29 +10,28 @@ export const initLogoAnimation = () => {
     const updateLogo = () => {
         const isHomePage = window.location.pathname === '/';
         const scrollY = window.scrollY;
-        const threshold = window.innerHeight * 0.01;
+        const threshold = window.innerHeight * 0.01; // adjust in CSS if you need a different value
 
-        // Remove all classes first
-        logoImg.classList.remove('hero-logo-fixed', 'hero-logo-shrunk');
+        // Reset everything first
+        logoImg.classList.remove(
+            'hero-logo-fixed',
+            'hero-logo-shrunk',
+            'hero-logo-normal' // optional – useful if you want an explicit "normal" state
+        );
         headerLogoContainer.style.opacity = '1';
 
+        // Not on homepage OR scrolled past the tiny threshold → normal header logo
         if (!isHomePage || scrollY > threshold) {
-            // Normal state: logo in header, no special class
-            logoImg.style.position = '';
-            logoImg.style.top = '';
-            logoImg.style.left = '';
-            logoImg.style.zIndex = '';
-            logoImg.style.transform = '';
-            logoImg.style.width = '';
+            logoImg.classList.add('hero-logo-normal');
             return;
         }
 
-        // Animation in progress
+        // Hero section – logo is fixed in the middle of the viewport
         logoImg.classList.add('hero-logo-fixed');
 
-        // Decide if we need to finish the shrink
+        // When we’re almost at the end of the animation, snap to the shrunk header size
         const progress = scrollY / threshold;
-        if (progress > 0.95) { // Near the end, snap to final position
+        if (progress > 0.95) {
             logoImg.classList.add('hero-logo-shrunk');
         }
     };
@@ -47,7 +46,7 @@ export const initLogoAnimation = () => {
         }
     };
 
-    // Initial check
+    // Initial state
     updateLogo();
 
     // Listeners
@@ -55,13 +54,17 @@ export const initLogoAnimation = () => {
     window.addEventListener('resize', updateLogo);
     window.addEventListener('popstate', updateLogo);
 
-    // Cleanup
+    // Cleanup function
     return () => {
         window.removeEventListener('scroll', handleScroll);
         window.removeEventListener('resize', updateLogo);
         window.removeEventListener('popstate', updateLogo);
 
-        logoImg.classList.remove('hero-logo-fixed', 'hero-logo-shrunk');
-        logoImg.style.cssText = ''; // reset all inline styles
+        // Remove only the classes we added – no inline style cleanup needed
+        logoImg.classList.remove(
+            'hero-logo-fixed',
+            'hero-logo-shrunk',
+            'hero-logo-normal'
+        );
     };
 };

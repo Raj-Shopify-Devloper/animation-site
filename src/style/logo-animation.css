@@ -6,13 +6,13 @@
 img.logo-image.hero-logo-fixed {
     position: fixed;
     scale: 5;
-    transform: translate(35%, 10vh);
+    transform: translate(35%, 10vh) !important;
 }
 
 @media screen and (max-width: 768px) {
     img.logo-image.hero-logo-fixed {
         position: unset;
         scale: 1;
-        transform: unset;
+        transform: unset !important;
     }
 }

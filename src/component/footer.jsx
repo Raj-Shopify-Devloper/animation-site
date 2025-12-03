@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../style/footer.css';
-import logoImage from '../assets/logo.png';
-import locationIcon from '../assets/location.png';
-import phoneIcon from '../assets/phone.png';
-import emailIcon from '../assets/email.png';
-import websiteIcon from '../assets/website.png';
+import logoImage from '../assets/logo.webp';
+import locationIcon from '../assets/location.webp';
+import phoneIcon from '../assets/phone.webp';
+import emailIcon from '../assets/email.webp';
+import websiteIcon from '../assets/website.webp';
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);

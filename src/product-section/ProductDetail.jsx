@@ -4,17 +4,17 @@ import ProductList from './ProductList';
 import { useParams } from 'react-router-dom';
 
 // Import all images
-import productImage from '../assets/pecoshield-2k.png';
-import pecobondImage from '../assets/pecobond.png';
-import pecoflexImage from '../assets/pecoFlex.png';
-import pecogripImage from '../assets/pecogrip.png';
-import pecoPrime from '../assets/pecoprime.png';
-import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
-import epoxyGrout from '../assets/epoxy-grout.png';
-import polumerTileGrout from '../assets/polumer-tile-grout.png';
-import smoothPutty from '../assets/smooth-putty.png';
-import pecoExtreme from '../assets/peco-extreme.png';
-import potLifeIcon from '../assets/time-min.png';
+import productImage from '../assets/pecoshield-2k.webp';
+import pecobondImage from '../assets/pecobond.webp';
+import pecoflexImage from '../assets/pecoFlex.webp';
+import pecogripImage from '../assets/pecogrip.webp';
+import pecoPrime from '../assets/pecoprime.webp';
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
+import epoxyGrout from '../assets/epoxy-grout.webp';
+import polumerTileGrout from '../assets/polumer-tile-grout.webp';
+import smoothPutty from '../assets/smooth-putty.webp';
+import pecoExtreme from '../assets/peco-extreme.webp';
+import potLifeIcon from '../assets/time-min.webp';
 
 const products = {
     pecogrip: {

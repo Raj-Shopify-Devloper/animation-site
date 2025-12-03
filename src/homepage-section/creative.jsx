@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../style/homepage.css';
-import Starimage from '../assets/start-image.png';
-import lineImage from '../assets/line-start.png';
-import streemImage from '../assets/streem-round.png';
-import Manicon from '../assets/foundation-image.png';
+import Starimage from '../assets/start-image.webp';
+import lineImage from '../assets/line-start.webp';
+import streemImage from '../assets/streem-round.webp';
+import Manicon from '../assets/foundation-image.webp';
 import video from '../assets/video/launch-video.mp4';
 
 const CreativeSection = () => {

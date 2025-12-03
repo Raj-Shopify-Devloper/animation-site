@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import backgroundVideoThumbnail from "../assets/video/banner-first.mp4";
-import pecoshieldProductImage from "../assets/pecoshield-2k.png";
-import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
-import smoothPutty from '../assets/smooth-putty.png';
+import pecoshieldProductImage from "../assets/pecoshield-2k.webp";
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
+import smoothPutty from '../assets/smooth-putty.webp';
 import { delay } from "framer-motion/dom";
 
 const HeroBanner = () => {

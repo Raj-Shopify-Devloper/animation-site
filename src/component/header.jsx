@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import '../style/header.css';
-import logoImage from '../assets/logo.png';
+import logoImage from '../assets/logo.webp';
 import { initHeaderFunctionality, getSearchSuggestions } from '../script/header-functionality';
 import { initLogoAnimation } from '../script/logo-animation';
 

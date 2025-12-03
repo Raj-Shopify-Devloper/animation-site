@@ -176,6 +176,10 @@ section.about-section.founder-section {
         padding: 120px 0 0;
     }
 
+    section.about-section.founder-section {
+        padding: 50px 0 0;
+    }
+
     section.about-section.about-us {
         padding: 120px 0 120px;
         position: relative;

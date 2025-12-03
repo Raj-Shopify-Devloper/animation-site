@@ -1,9 +1,9 @@
 import React from 'react';
-import logo1 from '../assets/eiffage.png';
-import logo2 from '../assets/aecom.png';
-import logo3 from '../assets/amazon.png';
-import logo4 from '../assets/build.png';
-import logo5 from '../assets/fedex.png';
+import logo1 from '../assets/eiffage.webp';
+import logo2 from '../assets/aecom.webp';
+import logo3 from '../assets/amazon.webp';
+import logo4 from '../assets/build.webp';
+import logo5 from '../assets/fedex.webp';
 
 const LogoSlider = () => {
   const logos = [

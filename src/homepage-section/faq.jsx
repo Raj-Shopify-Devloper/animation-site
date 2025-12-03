@@ -1,9 +1,9 @@
 import React from "react";
-import Faqimage from "../assets/our-product-bg.png";
-import productImage from "../assets/our-product.png";
-import pecobondImage from '../assets/pecobond.png';
-import epoxyGroutBucket from '../assets/epoxy-grout-bucket.png';
-import smoothPutty from '../assets/smooth-putty.png';
+import Faqimage from "../assets/our-product-bg.webp";
+import productImage from "../assets/our-product.webp";
+import pecobondImage from '../assets/pecobond.webp';
+import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
+import smoothPutty from '../assets/smooth-putty.webp';
 
 
 export default function OfferSection() {

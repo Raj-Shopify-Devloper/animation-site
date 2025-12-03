@@ -1,5 +1,5 @@
 import React from "react";
-import Strengthman from '../assets/strength-man.png'; ;
+import Strengthman from '../assets/strength-man.webp'; ;
 
 export default function DesignProcessSection() {
   return (

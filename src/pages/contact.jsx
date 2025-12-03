@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../style/contact.css';
 import { initHomeAnimations } from '../script/home-section';
-import founderImage from '../assets/about-founder-image.png'; // Using founder image as placeholder
+import founderImage from '../assets/about-founder-image.webp'; // Using founder image as placeholder
 
 export default function ContactForm() {
     const [result, setResult] = useState("");

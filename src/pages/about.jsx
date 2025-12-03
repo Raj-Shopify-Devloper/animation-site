@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import '../style/about.css';
-import starImage from '../assets/start-image.png';
-import aboutStarimage from '../assets/about-star.png';
+import starImage from '../assets/start-image.webp';
+import aboutStarimage from '../assets/about-star.webp';
 import { initHomeAnimations } from '../script/home-section';
-import lineImage from '../assets/line-start.png';
-import aboutLineImage from '../assets/about-line.png';
-import founderImage from '../assets/about-founder-image.png';
-import strengthManImage from '../assets/about-foundation-image.png';
+import lineImage from '../assets/line-start.webp';
+import aboutLineImage from '../assets/about-line.webp';
+import founderImage from '../assets/about-founder-image.webp';
+import strengthManImage from '../assets/about-foundation-image.webp';
 import LetsTalkSection from '../homepage-section/lets-talk.jsx';
 
 // Centralized content — just edit this object!

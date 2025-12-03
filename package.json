@@ -1,9 +1,9 @@
 {
   "name": "animation-site",
+  "homepage": "https://raj-shopify-devloper.github.io/animation-site/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://raj-shopify-devloper.github.io/animation-site/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

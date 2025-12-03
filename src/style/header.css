@@ -449,7 +449,7 @@ button.menu-toggle.active span.hamburger-line {
   padding: 0;
   margin: 0.5rem 0 0 0;
   z-index: 10;
-  max-height: 200px;
+  max-height: 50vh;
   overflow-y: auto;
 }
 
@@ -473,4 +473,21 @@ button.menu-toggle.active span.hamburger-line {
   color: #333;
   display: block;
   font-size: 1rem;
+}
+
+/* Search Categories */
+.suggestion-category {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  background-color: #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

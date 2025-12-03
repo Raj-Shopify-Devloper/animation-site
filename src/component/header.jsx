@@ -8,7 +8,7 @@ import { initLogoAnimation } from '../script/logo-animation';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState({ pages: [], products: [] });
   const location = useLocation();
 
   const handleSearchChange = (e) => {
@@ -111,14 +111,33 @@ const Header = () => {
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
-              {suggestions.length > 0 && (
-                <ul className="search-suggestions">
-                  {suggestions.map((item, index) => (
-                    <li key={index} className="suggestion-item">
-                      <NavLink to={`/${item.toLowerCase().replace(' ', '-')}`} onClick={closeMenu}>{item}</NavLink>
-                    </li>
-                  ))}
-                </ul>
+              {suggestions && (suggestions.pages?.length > 0 || suggestions.products?.length > 0) && (
+                <div className="search-suggestions">
+                  {suggestions.pages?.length > 0 && (
+                    <>
+                      <div className="suggestion-category">Pages</div>
+                      <ul className="category-list">
+                        {suggestions.pages.map((item, index) => (
+                          <li key={`page-${index}`} className="suggestion-item">
+                            <NavLink to={item.url} onClick={closeMenu}>{item.name}</NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                  {suggestions.products?.length > 0 && (
+                    <>
+                      <div className="suggestion-category">Products</div>
+                      <ul className="category-list">
+                        {suggestions.products.map((item, index) => (
+                          <li key={`product-${index}`} className="suggestion-item">
+                            <NavLink to={item.url} onClick={closeMenu}>{item.name}</NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
               )}
             </div>
             <div className="close-container">

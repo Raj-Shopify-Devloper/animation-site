@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import backgroundVideoThumbnail from "../assets/video/banner-first.mp4";
+import GroutBucketVideo from "../assets/video/tile-grout.mp4";
 import pecoshieldProductImage from "../assets/pecoshield-2k.webp";
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
@@ -21,7 +22,7 @@ const HeroBanner = () => {
     },
     {
       id: 2,
-      background: backgroundVideoThumbnail,
+      background: GroutBucketVideo,
       product: epoxyGroutBucket,
       title: "CONSTRUCTION",
       subtext: "SOLUTIONS",

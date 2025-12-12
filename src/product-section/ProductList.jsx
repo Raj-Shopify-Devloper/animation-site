@@ -27,10 +27,10 @@ const ProductList = () => {
 
     // Products with URL added exactly as you wanted
     const adhesives = [
-        { id: 1, name: 'PecoBond', type: 'Type 1T :- C1TE', image: pecobondImage, url: '/product/pecobond' },
-        { id: 2, name: 'PecoFlex', type: 'Type 2T :- C2TE', image: pecoflexImage, url: '/product/pecoflex' },
-        { id: 3, name: 'PecoGrip', type: 'Type 4T :- C2TES1', image: pecogripImage, url: '/product/pecogrip' },
-        { id: 4, name: 'PecoPrime', type: 'Premium Tile Adhesive', image: pecoPrime, url: '/product/pecoprime' },
+        { id: 1, name: 'PecoGrip', type: 'Type 4T :- C2TES1', image: pecogripImage, url: '/product/pecogrip' },
+        { id: 2, name: 'PecoPrime', type: 'Premium Tile Adhesive', image: pecoPrime, url: '/product/pecoprime' },
+        { id: 3, name: 'PecoBond', type: 'Type 1T :- C1TE', image: pecobondImage, url: '/product/pecobond' },
+        { id: 4, name: 'PecoFlex', type: 'Type 2T :- C2TE', image: pecoflexImage, url: '/product/pecoflex' },
         { id: 5, name: 'PecoExtreme', type: 'High Performance', image: pecoExtreme, url: '/product/pecoextreme' }
     ];
 

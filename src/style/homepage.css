@@ -19,7 +19,7 @@
 }
 
 .hero-banner .slick-slide.slick-active.slick-current h1 {
-  animation: leftanimateSlideIn 0.5s ease-in-out;
+  animation: leftanimateSlideIn 1.5s ease-in-out;
 }
 
 .hero-banner span.designers {
@@ -28,6 +28,10 @@
   position: relative;
   color: transparent;
   transition: 0.5s ease;
+}
+
+.hero-banner .slick-list .slick-track .slick-slide {
+  padding: 0 15px;
 }
 
 .hero-banner span.designers::before {
@@ -59,11 +63,11 @@
 
 
 .hero-banner .slick-slide.slick-active.slick-current .pecoshield-2k-wrap img {
-  animation: rightanimateSlideIn 0.5s ease-in-out;
+  animation: rightanimateSlideIn 1.5s ease-in-out;
 }
 
 .hero-banner .slick-slide.slick-active.slick-current .hero-background video {
-  animation: topanimateSlideIn 0.5s ease-in-out;
+  animation: topanimateSlideIn 1.5s ease-in-out;
 }
 
 .hero-banner .hero-background video {

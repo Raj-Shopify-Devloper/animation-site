@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +8,6 @@ import GroutBucketVideo from "../assets/video/tile-grout.mp4";
 import pecoshieldProductImage from "../assets/pecoshield-2k.webp";
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
-import { delay } from "framer-motion/dom";
 
 const HeroBanner = () => {
   const slides = [
@@ -37,18 +36,21 @@ const HeroBanner = () => {
       videoLabel: false,
     }
   ];
+
   const Slider = Slick && (Slick.default || Slick);
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 1500,                  // Duration of the fade transition (ms) → slower = smoother
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    delay: 0,
-    autoplaySpeed: 1800,
-    fade: true,
-    arrows: false
+    autoplaySpeed: 6000,           // Time each slide is visible (ms)
+    fade: false,                   // Keep fade effect
+    cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)', // Premium smooth easing for luxurious feel
+    arrows: false,
+    pauseOnHover: false,           // Nice UX: pause when hovering
   };
 
   return (
@@ -63,11 +65,14 @@ const HeroBanner = () => {
                   autoPlay
                   muted
                   loop
+                  playsInline
                   className="hero-bg-video"
                 />
               </div>
               <div className="hero-title-wrap">
-                <h1 className="hero-title f-110 f-m-48 white-color w-800 l-h-1 first-font">{item.title}<span className="designers" data-text={item.subtext}> {item.subtext}</span></h1>
+                <h1 className="hero-title f-110 f-m-48 white-color w-800 l-h-1 first-font">
+                  {item.title}<span className="designers" data-text={item.subtext}> {item.subtext}</span>
+                </h1>
                 <div className="pecoshield-2k-wrap">
                   <img
                     src={item.product}

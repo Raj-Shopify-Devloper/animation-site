@@ -35,9 +35,9 @@ const ProductList = () => {
     ];
 
     const grouts = [
-        { id: 1, name: 'Epoxy Grout (Bucket)', type: '3-Part Epoxy Grout', image: epoxyGroutBucket, url: '/product/epoxy-grout-bucket' },
-        { id: 2, name: 'Epoxy Grout', type: 'Stain-Free Epoxy', image: epoxyGrout, url: '/product/epoxy-grout' },
-        { id: 3, name: 'Polymer Tile Grout', type: 'Anti-Fungal Grout', image: polumerTileGrout, url: '/product/polymer-tile-grout' }
+        { id: 1, name: 'Polymer Tile Grout', type: 'Anti-Fungal Grout', image: polumerTileGrout, url: '/product/polymer-tile-grout' },
+        { id: 2, name: 'Epoxy Grout (Bucket)', type: '3-Part Epoxy Grout', image: epoxyGroutBucket, url: '/product/epoxy-grout-bucket' },
+        { id: 3, name: 'Grout Admixture', type: 'Milky White Tile Grout Admixture', image: productImage, url: '/product/grout-admix' }
     ];
 
     const waterproofing = [

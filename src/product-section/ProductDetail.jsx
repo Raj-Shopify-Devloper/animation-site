@@ -12,9 +12,23 @@ import pecoPrime from '../assets/pecoprime.webp';
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
 import epoxyGrout from '../assets/epoxy-grout.webp';
 import polumerTileGrout from '../assets/polumer-tile-grout.webp';
+import groutAdmixImage from '../assets/pecoshield-2k.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
 import pecoExtreme from '../assets/peco-extreme.webp';
-import potLifeIcon from '../assets/time-min.webp';
+import potLifeIcon90 from '../assets/time-90-min.webp';
+import potLifeIcon30 from '../assets/time-30-min.webp';
+import thinkness from '../assets/thinkness.webp';
+import strength from '../assets/strength.webp';
+import carbonation from '../assets/carbonation.webp';
+import smoothfinish from '../assets/smooth-finish.webp';
+import availablemorecolors from '../assets/available-more-colors.webp';
+import easyusecleaning from '../assets/easy-use-cleaning.webp';
+import weatherfinish from '../assets/weather-finish.webp';
+import stainproof from '../assets/stain-proof.webp';
+import noncracking from '../assets/non-cracking.webp';
+import chemicalresistance from '../assets/chemical-resistance.webp';
+import waterstain from '../assets/water-stain.webp';
+import clockicon from '../assets/clock-icon.webp';
 
 const products = {
     pecogrip: {
@@ -30,7 +44,7 @@ const products = {
             { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
             { icon: 'clock', label: 'SET TIME' },
             { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
-            { icon: 'potlife', label: 'POTLIFE' },
+            { icon: 'potLifeIcon90', label: 'POTLIFE' },
             { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 1T' },
         ],
         standard: 'CONFORMS TO IS 15477-2004 : TYPE-1 T',
@@ -59,7 +73,7 @@ const products = {
             { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
             { icon: 'clock', label: 'SET TIME' },
             { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
-            { icon: 'potlife', label: 'POTLIFE' },
+            { icon: 'potLifeIcon90', label: 'POTLIFE' },
             { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 2T' },
         ],
         standard: 'CONFORMS TO IS 15477-2004 : TYPE-2 T',
@@ -88,7 +102,7 @@ const products = {
             { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
             { icon: 'clock', label: 'SET TIME' },
             { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
-            { icon: 'potlife', label: 'POTLIFE' },
+            { icon: 'potLifeIcon90', label: 'POTLIFE' },
             { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 3T' },
         ],
         standard: 'CONFORMS TO IS 15477-2004 : TYPE-3 T',
@@ -117,7 +131,7 @@ const products = {
             { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
             { icon: 'clock', label: 'SET TIME' },
             { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
-            { icon: 'potlife', label: 'POTLIFE' },
+            { icon: 'potLifeIcon90', label: 'POTLIFE' },
             { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 4T S1' },
         ],
         standard: 'CONFORMS TO IS 15477-2004 : TYPE-4 T S1',
@@ -147,7 +161,7 @@ const products = {
             { icon: 'water', label: 'WATER MIXING', sublabel: '4-5 Ltr PER BAG' },
             { icon: 'color', label: 'COLOUR', sublabel: 'GREY', isColor: true },
             { icon: 'clock', label: 'SET TIME' },
-            { icon: 'potlife', label: 'POTLIFE' },
+            { icon: 'potLifeIcon90', label: 'POTLIFE' },
             { icon: 'default', label: 'ADHESIVE', sublabel: 'TYPE 5T' },
         ],
         standard: 'CONFORMS TO IS 15477-2004 : TYPE-5 T',
@@ -174,10 +188,10 @@ const products = {
         features: [
             { icon: 'indoor', label: 'INDOOR/ OUTDOOR USAGE' },
             { icon: 'default', label: 'CAN FILL THE JOINTS', sublabel: '1mm-3mm' },
-            { icon: 'default', label: 'SMOOTH FINISH' },
-            { icon: 'default', label: 'EASY TO APPLY & CLEAN' },
-            { icon: 'default', label: 'AVAILABLE IN MORE THAN 15 COLORS' },
-            { icon: 'default', label: 'WEATHER FINISH' },
+            { icon: 'smoothfinish', label: 'SMOOTH FINISH' },
+            { icon: 'easyusecleaning', label: 'EASY TO APPLY & CLEAN' },
+            { icon: 'availablemorecolors', label: 'AVAILABLE IN MORE THAN 15 COLORS' },
+            { icon: 'weatherfinish', label: 'WEATHER FINISH' },
         ],
         standard: 'ISO 13007-4 & EN 12808',
         technicalData: [
@@ -201,13 +215,12 @@ const products = {
             'This is a 3-component epoxy resin grout that is hygienic, stain-free, water- and shock-resistant, and provides good bond strength for floor and wall joints. It works with all ceramic, glass, and stone tiles. It is highly recommended for wet and commercial areas like kitchens, schools, restrooms, and swimming pools.',
         image: epoxyGroutBucket,
         features: [
-            { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
-            { icon: 'default', label: 'STAIN PROOF & EASY TO CLEAN' },
-            { icon: 'default', label: 'NON-CRACKING & POWDERING' },
+            { icon: 'stainproof', label: 'STAIN PROOF & EASY TO CLEAN' },
+            { icon: 'chemicalresistance', label: 'NON-CRACKING & POWDERING' },
             { icon: 'clock', label: 'CURING TIME' },
-            { icon: 'potlife', label: 'POT LIFE', sublabel: '30 Min.' },
-            { icon: 'default', label: 'CHEMICAL RESISTANCE' },
-            { icon: 'default', label: 'AVAILABLE IN VARIOUS SHADES' },
+            { icon: 'potLifeIcon30', label: 'POT LIFE' },
+            { icon: 'chemicalresistance', label: 'CHEMICAL RESISTANCE' },
+            { icon: 'availablemorecolors', label: 'AVAILABLE IN VARIOUS SHADES' },
         ],
         standard: 'ISO 13007-4 & EN 12808',
         technicalData: [
@@ -222,6 +235,35 @@ const products = {
         shelfLife: '12 months from the date of manufacturing.',
         shelfLifeNote: 'Stored in a original sealed sacks in a dry and closed place.',
     },
+    'grout-admix': {
+        name: 'Grout Admixture',
+        title: 'GROUT & SEALANTS',
+        subtitle: 'Grout Admixture',
+        type: 'Milky White Tile Grout Admixture',
+        description:
+            'Grout Admixture is a milky white tile grout admixture for grout admixture used in place of water. It enhances the strength, durability and performance of tile grout mix. The mix of Grout Admixture cementitious on wall & floor & all admix of tiles & grout admix is ideal for fillings joints under glazed, vitrified, glass mosaics, porcelain, terracotta and natural stones like ceramic, clay, large format, glazed, vitrified, glass on dry & wet and under wet joints.',
+        image: groutAdmixImage, // Replace with actual image import
+        features: [
+            { icon: 'indoor', label: 'DRY & WET INDOOR/OUTDOOR' },
+            { icon: 'waterstain', label: 'WATER & STAIN RESISTANCE' },
+            { label: 'COLOUR', sublabel: 'MILKY WHITE', isColor: true },
+            { icon: 'default', label: 'DOSAGE', sublabel: '200-400ml FOR 1KG' },
+            { icon: 'strength', label: 'INCREASE STRENGTH' },
+            { icon: 'noncracking', label: 'NON SHRINKAGE & CRACKING' },
+        ],
+        standard: '', // Not specified in provided details
+        technicalData: [
+            { label: 'Joint width', value: '1-6 mm' },
+            { label: 'Compression strength', value: '>215 N/mm²' },
+            { label: 'Flexural strength', value: '>2.5 N/mm²' },
+            { label: 'Shrinkage, 24 hrs', value: '<3 mm/m' },
+            { label: 'Water Absorption, 24 hrs', value: '<5 g' },
+        ],
+        coverageNote: '',
+        packSize: '200-400 ml',
+        shelfLife: '12 months from the date of manufacturing.',
+        shelfLifeNote: 'Stored in original sealed sacks in a dry and closed place.',
+    },
     'grout-admixture': {
         name: 'Grout Admixture',
         title: 'GROUT & SEALANTS',
@@ -232,7 +274,7 @@ const products = {
         image: productImage, // Placeholder; replace with actual
         features: [
             { icon: 'indoor', label: 'DRY & WET INDOOR/ OUTDOOR' },
-            { icon: 'default', label: 'WATER & STAIN RESISTANCE' },
+            { icon: 'waterstain', label: 'WATER & STAIN RESISTANCE' },
             { icon: 'color', label: 'COLOUR', sublabel: 'MILKY WHITE', isColor: true },
             { icon: 'default', label: 'DOSAGE', sublabel: '200-400ml for 1KG GROUT' },
             { icon: 'default', label: 'INCREASE STRENGTH' },
@@ -256,14 +298,22 @@ const products = {
         title: 'WATER PROOFING',
         subtitle: 'PecoShield 2K',
         type: 'Two Component Elastomeric Waterproof & Protective Coating',
-        description:
-            'Pecoshield Two component polymer modified flexible and elastic cementitious waterproof cum anti-carbonation coating to be applied on sound substrates for extremely tough & durable waterproof render. Best suited For all structures to be waterproofed & protected against ingress of moisture like Basement, Water Tanks, Swimming Pools, Retaining Walls, Bridge Walls, Tunnels, Lift Shafts, Sewage Tanks, Reservoirs, Dams, Dock Gates.',
+        description: 'Pecoshield Two component polymer modified flexible and elastic cementitious waterproof cum anti-carbonation coating to be applied on sound substrates for extremely tough & durable waterproof render. Best suited For all structures to be waterproofed & protected against ingress of moisture like',
+        applications: [
+            'Basement',
+            'Water Tanks',
+            'Swimming Pools',
+            'Retaining Walls',
+            'Bridge Walls',
+            'Tunnels',
+            'Lift Shafts',
+            'Sewage Tanks',
+            'Reservoirs',
+            'Dams',
+            'Dock Gates'
+        ],
         image: productImage,
         features: [
-            { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
-            { icon: 'default', label: 'FLEXIBLE & ELASTIC' },
-            { icon: 'default', label: 'ANTI-CARBONATION' },
-            { icon: 'default', label: 'TOUGH & DURABLE' },
         ],
         standard: 'Cementitious Waterproof Standard',
         technicalData: [],
@@ -325,10 +375,6 @@ const products = {
             'Polymer modified adhesive for masonry building applications, optimum for the adhesion of AAC blocks heaving high shear bond strength. Peco Block Fix replaces traditional method of 20-25mm thickness with 3 - 6mm thickness of Reliant Block Fix. High shear bond strength: Ensuring secure and reliable adhesion of AAC blocks, providing structural stability to your building. Improved efficiency: With its reduced thickness requirement, it streamlines the construction process, making it more efficient and cost-effective.',
         image: productImage,
         features: [
-            { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
-            { icon: 'default', label: 'HIGH SHEAR BOND STRENGTH' },
-            { icon: 'default', label: '3-6 MM THICKNESS' },
-            { icon: 'default', label: 'FOR AAC BLOCKS' },
         ],
         standard: 'Conforms to ASTM C: 1660-10',
         technicalData: [
@@ -348,18 +394,13 @@ const products = {
             'Polymer modified white cement based water resistant fine wall putty for concrete/mortar walls and ceilings. It has superior adhesive strength and durability. It does not require water curing. Benefits: Suitable for all kinds of paint & provides smooth & durable surface. Can be used as a filler/leveller in the paint system.',
         image: smoothPutty,
         features: [
-            { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
-            { icon: 'default', label: 'WATER RESISTANT' },
-            { icon: 'default', label: 'NO WATER CURING REQUIRED' },
-            { icon: 'default', label: 'SUPERIOR ADHESIVE STRENGTH' },
-            { icon: 'default', label: 'SMOOTH & DURABLE SURFACE' },
         ],
         standard: 'Conforms to ASTM C: 1660-10',
         technicalData: [
             { label: 'Coverage', value: 'Approx 20-25 sq.ft./kg/mm' },
         ],
         coverageNote: '',
-        packSize: '',
+        packSize: '20',
         shelfLife: '12 months.',
         shelfLifeNote: 'Stored in a original sealed sacks in a dry and closed place.',
     }
@@ -373,20 +414,64 @@ const IndoorIcon = () => (
     </svg>
 );
 
+const Strength = () => (
+    <img src={strength} alt="strength" />
+);
+
+const Thinkness = () => (
+    <img src={thinkness} alt="Thinkness" />
+);
+
+const Accblocks = () => (
+    <img src={accblocks} alt="Accblocks" />
+);
+
+const Carbonation = () => (
+    <img src={carbonation} alt="Carbonation" />
+);
+
+const Smoothfinish = () => (
+    <img src={smoothfinish} alt="smoothfinish" />
+);
+
+const AvailableMoreColors = () => (
+    <img src={availablemorecolors} alt="availablemorecolors" />
+);
+
+const EasyUseCleaning = () => (
+    <img src={easyusecleaning} alt="easyusecleaning" />
+);
+
+const WeatherFinish = () => (
+    <img src={weatherfinish} alt="weatherfinish" />
+);
+
+const StainProof = () => (
+    <img src={stainproof} alt="stainproof" />
+);
+
+const NonCracking = () => (
+    <img src={noncracking} alt="noncracking" />
+);
+
+const ChemicalResistance = () => (
+    <img src={chemicalresistance} alt="chemicalresistance" />
+);
+
+const PotLifeIcon30 = () => (
+    <img src={potLifeIcon30} alt="potLifeIcon30" />
+);
+
+const PotLifeIcon90 = () => (
+    <img src={potLifeIcon90} alt="potLifeIcon90" />
+);
+
 const ClockIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#0184a0" stroke="none">
-            <path d="M2236 5104 c-271 -35 -525 -113 -781 -239 -264 -130 -461 -271 -665 -476 -393 -393 -634 -883 -710 -1444 -6 -44 -14 -153 -17 -242 l-6 -163 241 0 242 0 0 85 0 85 -155 0 -155 0 0 58 c0 80 33 297 64 418 45 176 117 368 187 498 l30 55 102 -61 c56 -33 116 -69 134 -79 l32 -20 41 72 c34 57 40 73 29 80 -8 5 -65 39 -127 75 -61 36 -115 70 -118 75 -11 19 150 231 280 368 106 110 390 341 420 341 3 0 39 -58 81 -130 42 -71 79 -130 83 -130 14 0 132 72 132 81 0 9 -60 117 -132 237 l-20 32 119 56 c231 110 513 188 767 213 60 6 118 11 128 11 17 0 18 -12 18 -155 l0 -155 80 0 80 0 0 155 c0 143 1 155 18 155 10 0 68 -5 128 -11 165 -16 343 -54 506 -109 143 -47 378 -151 378 -166 0 -4 -34 -65 -76 -135 -42 -71 -74 -132 -71 -136 8 -12 135 -78 140 -73 2 3 37 61 77 130 41 69 75 127 76 128 9 13 255 -180 367 -287 121 -116 336 -382 337 -417 0 -6 -59 -46 -130 -88 l-130 -76 27 -48 c16 -27 35 -59 43 -72 l16 -23 132 78 c73 43 134 76 136 74 27 -30 140 -295 176 -414 54 -175 100 -428 100 -547 l0 -58 -155 0 -155 0 0 -85 0 -85 157 0 156 0 -6 -97 c-16 -262 -95 -554 -218 -811 -42 -89 -62 -121 -71 -116 -7 4 -29 17 -48 29 -19 12 -74 45 -122 73 l-88 51 -40 -69 c-22 -37 -40 -70 -40 -73 0 -2 56 -37 125 -77 69 -40 128 -77 131 -81 17 -29 -277 -385 -396 -479 l-36 -28 9 80 c7 60 6 82 -3 88 -13 8 -141 22 -147 16 -6 -6 -55 -448 -50 -452 5 -5 449 -55 454 -51 1 2 4 39 6 83 l2 79 -82 8 -82 9 122 121 c403 403 633 859 723 1437 22 140 26 516 6 655 -81 577 -317 1058 -712 1454 -204 205 -401 346 -665 476 -262 130 -512 205 -795 240 -154 19 -482 18 -634 -1z" />
-            <path d="M2480 3621 l0 -689 -26 -6 c-67 -17 -151 -95 -188 -175 -30 -65 -28 -186 3 -257 26 -60 87 -123 151 -156 62 -32 179 -37 252 -12 69 25 149 99 177 164 l22 50 454 0 455 0 0 85 0 85 -455 0 -454 0 -20 44 c-28 65 -93 130 -156 157 l-55 24 0 688 0 687 -80 0 -80 0 0 -689z m149 -861 c102 -52 112 -195 19 -262 -25 -17 -46 -23 -88 -23 -92 0 -152 59 -152 151 0 114 119 186 221 134z" />
-            <path d="M723 2445 c-197 -32 -402 -110 -533 -204 -46 -33 -100 -83 -100 -93 0 -7 123 -152 268 -316 l65 -73 61 59 c83 80 134 117 203 150 51 23 70 27 158 27 84 0 107 -4 146 -23 87 -43 130 -147 92 -222 -26 -50 -126 -121 -334 -235 -261 -143 -351 -204 -450 -305 -71 -70 -94 -103 -127 -171 -46 -99 -69 -184 -77 -294 -3 -44 -8 -101 -11 -127 l-5 -48 816 0 815 0 0 235 0 235 -437 2 -438 3 60 47 c33 26 141 96 240 155 99 58 212 128 250 154 134 92 225 208 265 338 25 78 27 221 5 306 -49 188 -207 331 -428 386 -107 27 -382 35 -504 14z" />
-            <path d="M2428 1753 l-528 -677 0 -238 0 -238 445 0 445 0 0 -220 0 -220 265 0 265 0 0 220 0 220 140 0 140 0 0 240 0 240 -140 0 -140 0 0 675 0 675 -182 0 -183 0 -527 -677z m419 -670 c-2 -2 -96 -2 -209 -1 l-205 3 206 268 206 268 3 -267 c1 -147 1 -269 -1 -271z" />
-            <path d="M100 230 l0 -230 60 0 60 0 0 90 0 90 85 0 85 0 0 -90 0 -90 55 0 55 0 0 230 0 230 -55 0 -55 0 0 -90 0 -90 -85 0 -85 0 0 90 0 90 -60 0 -60 0 0 -230z" />
-            <path d="M773 436 c-174 -81 -168 -346 9 -420 21 -9 61 -16 90 -16 168 1 276 173 204 325 -58 123 -180 168 -303 111z m147 -91 c91 -47 75 -215 -22 -239 -51 -13 -94 7 -119 55 -25 51 -24 98 4 140 38 57 84 71 137 44z" />
-            <path d="M1242 298 c3 -152 5 -166 28 -208 36 -66 93 -92 186 -88 60 3 77 8 109 32 63 48 78 97 83 274 l5 152 -62 0 -61 0 0 -142 c0 -125 -3 -147 -20 -175 -22 -36 -60 -50 -99 -37 -45 16 -56 55 -59 212 l-3 142 -56 0 -55 0 4 -162z" />
-            <path d="M1810 231 l0 -231 55 0 55 0 0 70 0 70 33 0 c29 0 36 -6 73 -67 l40 -68 62 -3 c38 -2 62 1 62 7 0 6 -20 43 -44 83 l-44 72 32 39 c27 34 31 47 31 97 0 63 -16 95 -69 134 -24 18 -45 21 -157 24 l-129 4 0 -231z" />
-            <path d="M2415 449 c-17 -4 -44 -22 -60 -39 -23 -24 -30 -41 -33 -88 -4 -54 -2 -60 26 -89 19 -19 57 -38 101 -53 76 -24 97 -40 87 -66 -9 -23 -90 -14 -146 15 -23 12 -44 21 -45 19 -14 -16 -44 -91 -40 -98 3 -5 30 -18 61 -29 76 -29 186 -29 234 0 41 25 47 33 60 80 24 85 -14 135 -130 174 -90 30 -109 45 -85 69 22 21 60 20 114 -4 24 -11 45 -20 47 -20 5 0 44 78 44 89 0 5 -25 19 -55 30 -58 22 -128 26 -180 10z" />
-        </g>
-    </svg>
+    <img src={clockicon} alt="clock" />
+);
+
+const WaterStain = () => (
+    <img src={waterstain} alt="waterstain" />
 );
 
 const GreyColorIcon = () => (
@@ -409,10 +494,36 @@ const ProductDetail = () => {
                 return <IndoorIcon />;
             case 'clock':
                 return <ClockIcon />;
+            case 'potLifeIcon30':
+                return <PotLifeIcon30 />;
+            case 'potLifeIcon90':
+                return <PotLifeIcon90 />;
             case 'color':
                 return <GreyColorIcon />;
-            case 'potlife':
-                return <img src={potLifeIcon} alt="Pot Life" />;
+            case 'thinkness':
+                return <Thinkness />;
+            case 'waterstain':
+                return <WaterStain />;
+            case 'carbonation':
+                return <Carbonation />;
+            case 'noncracking':
+                return <NonCracking />;
+            case 'chemicalresistance':
+                return <ChemicalResistance />;
+            case 'stainproof':
+                return <StainProof />;
+            case 'weatherfinish':
+                return <WeatherFinish />;
+            case 'easyusecleaning':
+                return <EasyUseCleaning />;
+            case 'smoothfinish':
+                return <Smoothfinish />;
+            case 'availablemorecolors':
+                return <AvailableMoreColors />;
+            case 'strength':
+                return <Strength />;
+            case 'accblocks':
+                return <Accblocks />;
             case 'water':
             default:
                 return null;
@@ -438,6 +549,16 @@ const ProductDetail = () => {
                             {product.description}
                         </p>
 
+                        {product.applications && (
+                            <ul className="product-applications">
+                                {product.applications.map((app, index) => (
+                                    <li key={index} className="f-20 f-m-16 w-400 l-h-1-2 second-font">
+                                        {app}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
                         <div className="product-features-grid">
                             {product.features.map((feature, index) => (
                                 <div className="feature-item" key={index}>
@@ -445,7 +566,7 @@ const ProductDetail = () => {
                                         <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">{feature.sublabel}</span>
                                         {renderFeatureIcon(feature)}
                                     </div>
-                                    <span className="feature-sublabel f-24 f-m-16 w-500 l-h-1-2 second-font white-color">
+                                    <span className="feature-sublabel f-20 f-m-16 w-500 l-h-1-2 second-font white-color">
                                         {feature.label}
                                     </span>
                                 </div>

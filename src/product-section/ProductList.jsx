@@ -41,14 +41,11 @@ const ProductList = () => {
     ];
 
     const waterproofing = [
-        { id: 1, name: 'PecoShield 2K', type: 'Two Component Waterproofing', image: productImage, url: '/product/pecoshield-2k' },
-        { id: 2, name: 'PecoFlex Coat', type: 'Flexible Waterproofing', image: productImage, url: '/product/pecoflex-coat' },
-        { id: 3, name: 'PecoAcrylic', type: 'Acrylic Polymer', image: productImage, url: '/product/pecoacrylic' }
+        { id: 1, name: 'PecoShield 2K', type: 'Two Component Waterproofing', image: productImage, url: '/product/pecoshield-2k' }
     ];
 
     const mortar = [
-        { id: 1, name: 'Block Jointing Mortar', type: 'Thin Bed Mortar', image: productImage, url: '/product/block-jointing-mortar' },
-        { id: 2, name: 'AAC Block Adhesive', type: 'High Strength', image: productImage, url: '/product/aac-block-adhesive' }
+        { id: 1, name: 'Block Jointing Mortar', type: 'Thin Bed Mortar', image: productImage, url: '/product/block-jointing-mortar' }
     ];
 
     const putty = [

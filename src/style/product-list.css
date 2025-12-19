@@ -75,8 +75,8 @@
 
 .product-image-container {
     margin-bottom: 0rem;
-    height: auto;
     max-width: 200px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

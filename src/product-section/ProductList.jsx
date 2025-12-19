@@ -13,7 +13,7 @@ import polumerTileGrout from '../assets/polumer-tile-grout.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
 import pecoExtreme from '../assets/peco-extreme.webp';
 import lwImage from '../assets/lw+.webp';
-import sbrImage from '../assets/sbr.webp';
+import sbrImage from '../assets/SBR.webp';
 
 const ProductList = () => {
     const [activeTab, setActiveTab] = useState('TILE ADHESIVE');

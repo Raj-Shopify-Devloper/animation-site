@@ -31,7 +31,7 @@ import chemicalresistance from '../assets/chemical-resistance.webp';
 import waterstain from '../assets/water-stain.webp';
 import clockicon from '../assets/clock-icon.webp';
 import lwImage from '../assets/lw+.webp';
-import SbrImage from '../assets/sbr.webp';
+import SbrImage from '../assets/SBR.webp';
 
 const products = {
     pecogrip: {

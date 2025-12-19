@@ -5,16 +5,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 import backgroundVideoThumbnail from "../assets/video/banner-first.mp4";
 import GroutBucketVideo from "../assets/video/tile-grout.mp4";
-import pecoshieldProductImage from "../assets/pecoshield-2k.webp";
+import pecoPutty from "../assets/video/peco-putty.mp4";
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
+import pecoprimeProductImage from '../assets/pecoprime.webp';
 
 const HeroBanner = () => {
   const slides = [
     {
       id: 1,
       background: backgroundVideoThumbnail,
-      product: pecoshieldProductImage,
+      product: pecoprimeProductImage,
       title: "CONSTRUCTION",
       subtext: "SOLUTIONS",
       videoLabel: true,
@@ -29,7 +30,7 @@ const HeroBanner = () => {
     },
     {
       id: 3,
-      background: backgroundVideoThumbnail,
+      background: pecoPutty,
       product: smoothPutty,
       title: "CONSTRUCTION",
       subtext: "SOLUTIONS",
@@ -42,15 +43,15 @@ const HeroBanner = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1500,                  // Duration of the fade transition (ms) → slower = smoother
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 6000,           // Time each slide is visible (ms)
-    fade: false,                   // Keep fade effect
-    cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)', // Premium smooth easing for luxurious feel
+    autoplaySpeed: 6000,
+    fade: false,
+    cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
     arrows: false,
-    pauseOnHover: false,           // Nice UX: pause when hovering
+    pauseOnHover: false,
   };
 
   return (

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const statsData = [
-  { label: "SATISFIED CUSTOMER", value: 450 },
-  { label: "ORDERS EVERY MONTH", value: 150 },
-  { label: "YEARS EXPERIENCE", value: 40 },
-  { label: "CITIES SERVED", value: 30 },
+  { label: "SATISFIED CUSTOMER", value: 150 },
+  { label: "ORDERS EVERY MONTH", value: 5000 },
+  { label: "YEARS EXPERIENCE", value: 5 },
+  { label: "CITIES SERVED", value: 10 },
 ];
 
 export default function StatsCounterSection() {
@@ -58,16 +58,16 @@ export default function StatsCounterSection() {
 
   return (
     <div className="stats-section" ref={sectionRef}>
-        <div className="container">
-            <div className="stats-content">
-                {statsData.map((item, index) => (
-                    <div key={index} className="stats-box">
-                        <div className="stats-number f-70 f-m-38 w-800 white-color second-font l-h-1">{counts[index]}+</div>
-                        <div className="stats-label f-28 f-m-22 white-color w-500 second-font l-h-1">{item.label}</div>
-                    </div>
-                ))}
+      <div className="container">
+        <div className="stats-content">
+          {statsData.map((item, index) => (
+            <div key={index} className="stats-box">
+              <div className="stats-number f-70 f-m-38 w-800 white-color second-font l-h-1">{counts[index]}+</div>
+              <div className="stats-label f-28 f-m-22 white-color w-500 second-font l-h-1">{item.label}</div>
             </div>
+          ))}
         </div>
+      </div>
     </div>
   );
 }

@@ -34,7 +34,7 @@ const CreativeSection = () => {
                       <br></br>
                       <span className="text-gray _03 f-70 f-m-48 first-font w-800 white-color l-h-1-2">TO </span><span className="text-gray _03 f-70 f-m-48 first-font w-800 white-color l-h-1-2">FINISH</span>{' '}
                       <br></br>
-                      <span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">PICO </span><span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">HAS</span>{' '}
+                      <span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">PECO </span><span className="text-gray _04 f-70 f-m-48 first-font w-800 white-color l-h-1-2">HAS</span>{' '}
                       <br></br>
                       <span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">YOU </span><span className="text-gray _05 f-70 f-m-48 first-font w-800 white-color l-h-1-2">COVERED.</span>{' '}
                     </h2>

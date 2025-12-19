@@ -10,16 +10,17 @@ import pecoflexImage from '../assets/pecoFlex.webp';
 import pecogripImage from '../assets/pecogrip.webp';
 import pecoPrime from '../assets/pecoprime.webp';
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
-import epoxyGrout from '../assets/epoxy-grout.webp';
 import polumerTileGrout from '../assets/polumer-tile-grout.webp';
-import groutAdmixImage from '../assets/pecoshield-2k.webp';
+import whiteCement from '../assets/white-cement.webp';
+import Water from '../assets/water.webp';
+import SaveCement from '../assets/save-cement.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
 import pecoExtreme from '../assets/peco-extreme.webp';
 import potLifeIcon90 from '../assets/time-90-min.webp';
 import potLifeIcon30 from '../assets/time-30-min.webp';
 import thinkness from '../assets/thinkness.webp';
+import epoxyAdmixure from '../assets/grout-admixure.webp';
 import strength from '../assets/strength.webp';
-import carbonation from '../assets/carbonation.webp';
 import smoothfinish from '../assets/smooth-finish.webp';
 import availablemorecolors from '../assets/available-more-colors.webp';
 import easyusecleaning from '../assets/easy-use-cleaning.webp';
@@ -29,13 +30,15 @@ import noncracking from '../assets/non-cracking.webp';
 import chemicalresistance from '../assets/chemical-resistance.webp';
 import waterstain from '../assets/water-stain.webp';
 import clockicon from '../assets/clock-icon.webp';
+import lwImage from '../assets/lw+.webp';
+import SbrImage from '../assets/sbr.webp';
 
 const products = {
     pecogrip: {
         name: 'Peco Grip',
         title: 'TILE ADHESIVE',
         subtitle: 'Peco Grip',
-        type: 'Type 1T C1TE',
+        type: 'Type 1T :- C1TE',
         description:
             'PecoGrip is a polymer modified grey cement-based adhesive for fixing of ceramic tiles on internal floor and walls. Its usage extends to Ceramic, fully vitrified, Terracotta, bricks & Porous Stones/Tiles as well. It is water resistant and does not allow cracking of tiles.',
         image: pecogripImage,
@@ -64,7 +67,7 @@ const products = {
         name: 'PecoPrime',
         title: 'TILE ADHESIVE',
         subtitle: 'PecoPrime',
-        type: 'Type 2T C2TE',
+        type: 'Type 2T :- C2TE',
         description:
             'PecoPrime is a polymer modified cement-based adhesive for fixing of Ceramic, fully vitrified, Terracotta, bricks, Glass Mosaic Tiles, terrazzo & Porous Stones as well. Its application extends to interior floors/walls & exterior floor. It is water resistant and does not allow cracking of tiles.',
         image: pecoPrime,
@@ -93,7 +96,7 @@ const products = {
         name: 'PecoBond',
         title: 'TILE ADHESIVE',
         subtitle: 'PecoBond',
-        type: 'Type 3T C1TE',
+        type: 'Type 3TS1 :- C2TES1',
         description:
             'PecoBond adhesive is designed for all internal & external floor & wall tiling, including ceramic, porcelain, & natural stone. It\'s ideal for wet areas (pools, saunas). At 27° C, it has a 2-hour pot life & allows heavy traffic in 16-24 hours. Coverage is about 45-55 sq.ft. per 20kg pack using a 6mm×6mm notched trowel for a 3mm bed.',
         image: pecobondImage,
@@ -122,7 +125,7 @@ const products = {
         name: 'PecoFlex',
         title: 'TILE ADHESIVE',
         subtitle: 'PecoFlex',
-        type: 'Type 4T C1TE S1',
+        type: 'Type 4TS1 :- C2TES1',
         description:
             'PecoFlex is a highly polymer modified cement-based adhesive for fixing of large format of all tiles, plaster board, concrete surfaces and stones. Its application can be extended to highly diversified uses, material and surfaces. Excellent for elevation purposes and heavy exterior requirement.',
         image: pecoflexImage,
@@ -152,7 +155,7 @@ const products = {
         name: 'PecoExtreme',
         title: 'TILE ADHESIVE',
         subtitle: 'PecoExtreme',
-        type: 'Type 5T C1TE',
+        type: `Type V :- 'T' S2`,
         description:
             'PecoExtreme is a two-component Epoxy PU tile adhesive designed for installing all types of tiles & stones (including glass & metal) on both interior and exterior floors and walls. It is highly versatile, suitable for deformable, absorbent, & non-absorbent substrates like metal, wood, rubber, PVC, & cement-based surfaces.',
         image: pecoExtreme,
@@ -242,7 +245,7 @@ const products = {
         type: 'Milky White Tile Grout Admixture',
         description:
             'Grout Admixture is a milky white tile grout admixture for grout admixture used in place of water. It enhances the strength, durability and performance of tile grout mix. The mix of Grout Admixture cementitious on wall & floor & all admix of tiles & grout admix is ideal for fillings joints under glazed, vitrified, glass mosaics, porcelain, terracotta and natural stones like ceramic, clay, large format, glazed, vitrified, glass on dry & wet and under wet joints.',
-        image: groutAdmixImage, // Replace with actual image import
+        image: epoxyAdmixure, // Replace with actual image import
         features: [
             { icon: 'indoor', label: 'DRY & WET INDOOR/OUTDOOR' },
             { icon: 'waterstain', label: 'WATER & STAIN RESISTANCE' },
@@ -322,6 +325,43 @@ const products = {
         shelfLife: '12 months from the date of manufacturing.',
         shelfLifeNote: 'Stored in a original sealed sacks in a dry and closed place.',
     },
+    'lw+': {
+        name: 'LW+ Integral Waterproofing',
+        title: 'WATER PROOFING',
+        subtitle: 'LW+ Integral Waterproofing',
+        type: 'Integral Waterproofing Liquid Admixture',
+        description:
+            'Integral Waterproofing Liquid Admixture for concrete and mortar confirming to IS 2645:2003, IS 4031:1988, IS 6925:1973. For waterproofing of concrete and mortar used in RCC beams, basements, roof slabs and screeds. For water tanks & water retaining structures, external plastering, bathrooms and balconies, sumps and drains. In precast concrete manufacturing. Dosage is 200ml for 50Kg cement bag.',
+        image: lwImage,
+        features: [
+            { icon: 'WhiteCement', label: 'IMPROVES WORKABILITY WITH CEMENT' },
+            { icon: 'Water', label: 'SAVE WATER USAGE' },
+            { icon: 'SaveCement', label: 'SAVE CEMENT USAGE' }
+        ],
+        standard: 'IS 2645:2003, IS 4031:1988, IS 6925:1973',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '10',
+        shelfLife: '',
+        shelfLifeNote: ''
+    },
+    'sbr-latex-bond': {
+        name: 'SBR Latex Bond',
+        title: 'WATER PROOFING',
+        subtitle: 'SBR Latex Bond',
+        type: 'Latex Bond',
+        description:
+            'Latex Bond-A milky white latex based on modified styrene butadiene (SBR) co-polymer emulsion for waterproofing & bonding in many civil engineering applications. SBR Latex Type II, EN 12090. Waterproofing & Repair Polymer confirming to ASTM C 1059 Type II, EN 12090. For concrete repairs in combination with cement: Spalled concrete of floors, columns, beams, slabs, parapets etc. For waterproofing: As a strong primer & additive in the mortar - small roof terraces, sunken portions of toilets bathrooms, lift & add balconies. As a bond coat: For multi layer plaster, lift pits & bonding agent & waterproof barrier, bonding of new concrete to old concrete, masonry stone work & plastering.',
+        image: SbrImage,
+        features: [
+        ],
+        standard: 'ASTM C 1059 Type II, EN 12090',
+        technicalData: [],
+        coverageNote: '',
+        packSize: '',
+        shelfLife: '',
+        shelfLifeNote: ''
+    },
     'lw-waterproofing': {
         name: 'LW+ Integral Waterproofing',
         title: 'WATER PROOFING',
@@ -329,7 +369,7 @@ const products = {
         type: 'Integral Waterproofing Liquid Admixture',
         description:
             'Integral Waterproofing Liquid Admixture for concrete and mortar confirming to IS 2645:2003, IS 4031:1988, IS 6925:1973. For waterproofing of concrete and mortar used in RCC beams, basements, roof slabs and screeds. For water tanks & water retaining structures, external plastering, bathrooms and balconies, sumps and drains. In precast concrete manufacturing. Dosage is 200ml for 50Kg cement bag.',
-        image: productImage, // Placeholder; replace with actual
+        image: productImage,
         features: [
             { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
             { icon: 'default', label: 'IMPROVES WORKABILITY WITH CEMENT' },
@@ -338,28 +378,6 @@ const products = {
             { icon: 'default', label: 'DOSAGE: 200ml / 50kg Cement' },
         ],
         standard: 'IS 2645:2003, IS 4031:1988, IS 6925:1973',
-        technicalData: [],
-        coverageNote: '',
-        packSize: '',
-        shelfLife: '12 months from the date of manufacturing.',
-        shelfLifeNote: 'Stored in a original sealed sacks in a dry and closed place.',
-    },
-    'sbr-latex-bond': {
-        name: 'SBR Latex Bond',
-        title: 'WATER PROOFING',
-        subtitle: 'SBR Latex Bond',
-        type: 'Cementitious Waterproofing & Repair Polymer',
-        description:
-            'Latex Bond-A milky white latex based in a modified styrene butadiene (SBR) co-polymer emulsion for waterproofing & bonding in many civil engineering applications. SBR Latex Bond for Cementitious Waterproofing & Repair Polymer confirming to ASTM C 1059 Type II, EN 12190. For concrete repairs in combination with cement: Spalled concrete of floors, columns, beams, slabs, parapets etc. For waterproofing: As a strong primer & as an additive in the mortar -small roof terraces, sunken portions of toilets bathrooms, lift pits & balconies. As a bond coat: For multi layer plaster, serves as a bonding agent & also as a waterproof barrier, for bonding of new concrete to old concrete, masonry stone work & plastering.',
-        image: productImage, // Placeholder; replace with actual
-        features: [
-            { icon: 'indoor', label: 'INDOOR / OUTDOOR USAGE' },
-            { icon: 'color', label: 'COLOUR', sublabel: 'MILKY WHITE', isColor: true },
-            { icon: 'default', label: 'WATERPROOFING & BONDING' },
-            { icon: 'default', label: 'FOR REPAIRS & PRIMER' },
-            { icon: 'default', label: 'BOND COAT FOR PLASTER' },
-        ],
-        standard: 'ASTM C 1059 Type II, EN 12190',
         technicalData: [],
         coverageNote: '',
         packSize: '',
@@ -426,10 +444,6 @@ const Accblocks = () => (
     <img src={accblocks} alt="Accblocks" />
 );
 
-const Carbonation = () => (
-    <img src={carbonation} alt="Carbonation" />
-);
-
 const Smoothfinish = () => (
     <img src={smoothfinish} alt="smoothfinish" />
 );
@@ -474,6 +488,18 @@ const WaterStain = () => (
     <img src={waterstain} alt="waterstain" />
 );
 
+const WhiteCement = () => (
+    <img src={whiteCement} alt="whiteCement" />
+);
+
+const WaterIcon = () => (
+    <img src={Water} alt="water" />
+);
+
+const SaveCementIcon = () => (
+    <img src={SaveCement} alt="saveCement" />
+);
+
 const GreyColorIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3423 836" fill="none">
         <path d="M1907.3 127.039L1907.69 127.961L1874.2 141.957L1845.7 154.458L1815.22 169.448L1784.73 184.938L1784.74 184.938L1752.74 202.433L1723.25 219.434L1723.24 219.433L1688.75 239.927L1646.75 265.428L1605.77 292.915L1605.77 292.916L1559.27 323.916L1559.27 323.918L1518.77 350.418L1518.75 350.43L1474.25 376.93L1474.24 376.938L1474.22 376.946L1436.72 395.946L1409.22 409.945L1409.2 409.958L1409.17 409.968L1377.17 421.968L1377.17 421.97L1349.67 431.97L1349.63 431.982L1349.59 431.99L1317.59 438.49L1317.57 438.495L1317.54 438.498L1275.54 442.498L1275.52 442.5H1244.44L1244.38 442.487L1197.88 431.987L1197.83 431.977L1197.79 431.955L1154.79 412.455L1154.75 412.438L1154.72 412.415L1124.22 391.915L1124.18 391.913L1124.15 391.864L1099.15 368.364L1099.14 368.351L1099.12 368.336L1080.12 347.336L1080.11 347.32L1080.1 347.305L1052.1 310.805L1052.09 310.791L1052.08 310.776L1027.58 273.776L1027.57 273.77L1027.57 273.763L993.069 217.763L965.09 175.793L937.608 139.817L909.138 107.352L875.678 76.8877L846.216 55.415L818.269 38.9463L787.301 24.9609L748.857 11.4805L718.924 4.99512L675.471 1H635.029L593.06 6.49609L593.059 6.49512L550.603 13.4883L517.635 21.9805L470.658 36.9727L436.697 50.957L401.721 66.4463L369.771 84.917L343.276 102.914L343.275 102.913L316.309 122.889L273.339 159.862L234.373 200.328L212.389 228.309L175.921 280.761L148.927 326.753L121.447 378.713L94.9561 441.694L71.4736 506.646L49.9736 577.146L27.4873 669.09L11.4873 757.09L0.999117 835.5H3417.69H3423L3118 586.5L2829 365L2665 249L2590.5 201L2469 126.5L2400.5 96.5L2320.5 72L2268.5 64.5L2214 59L2148 61.5L2084.5 70.5L2029 83.5L1954 107.5L1907.3 127.039Z" fill="#868686" />
@@ -492,6 +518,12 @@ const ProductDetail = () => {
         switch (feature.icon) {
             case 'indoor':
                 return <IndoorIcon />;
+            case 'SaveCement':
+                return <SaveCementIcon />;
+            case 'Water':
+                return <WaterIcon />;
+            case 'WhiteCement':
+                return <WhiteCement />;
             case 'clock':
                 return <ClockIcon />;
             case 'potLifeIcon30':
@@ -504,8 +536,6 @@ const ProductDetail = () => {
                 return <Thinkness />;
             case 'waterstain':
                 return <WaterStain />;
-            case 'carbonation':
-                return <Carbonation />;
             case 'noncracking':
                 return <NonCracking />;
             case 'chemicalresistance':
@@ -559,57 +589,71 @@ const ProductDetail = () => {
                             </ul>
                         )}
 
-                        <div className="product-features-grid">
-                            {product.features.map((feature, index) => (
-                                <div className="feature-item" key={index}>
-                                    <div className="product-icon">
-                                        <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">{feature.sublabel}</span>
-                                        {renderFeatureIcon(feature)}
+                        {product.features && product.features.length > 0 && (
+                            <div className="product-features-grid">
+                                {product.features.map((feature, index) => (
+                                    <div className="feature-item" key={index}>
+                                        <div className="product-icon">
+                                            <span className="feature-label f-24 f-m-16 w-600 l-h-1-2 second-font primary-color">{feature.sublabel}</span>
+                                            {renderFeatureIcon(feature)}
+                                        </div>
+                                        <span className="feature-sublabel f-20 f-m-16 w-500 l-h-1-2 second-font white-color">
+                                            {feature.label}
+                                        </span>
                                     </div>
-                                    <span className="feature-sublabel f-20 f-m-16 w-500 l-h-1-2 second-font white-color">
-                                        {feature.label}
-                                    </span>
+                                ))}
+                            </div>
+                        )}
+
+                        {((product.technicalData && product.technicalData.length > 0) || product.standard) && (
+                            <div className="technical-details-section">
+                                <div className="technical-header f-20 f-m-16 w-600 l-h-1-2 second-font primary-color">
+                                    TECHNICAL DETAILS
                                 </div>
-                            ))}
-                        </div>
-
-                        <div className="technical-details-section">
-                            <div className="technical-header f-20 f-m-16 w-600 l-h-1-2 second-font primary-color">
-                                TECHNICAL DETAILS
+                                {product.standard && (
+                                    <div className="technical-subheader f-20 f-m-16 w-600 l-h-1-2 second-font white-color">
+                                        {product.standard}
+                                    </div>
+                                )}
+                                {product.technicalData && product.technicalData.length > 0 && (
+                                    <table className="technical-table">
+                                        <tbody>
+                                            {product.technicalData.map((row, i) => (
+                                                <tr key={i}>
+                                                    <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color" dangerouslySetInnerHTML={{ __html: row.label }} />
+                                                    <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color" dangerouslySetInnerHTML={{ __html: row.value }} />
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                )}
+                                {product.coverageNote && (
+                                    <div className="technical-footer f-20 f-m-14 w-500 l-h-1-2 second-font white-color">
+                                        {product.coverageNote}
+                                    </div>
+                                )}
                             </div>
-                            <div className="technical-subheader f-20 f-m-16 w-600 l-h-1-2 second-font white-color">
-                                {product.standard}
-                            </div>
-                            <table className="technical-table">
-                                <tbody>
-                                    {product.technicalData.map((row, i) => (
-                                        <tr key={i}>
-                                            <td className="f-20 f-m-16 w-500 l-h-1-2 second-font white-color" dangerouslySetInnerHTML={{ __html: row.label }} />
-                                            <td className="f-18 f-m-16 w-400 l-h-1-2 second-font white-color" dangerouslySetInnerHTML={{ __html: row.value }} />
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            <div className="technical-footer f-20 f-m-14 w-500 l-h-1-2 second-font white-color">
-                                {product.coverageNote}
-                            </div>
-                        </div>
+                        )}
 
-                        <div className="pack-size f-28 f-m-20 w-400 l-h-1-2 second-font white-color">
-                            Pack Size <span className="f-32 f-m-20 w-800 l-h-1-2 second-font primary-color">{product.packSize}</span> kg
-                        </div>
+                        {product.packSize && (
+                            <div className="pack-size f-28 f-m-20 w-400 l-h-1-2 second-font white-color">
+                                Pack Size <span className="f-32 f-m-20 w-800 l-h-1-2 second-font primary-color">{product.packSize}</span> kg
+                            </div>
+                        )}
 
-                        <div className="shelf-life">
-                            <p className="f-20 f-m-16 w-600 l-h-1-2 second-font white-color" style={{ textAlign: 'center' }}>
-                                Shelf Life
-                            </p>
-                            <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
-                                {product.shelfLife}
-                            </p>
-                            <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
-                                {product.shelfLifeNote}
-                            </p>
-                        </div>
+                        {(product.shelfLife || product.shelfLifeNote) && (
+                            <div className="shelf-life">
+                                <p className="f-20 f-m-16 w-600 l-h-1-2 second-font white-color" style={{ textAlign: 'center' }}>
+                                    Shelf Life
+                                </p>
+                                <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
+                                    {product.shelfLife}
+                                </p>
+                                <p className="f-20 f-m-16 w-400 l-h-1-2 second-font white-color" style={{ textAlign: 'center', opacity: 0.8 }}>
+                                    {product.shelfLifeNote}
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

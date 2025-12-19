@@ -1,7 +1,7 @@
 import React from "react";
 import Faqimage from "../assets/our-product-bg.webp";
 import productImage from "../assets/our-product.webp";
-import pecobondImage from '../assets/pecobond.webp';
+import pecogripImage from '../assets/pecogrip.webp';
 import epoxyGroutBucket from '../assets/epoxy-grout-bucket.webp';
 import smoothPutty from '../assets/smooth-putty.webp';
 
@@ -16,13 +16,14 @@ export default function OfferSection() {
   const offers = [
     {
       title: "TILE ADHESIVE",
-      desc: "deliver unmatched bonding strength for every tile, every surface. For flawless finishes that last for years.",
-      img: pecobondImage,
-      link: "/product/pecobond",
+      desc: "Deliver unmatched bonding strength for every tile, every surface. For flawless finishes that last for years.",
+      img: pecogripImage,
+      link: "/product/pecogrip",
     },
     {
       title: "GROUT & SEALANTS",
       desc: "Seal the gaps, protect the beauty, ensure durable joints and long-lasting elegance.",
+      img: epoxyGroutBucket,
       link: "/product/epoxy-grout-bucket",
     },
     {
